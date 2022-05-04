@@ -1,0 +1,27 @@
+ f=1; 
+t=-1:0.01:1; 
+xe=cos(2*pi*f*t); 
+ xo=sin(2*pi*f*t); 
+ 
+ subplot(2,1,1);plot(t,xe);
+subplot(2,1,2);plot(-t,xe); 
+figure
+subplot(2,1,1);plot(t,xo);  
+ subplot(2,1,2);plot(-t,xo); 
+ n =-2:4;
+ xn = [0 0 0 1 1 1 1];
+
+ xN = fliplr(xn); 
+ xe =(xn+xN)/2; 
+ xo =(xn-xN)/2; 
+ 
+ subplot(3,1,1);stem(n,xn);
+ grid;ylabel('x[n]')  
+ title('Demonstration of Even-Odd Decomposition')
+subplot(3,1,2);stem(n,xe);
+ grid;ylabel('xe[n]') 
+ subplot(3,1,3);stem(n,xo);
+ grid;ylabel('xo[n]');xlabel('n') 
+ 
+ 
+ 

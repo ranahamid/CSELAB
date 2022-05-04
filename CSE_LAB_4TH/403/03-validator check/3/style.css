@@ -1,0 +1,525 @@
+﻿
+body{
+background-image:url('../images/back.png');
+margin:0;
+padding:0;
+
+}
+
+
+
+ul{
+list-style-type:none;	
+}
+
+
+div#total{
+		margin:auto;
+		width:95%;
+		
+}
+
+
+
+div#left1{
+	float:left;
+	width:70%;
+	margin:0 5px 5px 30px;
+}
+div#right1{
+	
+	float:right;
+	width:25%;
+	margin:auto;
+}
+
+
+div#footer{
+	clear:both;
+	width:100%;
+	float:none;
+	position:relative;
+	margin:10px 0px 0px 0px;
+	text-align:center;
+	padding:0;
+
+}
+
+
+ h3{
+	color:black;	
+	font-family:Arial, Helvetica, sans-serif;
+   }
+
+
+
+
+div#header ul, div#header li{
+    display:inline;
+    color:red;
+    float:left;
+    padding-right:20px;
+      }
+
+
+
+ a{
+ text-decoration:none;
+ color:#265;
+ }
+ 
+ a:hover{
+	 color:#000;
+ }
+ a:active, a:focus{
+	 color:#093;
+ }
+ 
+ .continue a{
+	 text-decoration:underline;
+ }
+ 
+ 
+div#header li a{
+ 	 display:block;
+	 color:#66CCFF; 	  
+ 	 }
+ 	 
+div#header a:hover{
+ 	text-decoration:underline;
+ 	color:#66ccaa;   
+ 	}
+ 	
+
+
+
+div table input{
+	
+	border-color:pink;
+}
+
+div table input:hover{
+	
+	border-color:black;
+}
+
+
+#google_button{
+	
+	padding: 2px;
+	background-color:#90305c;
+	border:2px double #5513c5;
+	font:bold 92% Arial;
+	color:#fff;
+	text-transform:uppercase;	
+}
+
+#google_button:hover{
+	background-color:#5513c5;
+}
+
+
+#google_button:active, #google_button:focus{
+	background-color:#784;
+}
+
+
+div#time{
+	
+	color:black;
+	border:1px solid #a48;
+	text-align:center;
+	margin:15px 0 15px 0;
+	font-family:"Courier New", Courier, monospace;
+		
+	}
+
+
+h4 span#news_heading{
+	color:#666;
+}
+
+h3 span#Latest_news{
+	text-decoration:blink;
+	
+}
+
+div#right1 h3#latest_news_h3{
+	margin-top:40px;
+}
+
+.continue{
+	float:right;
+}
+
+.continue:before{
+	content:"(";
+}
+
+
+.continue:after{
+	content:")";
+}
+
+
+.article{
+	clear:both;
+}
+
+#header ul
+{		
+	background-image:url('../images/Banner-Wood-Frame.jpg');
+}
+
+#header_link{
+	
+	margin-left:20px;
+	font-size:24px;
+	text-shadow:-5px 1px 5px green,
+				1px -1px 0 yellow,
+				3px -3px 0 red,
+				-3px 3px 0 red;
+	
+}
+
+#latest_news_h3{
+	
+	color:red;
+}
+
+
+#image_profile{
+	float:left;
+	margin-right:20px;
+	border:2px solid maroon;
+
+	opacity:0.95;/*for firefox*/
+    filter:alpha(opacity=95);/* For IE8 and earlier*/ 
+
+	
+	
+}
+
+
+#image_profile:hover{
+	border:2px solid purple;
+	
+	opacity:1.00;/*for firefox*/
+    filter:alpha(opacity=100);/* For IE8 and earlier*/ 
+
+	
+}
+
+#image_profile:active,#image_profile:focus{
+
+	border:2px solid silver;
+	
+	opacity:1.00;/*for firefox*/
+    filter:alpha(opacity=100);/* For IE8 and earlier*/ 
+
+}
+
+#to_contact_span{
+	
+	clear:both;
+}
+
+
+#temp{
+	clear:both;
+}
+
+#aca_table{
+	float:left;
+	padding: 2px;
+	margin: 2px;
+    }
+
+#aca_table  th{
+	border: 1px solid olive;
+    padding: 2px;
+    font: normal 14px Tahoma;
+    background: silver;
+    text-align: center;
+    color:#509;
+    
+}
+
+#table_div{
+	text-align:center;
+	float:left;
+	margin-left:10px;
+	
+}
+
+#aca_table  td{
+	border: 1px solid gray;
+    padding: 2px;
+    font: normal 14px Tahoma;
+    background: lightyellow;
+    text-align: center;
+}
+
+
+
+
+
+div#div_form{
+	
+	width:60%;
+	float:left;
+	margin:auto;
+}
+
+label,label span{
+	display:block;
+	margin:auto;
+	padding-bottom:5px;
+}
+label{
+	float:left;
+	width:100%;
+}
+label span{
+	
+	float:left;
+	width:40%;
+	text-align:right;
+}
+div#submit{
+	
+	
+	color:white;
+	border:1 px double #eee;  
+}
+
+fieldset input{
+	
+	float:right;
+	width:45%;
+	border:1px solid #FF33CC;
+}
+
+fieldset input:hover{
+	border:1px solid black;	
+}
+fieldset input:active,fieldset input:focus{
+	
+	border:1px solid gray;
+}
+
+
+fieldset textarea{
+	
+	float:right;
+	width:45%;
+	border:1px solid #FF33CC;
+}
+
+fieldset textarea:hover{
+	border:1px solid black;	
+}
+fieldset textarea:active,fieldset textarea:focus{
+	
+	border:1px solid gray;
+}
+
+fieldset{
+	
+	border:0px;
+	padding:20px;
+	overflow:hidden;
+	margin-bottom:5px;
+	}
+
+form div{
+	
+	margin-bottom:10px;
+	padding:10px 20px;
+	text-align:right;
+}
+
+#submit input{
+	padding: 2px;
+	background-color:#90305c;
+	border:2px double #5513c5;
+	font:bold 92% Arial;
+	color:#fff;
+	text-transform:uppercase;
+}
+
+
+#submit input:hover{
+	background-color:#5513c5;
+}
+
+
+#submit input:active, #submit input:focus{
+	background-color:#784;
+}
+
+
+#favs_link{
+	float:left;
+	margin:10px 30px;
+}
+
+#favs_link #link_news{
+	
+	float:left;
+	
+	margin:10px 30px;
+}
+#favs_link #link_search{
+	
+	float:left;
+	
+	margin:10px 30px;
+}
+#favs_link #link_cricket{
+	
+	float:left;
+	margin:10px 30px;
+}
+#favs_link #link_programming{
+	
+	float:left;
+	margin:10px 30px;
+}
+
+
+caption{
+	font-size:24px;
+	color:maroon;
+	text-decoration:underline;
+	margin-bottom:10px;
+	margin-top:10px;
+	
+	}
+
+
+
+
+
+
+
+
+#image
+    {
+	opacity:0.95;/*for firefox*/
+    filter:alpha(opacity=95);/* For IE8 and earlier*/ 
+	
+	margin:2px;
+	float:left;
+	
+//	height:470px;
+//	width:550px;
+
+	height:82%;
+	width:82%;
+	
+	text-align:center;
+	
+	border:2px solid navy;
+	
+	}
+
+
+
+#img_button{
+	
+	padding: 0;
+	background-color:navy;
+
+	float:left;
+	margin:15px 15px;
+	padding:0;
+	width:5.1m;
+	border:1px solid silver;
+	
+
+	font:bold 92% Arial;
+	color:#fff;
+	text-transform:uppercase;	
+}
+
+#img_button:hover{
+	background-color:#5513c5;
+}
+
+
+#img_button:active, ##img_button:focus{
+	background-color:#784;
+}
+
+
+	
+#image:hover
+{
+
+	opacity:1.0;/*for firefox*/
+    filter:alpha(opacity=40);
+   border:2px solid #ff00ff;
+	
+}	
+
+#image a:hover
+{
+	 border:2px solid silver;
+ 
+}
+
+	
+
+div.desc{
+	text-align:center;
+	margin:1px;
+	width:120px;
+	font-weight:normal;
+}
+
+
+
+div#header ul li{
+	border:2px solid teal;
+	line-height:30px;
+	padding:2px;
+	background-color:#000;
+}
+
+div#banner{
+		background-image:url('../images/banner1.png');
+		
+		font-size:30px;
+		text-shadow:-3px -5px 4px green,
+					-1px -3px 7px silver,
+					-1px -2px 1px green,
+					-4px -2px 1px #25f,
+					-7px -1px 0 #eee,
+					-1px -5px 1px #333;
+	    text-align:center;	
+	   color:red;
+	   margin-top:10px;
+	   overflow:hidden;
+		height:70px;
+		margin-bottom:0px;
+		border:1px solid black;
+		padding:0;
+}
+
+#img_footer{
+	
+	text-indent:-9999px;
+	background-image:url('../images/potpurri.GIF'); ;
+}
+
+
+#header{
+	margin-top:0;
+	padding:0;
+	text-align:center;
+
+}
+
+
+

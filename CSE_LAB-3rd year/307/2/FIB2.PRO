@@ -1,0 +1,32 @@
+%fibonacci
+predicates
+   find_fib(real,real,real,real)
+   run
+  
+   goal
+   	clearwindow,
+   	run.
+clauses
+		run:-
+			write("type non-negetive number"),
+			readreal(Number),
+			Result=0.0,
+			find_fib(Result,1,Number,0).
+	
+	find_fib(Result,N,Number,Count):-
+			Count2=Count+1,
+			Number>=Count2,
+			
+			N1=N+Result,
+			write(N1," "),
+			
+			Count3=Count2+1,
+			Number>=Count3,
+			
+			NewResult=Result+N1,
+			write(NewResult," "),
+			
+			find_fib(NewResult,N1,Number,Count3).
+			
+		
+			

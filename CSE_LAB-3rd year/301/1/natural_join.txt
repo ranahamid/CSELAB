@@ -1,0 +1,34 @@
+create table r
+(
+a varchar2(20),
+b varchar2(20),
+c varchar2(20),
+d varchar2(20)
+);
+
+
+insert into r
+  values('1','2','3','4');
+insert into r
+  values('5','6','7','8');
+insert into r
+  values('9','10','11','12');
+
+create table s
+(
+
+b varchar2(20),
+c varchar2(20)
+);
+
+insert into s
+  values('2','3');
+
+insert into s
+  values('2','4');
+
+insert into s
+  values('10','11');
+
+select *
+from r,s;

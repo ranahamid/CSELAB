@@ -1,0 +1,872 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/bmi.js" language="javascript"></script><title>Koders Code Search: GroupChat.java - Java </title><meta name="robots" content="noarchive,index,follow"><meta name="GOOGLEBOT" content="noarchive,index,follow"><link href="http://www.koders.com/search/KodersDescriptionOS1_1.xml" title="Koders search" rel="search" type="application/opensearchdescription+xml"><link href="http://www.koders.com/search/KodersDescriptionOS1_1Proj.xml" title="Koders Projects search" rel="search" type="application/opensearchdescription+xml"><style type="text/css" style="display:none">body{font-family:Verdana,Helvetica,sans-serif;font-size:11px;font-weight:normal;padding:0px;margin:0px;background-color:White;}.license_detail_table{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;}.grayborder{border:1px solid gainsboro;}.blackborder{border:1px solid black;}.redborder{border:1px solid red;}.licenseWarningMessage{}.licenseErrorMessage{color:Red;}.licstyle2{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;}.licstyle3{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;color:#FFFFFF;}.licstyle5{font-size:12px;color:#000000;font-family:Verdana,Arial,Helvetica,sans-serif;}.licstyle7{color:#FFFFFF;font-weight:bold;}.licstyle9{font-size:14px;}.style7{color:#2966CC;font-size:14px;text-align:left;}.examplesBox{background-color:#F5F7FA;padding-left:10px;padding-top:10px;padding-bottom:10px;line-height:18px;}img{border:0;}/**/table{border-color:White;}p,td,textbox,select,input,li{font-family:Verdana,Helvetica,sans-serif;font-size:11px;font-weight:normal;}td{font-family:Verdana,Helvetica,sans-serif;font-size:11px;font-weight:normal;vertical-align:top;}th{font-family:Verdana,Helvetica,sans-serif;font-size:11px;font-weight:bold;line-height:12px;}acronym{cursor:help;border-bottom:1px dotted #000;}.textblock{width:500px;}.tbSearch{font-family:Verdana,Helvetica,sans-serif;font-size:11px;font-weight:normal;width:300px;vertical-align:middle;}.kvSearchBox{width:176px;position:relative;top:-1px;}.tbSearchSmall{font-family:Verdana,Helvetica,sans-serif;font-size:11px;font-weight:normal;width:200px;}.normal{font-family:Verdana,Helvetica,sans-serif;font-size:11px;font-weight:normal;line-height:16px;}.heading2{font-family:Verdana,Helvetica,sans-serif;font-size:20px;font-weight:bold;line-height:30px;clear:left;}.heading3{font-family:Verdana,Helvetica,sans-serif;font-size:14px;font-weight:bold;line-height:22px;clear:left;}h3{font-family:Verdana,Helvetica,sans-serif;font-size:14px;font-weight:bold;line-height:22px;clear:left;}legend{font-family:Verdana,Helvetica,sans-serif;font-size:11px;font-weight:bold;color:#4a6184;}#Homepage_Promo{font-size:larger;font-weight:bolder;}#Homepage_Promo a{color:#333399;}.block_header{border-top:solid 2px lightsteelblue;padding:0px 0px 2px 0px;background-color:#F5F5F5;font-family:Verdana,Helvetica,sans-serif;font-size:12px;font-weight:normal;}.results_summary{text-align:right;border-top:solid 2px lightsteelblue;padding:0px 0px 2px 8px;background-color:#F5F5F5;font-family:Verdana,Helvetica,sans-serif;font-size:12px;font-weight:normal;}.snippet{font-size:9pt;line-height:10.5pt;height:60pt;padding:2px;margin-top:2px;margin-bottom:2px;border:2px solid lightsteelblue;background-color:#eeeeee;overflow:auto;}.snippet pre{float:left;margin:0;}.error_message{color:Red;/**/}.error{color:Red;}A.results_header:link,A.results_header:active,A.results_header:hover{font-size:18px;font-family:Lucida Sans,Tahoma,Arial,Sans-Serif;font-weight:bold;line-height:24px;text-decoration:none;color:Navy;}A.results_header:visited{font-size:18px;font-family:Lucida Sans,Tahoma,Arial,Sans-Serif;text-decoration:none;font-weight:bold;color:Purple;line-height:24px;}.footer{font-size:10px;font-family:Tahoma,Arial,Sans-Serif;color:#333333;}.code{font-family:Courier;font-size:11px;font-weight:normal;line-height:12px;}A:link{text-decoration:none;}A:visited{text-decoration:none;}A:active{text-decoration:none;}A:hover{text-decoration:underline;}/**/.c{color:Green;}.str{color:Red;}.k{color:Blue;}.r{color:Black;}.s0{color:black;background-color:yellow;}.s1{color:black;background-color:#00FFFF;}.s2{color:black;background-color:Lime;}.s3{color:black;background-color:purple;}.s4{color:black;background-color:teal;}.s5{color:black;background-color:yellow;}.s6{color:black;background-color:yellow;}.s7{color:black;background-color:yellow;}.s8{color:black;background-color:yellow;}.s9{color:black;background-color:yellow;}.info_panel{border-top:solid 4px #336699;border-bottom:solid 1px #cccccc;background-color:#F5F5F5;padding:0px;}.kodeviewer_info_panel{border-top:solid 4px #336699;border-bottom:solid 1px #cccccc;background-color:#F5F5F5;padding:0px;padding-left:8px;}.PureLanguage{font-weight:bold;text-align:center;margin-bottom:10px;}#SiteToolbar a{color:#333399;}.toolbar_tip{position:absolute;right:366px;font-size:11px;height:17px;line-height:17px;margin-top:1px;}.toolbar_tip img{float:left;margin-top:1px;margin-right:1px;}.toolbar_button{border-right:gray thin ridge;padding-right:10px;border-top:gray thin ridge;padding-left:10pt;padding-bottom:5px;border-left:gray thin ridge;width:48px;padding-top:5px;border-bottom:gray thin ridge;height:48px;text-align:center;}.toolbar_corner{background-position:left bottom;background-image:'url( "http://www.koders.com/skins/koders/../../images/gray-white-vgrad.png" )';/**/background-repeat:repeat-x;}.toolbar2{/**/background-position:left bottom;/**/background-image:'url( "http://www.koders.com/skins/koders/../../images/gray-white-vgrad.png" )';border-bottom:#cccccc 1px solid;background-repeat:repeat-x;}.score_panel{border-right:gray thin outset;padding-right:10px;border-top:gray thin outset;padding-left:10pt;padding-bottom:5px;border-left:gray thin outset;padding-top:5px;border-bottom:gray thin outset;background-color:Yellow;}.quote{font-family:Georgia,"Times New Roman",Times,serif;font-style:italic;font-weight:normal;}.quote_signature{font-family:Georgia,"Times New Roman",Times,serif;font-weight:bold;text-align:right;}/**/.pexp_table{border-right:gray 1px solid;border-top:gray 1px solid;border-left:gray 1px solid;border-bottom:gray 1px solid;font-family:Tahoma,Arial;border-collapse:collapse;}.pexp_header{border-right:gray 1px solid;border-top:gray 0px solid;padding-right:3px;padding-left:3px;font-weight:bold;padding-bottom:1px;border-left:gray 0px solid;padding-top:1px;border-bottom:gray 1px solid;font-family:Tahoma,Arial;text-align:center;background-color:#F5F5F5;}.pexp_folders{border-right:#000000 1px solid;padding-top:4px;padding-left:4px;padding-right:0px;padding-bottom:0px;vertical-align:top;line-height:120%;background-color:#F5F5F5;}.pexp_files{padding-right:2px;padding-left:2px;padding-bottom:1px;padding-top:1px;vertical-align:top;line-height:120%;background-color:white;}.paginator{padding:2px 6px;font:11px Arial,Helvetica,sans-serif;}.paginator a,.pageList .this-page{padding:2px 6px;border-left:solid 1px #ddd;border-right:solid 1px #ddd;text-decoration:none;}.paginator span{padding:2px 6px;}.paginator .break{padding:2px 6px;border:none;text-decoration:none;}.paginator .end{padding:2px 6px;border:solid 2px #ddd;}.paginator .this-page{padding:2px 6px;border-color:#999;font-weight:bold;}.paginator a:hover{color:#fff;background:#0063DC;border-color:#036;text-decoration:none;}/**/.ffLabel{width:100px;margin-left:4px;/**//**/float:left;display:block;}.ffLabelLong{width:150px;margin-left:4px;/**//**/float:left;display:block;}.ffInput{font-family:Verdana,Helvetica,sans-serif;font-size:11px;font-weight:normal;margin-bottom:2px;}.ffInputShort{font-family:Verdana,Helvetica,sans-serif;font-size:11px;font-weight:normal;width:48px;}.ffError{font-size:10px;color:Red;}.floatLeft{position:absolute;direction:rtl;right:20px;}/**/.pointerhand{cursor:pointer;}.chart_title{border:#336699 solid 4px;padding-left:8px;padding-right:16px;background-color:#336699;color:#ffffff;text-align:center;font-weight:bold;font-size:13px;display:inline;}.results_title{padding-bottom:2px;padding-left:8px;padding-right:12px;background-color:#B0C4DE;color:#000000;text-align:center;font-weight:bold;}#ProjectDirectory{margin-left:50px;}#ProjectDirectory h1{margin-bottom:0px;font-size:14px;font-weight:bold;margin-top:20px;}#ProjectDirectory span{margin-left:20px;}.SidePadding{padding-left:20px;padding-right:20px;}.SideMargins{margin-left:20px;margin-right:20px;}.LOCHomePageTag{margin-top:10px;font-size:13px;font-weight:bold;}.InfoPage{margin-left:50px;}sup{color:red;}ul{list-style-type:none;list-style:none;margin:0;padding:0;}ul.ulist1{list-style-type:disc;margin-left:20px;}ul.NavUL{margin-left:15px;width:175px;}/**/ul.ul2{margin-left:20px;margin-top:5px;}ul.SubscriptionFeatures{margin-top:10px;margin-left:36px;list-style-type:disc;}LI{padding-bottom:7px;}.LeftNavBorder{border-right:#dddddd 1px solid;text-align:left;vertical-align:top;}.LabsControl{padding-left:40px;}.MyAccountControl{margin-left:40px;}.MyAccountControl div{/**/}.MyAccountControl div div{margin-left:20px;/**/}fieldset{margin-bottom:10px;}.MACInner{margin-left:20px;}#MyAccountLayout{/**/width:100%;}#MyAccountMenuCSS{border-right:#dddddd 1px solid;text-align:left;vertical-align:top;width:150px;}#MADashboard{/**/}#InfoPageContent div div{margin-left:20px;width:500px;}div.notice{border:2px solid lightsteelblue;background-color:#F5F5F5;padding:5px;width:500px;text-align:left;}#SubscriptionForm,#SubscriptionFeatures{width:500px;/**/}#SubscriptionForm fieldset{padding:10px;}.SubscriptionFormButton{float:right;}#PaymentReceipt{/**/margin-top:50px;margin-bottom:50px;}/**/#OFContent{margin-bottom:100px;}.FilterLevel1{margin-top:5px;background-color:#F5F5F5;border:1px solid #B0C4DE;width:500px;padding:10px;}/**/.ReportTable{color:#333;background-color:white;border:solid 1px #ccc;border-bottom:solid 1px #bbb;border-collapse:collapse;margin-top:5px;margin-bottom:5px;width:98%;margin:5px;}.ReportTable tr td{padding:4px;border:solid 1px #ccc;}.ReportContents{position:relative;padding:5px!important;border:0px!important;clear:both;overflow:hidden;}#IEroot .ReportContents{margin:4px!important;margin-bottom:6px;width:100%;border:0px!important;padding:5px;}.DataGridHeader{}.DataGridHeader td{background-color:#e6e6e6;color:#222;font-weight:bold!important;}.DataGridHeader{color:#333;background-color:white;border:solid 1px #ccc;border-bottom:solid 1px #bbb;border-collapse:collapse;margin:5px;}.DataGridItem td{padding:5px;border-top:solid 1px #ccc;color:#333;background-color:#fdfdfd;}.DataGridAlternateItem td{padding:5px;border-top:solid 1px #ccc;background-color:#fafafa;color:#333;}.DataGridHighlight td{background-color:#DEEFFF;color:#336699;background-position:0px -20px;background-repeat:repeat-x;color:black;}.report_nav{border-top:solid 4px #336699;border-bottom:solid 1px #cccccc;background-color:#F5F5F5;padding:0px;position:relative;}.report_nav a{color:#222;padding-top:5px;padding-bottom:5px;display:block;border-bottom:solid 1px #eee;}.report_nav br{height:1px;overflow:hidden;display:none;}a.toolbarLink,.toolbar2 a{text-decoration:none;color:black;font-weight:bold;padding:0 2px 0 2px;}a.toolbarLink:hover,.toolbar2 a:hover{text-decoration:none;background:#ddd;color:#114477;}.loggedEmailDiv{position:absolute;right:2px;width:300px;text-align:right;top:38px;font-size:10px;background:white;}.trialUpgradeA{color:Red;font-weight:bold;}img.dojoComboBox{display:none!important;}input.dojoComboBox{border:1px inset #afafaf!important;}.warningDiv{background-color:#FFFFCC;border:1px dotted #CCCCCC;padding:9px;}/**/#promoStatus{display:block;height:20px;margin-top:5px;}.upgrade-promotion .success{color:#060;}.promoLabelSpan{float:left;height:40px;display:block;padding-right:5px;}.promoCodeTextBox{border:solid 1px #336699;padding:1px;}/**/blockquote#feedback{width:871px;}#feedback #feeds_pane{width:400px;padding-left:20px;border-left:solid 1px #ccc;float:left;}#feedback #feedback_pane{width:430px;padding-right:20px;float:left;}#feedback .recent_posts{color:#000;font-size:12px;font-family:arial;margin-bottom:40px;}#feedback .recent_posts a{color:#225588;text-decoration:none;}#feedback .recent_posts div{margin-bottom:3px;}#feedback .recent_posts a:hover{color:#4477aa;text-decoration:underline;}#feedback .recent_posts h3{font-size:15px;font-weight:bold;padding:10px 0 0 0;margin:0 0 0 0;}.nm_type{font-size:10pt;font-family:Tahoma,Arial;}.namesp{font-weight:bold;font-size:12pt;font-family:Tahoma,Arial;}.uml_type{font-size:8pt;font-family:Tahoma,Arial;padding:3px;}.uml_section{border-top:gray 1px solid;font-size:8pt;font-family:Tahoma,Arial;background-color:#6495ED;padding:3px;}.uml_item{font-size:8pt;font-family:Tahoma,Arial;padding:3px;}.entity{font-weight:bold;font-size:10pt;line-height:12pt;font-family:Tahoma,Arial;}TH.entity{font-weight:normal;background-image:'url( "http://www.koders.com/skins/koders/../../images/blue-white-grad.PNG" )';/**/background-repeat:repeat-y;}.exp_header{border-right:gray 1px solid;border-top:gray 1px solid;border-left:gray 1px solid;border-bottom:gray 1px solid;font-family:Tahoma,Arial;background-color:#F5F5F5;padding:3px;}.exp_items{line-height:110%;padding:3px;} .kvHeaderLimiter{position:relative;width:510px;}.detailsTable td{padding:5px;padding-left:10px;}/**/#plugin_screenshots{margin-left:0;padding-left:0;margin-top:15px;margin-bottom:50px;margin-left:30px!important;}#plugin_screenshots td{text-align:center;vertical-align:middle;margin-left:0;}#plugin_screenshots td.c2{padding-left:30px;}#plugin_demo{background-image:url(http://koders.com/media/images/koders/smartsearch_bg.gif);background-repeat:no-repeat;padding:5px 6px 6px 6px;width:320px;float:none;}#smartsearch_info{margin-left:30px;}#smartsearch_info td{vertical-align:middle;}#smartsearch_info td.c1{padding-right:20px;text-align:center;}.kodeViewerContDiv{padding:0px 10px 0px 10px;}
+</style>
+<!--[if IE]><link href="/skins/koders/iestyles.css" type="text/css" rel="stylesheet" /><![endif]--><style type="text/css" style="display:none">/**/#plugin_downloads{margin-top:10px;width:400px;/**/}#plugin_downloads .header{background-color:lightsteelblue;color:White;font-weight:bold;/**/border-bottom:2px solid white;border-right:2px solid white;}#plugin_downloads .p_name{/**/font-weight:bold;}.languages{font-size:smaller;color:Gray;}#tblDownloads{border:1px solid steelblue;background-color:whitesmoke;/**/margin-top:10px;padding:10px;width:300px;margin-left:20px;/**/}#tblDownloads th{border-bottom:1px solid lightsteelblue;}#plugin_downloads td{vertical-align:top;padding:5px;}/**/#DashBoard{}#DashBoard .dbRight{}#DashBoard .dbRight P{/**/MARGIN:10px;}#DashBoard .dbRight OL{}#DashBoard .dbRight div{}#widgetColumn{MARGIN-TOP:10px;FLOAT:right;/**/width:400px;}/**/.DashboardWidgetContent{margin-left:25px;}.widget_spacing{margin-top:0px;padding:0px;}/**/#widget_Downloads{margin-left:20px;}#widget_Downloads tr td{vertical-align:middle;}UL.toolsMenu{WIDTH:180px}.toolsSection{MARGIN-BOTTOM:30px}.toolsSection DIV{WIDTH:600px}.toolsSubSection P A{MARGIN-LEFT:15px}.toolsSubSection P IMG{MARGIN-TOP:10px;MARGIN-LEFT:15px}#tools_ascx_content fieldset{margin-bottom:20px;padding:10px;border:1px solid darkblue;}#tools_ascx_content fieldset legend{border:#336699 solid 4px;padding-left:8px;padding-right:16px;background-color:#336699;color:#ffffff;text-align:center;/**/font-size:12px;display:inline;margin-bottom:10px;}ul.tools{list-style-type:disc;margin-left:50px;}li.tool_li{font-weight:bold;}#plugin_screenshots{text-align:center;margin-left:50px;}#plugin_screenshots .caption{color:#777777;font-size:10px;}#plugin_demo_section{margin-top:10px;margin-bottom:10px;}#plugin_demo{float:right;margin-right:50px;vertical-align:top;}.section_heading{font-weight:bold;margin-bottom:10px;display:block;}
+</style>
+<meta name="ROBOTS" content="NOARCHIVE"><link href="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/home-page.css" type="text/css" rel="stylesheet"><script type="text/javascript" language="javascript">var anchors;var symbolSegment=0;var max=0;function assignInitial(){var codeDiv=document.getElementById("CodeDiv");if(codeDiv!=null){anchors=codeDiv.getElementsByTagName("a");assignR(300);}}
+function assignR(max){if(symbolSegment+max>=anchors.length){max=anchors.length-symbolSegment;}
+for(var i=0;i<max;i++){var temp="";var index=symbolSegment+i;var anchor=anchors[index];for(var k=0;k<anchor.childNodes.length;k++){if(anchor.childNodes[k].data==undefined){temp=temp+anchor.childNodes[k].childNodes[0].data;}
+else{temp=temp+anchor.childNodes[k].data;}}
+anchors[index].setAttribute("href","javascript:searchRef('"+temp+"')");anchors[index].setAttribute("title","Search for references of '"+temp+"'");}
+if(symbolSegment+max<anchors.length){symbolSegment+=max;this.setTimeout("assignR(50)",200);}}
+function searchRef(symbol){location=homeUrl+"?s="+symbol+"&scope="+projectID+"&la="+sourceLanguage;}
+function Hide(element){if(element){element.style.visibility="hidden";element.style.display="none";}}
+function HideBanner(){var eleArray=document.getElementsByTagName('div');for(var i=0;i<eleArray.length;i++){if(!eleArray[i]||!eleArray[i].id){continue;}
+var id=eleArray[i].id;if(id&&id.indexOf("RightBanner")!=-1){Hide(eleArray[i]);var arrIframe=eleArray[i].getElementsByTagName('iframe');if(!arrIframe)
+return;for(var j=0;j<arrIframe.length;j++){Hide(arrIframe[j]);}}}}
+var dojo;if(dojo)dojo.addOnLoad(assignInitial);else window.onload=assignInitial;</script> </head><body><!--//--><style type="text/css" media="all">/**/A IMG{BORDER-TOP-STYLE:none;BORDER-RIGHT-STYLE:none;BORDER-LEFT-STYLE:none;BORDER-BOTTOM-STYLE:none}#container{BORDER-RIGHT:#666 1px solid;BORDER-TOP:#666 1px solid;BORDER-LEFT:#666 1px solid;BORDER-BOTTOM:#666 1px solid}#duck_home_link{DISPLAY:block;LEFT:0px;FLOAT:left;WIDTH:150px;TOP:0px;HEIGHT:59px}#duck_home_link A{DISPLAY:block;WIDTH:150px}.header_row{/**/}#header_table{BACKGROUND:none transparent scroll repeat 0% 0%}#search_field{PADDING-RIGHT:20px;PADDING-LEFT:0px;FLOAT:left;PADDING-BOTTOM:0px;PADDING-TOP:5px}#nav_container{MARGIN-TOP:-59px;FONT-FAMILY:Arial;POSITION:absolute;right:25px;z-index:1;}UL.main_nav{PADDING-RIGHT:0px;PADDING-LEFT:0px;PADDING-BOTTOM:0px;MARGIN:0px;PADDING-TOP:0px}UL.main_nav UL{PADDING-RIGHT:0px;PADDING-LEFT:0px;PADDING-BOTTOM:0px;MARGIN:0px;PADDING-TOP:0px}UL.main_nav LI{PADDING-RIGHT:0px;PADDING-LEFT:0px;PADDING-BOTTOM:0px;MARGIN:0px;PADDING-TOP:0px}UL.main_nav{FONT-SIZE:10px}UL.main_nav LI UL LI A{DISPLAY:block;WIDTH:100%}UL.main_nav UL{BORDER-RIGHT:#000 1px solid;DISPLAY:none;LEFT:0px;BORDER-LEFT:#000 1px solid;BORDER-BOTTOM:#000 1px solid;POSITION:absolute;TOP:15px}UL.main_nav LI{LIST-STYLE-TYPE:none;POSITION:relative}UL.main_nav LI:hover UL{DISPLAY:block}UL.main_nav LI:hover UL UL{DISPLAY:none}UL.main_nav LI UL{WIDTH:150px;TOP:11px;BACKGROUND-COLOR:#e6e6e6}UL.main_nav LI UL LI{PADDING-RIGHT:5px;PADDING-LEFT:5px;PADDING-BOTTOM:5px;PADDING-TOP:5px}UL.main_nav LI UL LI IMG{PADDING-RIGHT:0px;PADDING-LEFT:0px;FLOAT:right;PADDING-BOTTOM:0px;MARGIN:0px;WIDTH:7px;PADDING-TOP:0px}UL.main_nav LI UL LI A{WIDTH:132px}UL.main_nav LI UL LI:hover UL{DISPLAY:block}UL.main_nav LI.top_level{DISPLAY:inline}UL.main_nav UL.second_level{BORDER-RIGHT:#000 1px solid;BORDER-TOP:#000 1px solid;LEFT:100%;BORDER-LEFT:#000 1px solid;WIDTH:150px;BORDER-BOTTOM:#000 1px solid;TOP:1px}UL.main_nav LI UL LI{CLEAR:both;WIDTH:93%;BACKGROUND-COLOR:#e6e6e6}UL.main_nav LI UL A{DISPLAY:block;COLOR:#000;BACKGROUND-COLOR:#e6e6e6;TEXT-DECORATION:none}UL.main_nav A:hover{COLOR:#ca3402}UL.main_nav A.subheader{}.k_footer{color:#cc3300;font-weight:bold;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:100%;}#k_copyright{background-color:#eee;padding:1em;font-size:0.8em;}
+</style>
+<style type="text/css" media="all"></style> <!--[if gte IE 6]><style type="text/css">#nav_container{MARGIN-TOP:-64px;FONT-FAMILY:Arial;POSITION:absolute;right:25px;z-index:1;}UL.main_nav LI UL{WIDTH:150px;TOP:20px;BACKGROUND-COLOR:#e6e6e6}UL.main_nav LI UL LI IMG{PADDING-RIGHT:0px;PADDING-LEFT:0px;FLOAT:right;PADDING-BOTTOM:0px;MARGIN:-10px;WIDTH:7px;PADDING-TOP:-10px}</style> <![endif]--><script type="text/javascript">function urldecode(str){var histogram={},ret=str.toString(),unicodeStr='',hexEscStr='';var replacer=function(search,replace,str){var tmp_arr=[];tmp_arr=str.split(search);return tmp_arr.join(replace);};
+histogram["'"] = '%27';
+    histogram['(']   = '%28';
+    histogram[')']   = '%29';
+    histogram['*']   = '%2A';
+    histogram['~']   = '%7E';
+    histogram['!']   = '%21';
+    histogram['%20'] = '+';
+    histogram['\u00DC'] = '%DC';
+    histogram['\u00FC'] = '%FC';
+    histogram['\u00C4'] = '%D4';
+    histogram['\u00E4'] = '%E4';
+    histogram['\u00D6'] = '%D6';
+    histogram['\u00F6'] = '%F6';
+    histogram['\u00DF'] = '%DF'; 
+    histogram['\u20AC'] = '%80';
+    histogram['\u0081'] = '%81';
+    histogram['\u201A'] = '%82';
+    histogram['\u0192'] = '%83';
+    histogram['\u201E'] = '%84';
+    histogram['\u2026'] = '%85';
+    histogram['\u2020'] = '%86';
+    histogram['\u2021'] = '%87';
+    histogram['\u02C6'] = '%88';
+    histogram['\u2030'] = '%89';
+    histogram['\u0160'] = '%8A';
+    histogram['\u2039'] = '%8B';
+    histogram['\u0152'] = '%8C';
+    histogram['\u008D'] = '%8D';
+    histogram['\u017D'] = '%8E';
+    histogram['\u008F'] = '%8F';
+    histogram['\u0090'] = '%90';
+    histogram['\u2018'] = '%91';
+    histogram['\u2019'] = '%92';
+    histogram['\u201C'] = '%93';
+    histogram['\u201D'] = '%94';
+    histogram['\u2022'] = '%95';
+    histogram['\u2013'] = '%96';
+    histogram['\u2014'] = '%97';
+    histogram['\u02DC'] = '%98';
+    histogram['\u2122'] = '%99';
+    histogram['\u0161'] = '%9A';
+    histogram['\u203A'] = '%9B';
+    histogram['\u0153'] = '%9C';
+    histogram['\u009D'] = '%9D';
+    histogram['\u017E'] = '%9E';
+    histogram['\u0178'] = '%9F';
+ 
+    for (unicodeStr in histogram) {
+        hexEscStr = histogram[unicodeStr]; // Switch order when decoding
+        ret = replacer(hexEscStr, unicodeStr, ret); // Custom replace. No regexing
+    }
+    
+    // End with decodeURIComponent, which most resembles PHP's encoding functions
+    ret = decodeURIComponent(ret);
+ 
+    return ret;
+}
+
+function setsearchterm()
+{
+  name = "s";
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  document.getElementById('searchbox').value = urldecode(results[1]);
+
+}
+
+function setsearchscope()
+{
+  name = "scope";
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+
+//set the scope by default
+  document.getElementById('searchscope').value = results[1];
+
+//if we get told to clear scope, clear it.
+  action = "action";
+  action = action.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexA = "[\\?&]"+action+"=([^&#]*)";
+  var regexAct = new RegExp( regexA );
+  var actionresultstemp = regexAct.exec( window.location.href );
+  var actionresults = actionresultstemp[1];
+
+if (actionresults.match("ClearScope"))
+{
+  document.getElementById('searchscope').value = "";
+}
+}
+
+function setsearchlang()
+{
+  name = "la";
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  document.getElementById('__ctl04_la').value = results[1];
+
+}
+
+function setsearchlic()
+{
+  name = "li";
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  document.getElementById('__ctl04_li').value = results[1];
+
+}
+
+
+var linkPrefix = "http://www.koders.com/ks/search/KodersMozillaPlugin_";
+
+function AddKodersSearch(name)
+{
+  if ((typeof window.sidebar == "object") && (typeof
+  window.sidebar.addSearchEngine == "function"))
+  {
+	var pluginUrl = linkPrefix + name + ".src"; 
+	var imageUrl  = linkPrefix + name + ".png"; 
+	//alert(pluginUrl + "\n" + imageUrl);
+	
+    window.sidebar.addSearchEngine(
+	  pluginUrl,
+      imageUrl,
+      name,
+      "Software Development");
+  }
+  else
+  {
+	alert("Your browser is not currently supported. Please contact support@koders.com if you would like further assistence.");
+  }
+}
+
+function TriggerAdd() {
+	var selectBox = document.getElementById('MozillaPluginSelect');
+	var selectedValue = selectBox.options[selectBox.selectedIndex].value + "";
+	if(selectedValue.length > 0) {
+		AddKodersSearch(selectedValue);
+	}
+}
+    
+
+function jsinit() {
+setsearchterm();
+setsearchlang();
+setsearchlic();
+setsearchscope();
+init_sBG(true);
+}
+
+window.onload = jsinit
+
+					</script>
+
+<!-- following two given for nav --><!-- <script src='/themes/blackduck/globalScript.js' type=text/javascript></script> -->
+
+<script src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/twoLevelScript.js" type="text/javascript"></script>
+
+<link title="rss 2.0" href="http://www.koders.com/rss.xml" type="application/rss+xml" rel="alternate">
+
+<meta content="MSHTML 6.00.2900.3527" name="GENERATOR">
+
+
+
+<table id="container" align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody>
+
+  <tr>
+
+    <td height="59" valign="top" width="100%">
+
+      <div class="header_row">
+
+      <table class="header_row" id="header_table" border="0" cellpadding="0" cellspacing="0" height="59" width="100%">
+
+        <tbody>
+
+        <tr>
+
+          <td rowspan="2" width="175"><a id="duck_home_link" href="http://www.koders.com/"><img alt="" src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/koders_logo_sm.gif" height="59" width="175"></a> </td>
+
+          <td height="59">
+
+            <div id="search_field">
+
+
+
+            <form action="/default.aspx" method="get"> 
+
+			<input value="Search" name="s" id="searchbox" size="35" maxlength="100"> <input src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/search_carat_bl.gif" name="search" type="image"><br>
+
+			<select name="la" id="__ctl04_la" class="language_select_box">
+	<option selected="selected" value="*">All Languages</option>
+	<option value="ActionScript">ActionScript</option>
+	<option value="Ada">Ada</option>
+	<option value="ASP">ASP</option>
+	<option value="ASP.NET">ASP.NET</option>
+	<option value="Assembler">Assembler</option>
+	<option value="C">C</option>
+	<option value="C#">C#</option>
+	<option value="Cpp">C++</option>
+	<option value="Cobol">Cobol</option>
+	<option value="ColdFusion">ColdFusion</option>
+	<option value="Delphi">Delphi</option>
+	<option value="Eiffel">Eiffel</option>
+	<option value="Erlang">Erlang</option>
+	<option value="Fortran">Fortran</option>
+	<option value="Java">Java</option>
+	<option value="JavaScript">JavaScript</option>
+	<option value="JSP">JSP</option>
+	<option value="Lisp">Lisp</option>
+	<option value="Lua">Lua</option>
+	<option value="Mathematica">Mathematica</option>
+	<option value="Matlab">Matlab</option>
+	<option value="ObjectiveC">ObjectiveC</option>
+	<option value="Perl">Perl</option>
+	<option value="PHP">PHP</option>
+	<option value="Prolog">Prolog</option>
+	<option value="Python">Python</option>
+	<option value="Ruby">Ruby</option>
+	<option value="Scheme">Scheme</option>
+	<option value="Smalltalk">Smalltalk</option>
+	<option value="SQL">SQL</option>
+	<option value="Tcl">Tcl</option>
+	<option value="VB">VB</option>
+	<option value="VB.NET">VB.NET</option>
+</select>
+        <select name="li" id="__ctl04_li" class="select_box">
+	<option selected="selected" value="*">All Licenses</option>
+	<option value="AFL">Academic Free License</option>
+	<option value="AL20">Apache License, Version 2.0</option>
+	<option value="ASL">Apache Software License</option>
+	<option value="APSL">Apple Public Source License</option>
+	<option value="BSD">BSD License</option>
+	<option value="CPL">Common Public License</option>
+	<option value="EPL10">Eclipse Public License v1.0</option>
+	<option value="GTPL">Globus Toolkit Public License</option>
+	<option value="GPL">GNU General Public License v1 v2 v3</option>
+	<option value="LGPL">GNU Lesser General Public License</option>
+	<option value="IBMPL">IBM Public License</option>
+	<option value="IOSL">Intel Open Source License</option>
+	<option value="MSCL">Microsoft Community License</option>
+	<option value="MSPL">Microsoft Permissive License</option>
+	<option value="MSRL">Microsoft Reference License</option>
+	<option value="MSVSSDK">Microsoft Visual Studio SDK License</option>
+	<option value="MITD">MIT Derived License</option>
+	<option value="MPL10">Mozilla Public License Version 1.0</option>
+	<option value="MPL11">Mozilla Public License Version 1.1</option>
+	<option value="NPL10">Netscape Public License, Version 1.0</option>
+	<option value="NPL11">Netscape Public License, Version 1.1</option>
+	<option value="OSL">Open Software License</option>
+	<option value="PHPL">PHP License</option>
+	<option value="PSFL">Python Software Foundation License</option>
+	<option value="SL">Sleepycat Software Product License</option>
+	<option value="SPL">Sun Public License</option>
+	<option value="W3C">W3C Software License</option>
+	<option value="ZLL">zlib/libpng License</option>
+	<option value="ZPL">Zope Public License</option>
+</select>
+
+	    <input name="scope" id="searchscope" value="" type="hidden">
+
+</form></div></td></tr>
+
+        <tr><td height="0">
+
+            <div id="nav_container">
+
+            <ul class="main_nav">
+
+              <li class="top_level"><a class=" subheader" href="http://corp.koders.com/about/"><img class="rollovers" id="learn_rollover" alt="" src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/about_button_top.gif"></a> 
+
+              <ul>
+                <li>
+                  <div align="left"><a title="About Koders.com" href="http://corp.koders.com/about/">About</a> </div>
+                </li>
+                <li>
+                  <div align="left"><a title="Contact Us" href="http://corp.koders.com/about#Contact"> 
+                  Contact</a> </div>
+                </li><li>
+                  <div align="left"><a title="Site Map" href="http://corp.koders.com/sitemap"> 
+                  Site Map</a> </div>
+                </li>
+              </ul></li>
+			  
+              <li class="top_level"><a class=" subheader" href="http://corp.koders.com/resources"><img class="rollovers" id="resources_rollover" alt="" src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/resources_button_top.gif"></a> 
+
+              <ul>
+                <li>
+                  <div align="left"><a title="Overview" href="http://corp.koders.com/resources"> 
+                  Overview</a>                    </div>
+                </li>
+                <li>
+                  <div align="left"><a title="Open Source License Info" href="http://corp.koders.com/resources/license-info">License Info</a> 
+                  </div>
+                </li><li>
+                  <div align="left"><a title="Top Searches" href="http://corp.koders.com/resources/top-searches">Top Searches</a> 
+                  </div>
+                </li><li>
+                  <div align="left"><a title="AD Search" href="http://corp.koders.com/resources/widgets">Add search to your site</a> 
+                  </div>
+                </li><li>
+                  <div align="left"><a title="feeback" href="http://corp.koders.com/resources/feedback">Feedback</a> 
+                  </div>
+                </li>
+	</ul></li>
+              <li class="top_level"><a class=" subheader" href="http://corp.koders.com/downloads"><img class="rollovers" id="products_rollover" alt="" src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/community_button_top.gif"></a> 
+
+              <ul>
+                <li>
+                  <div align="left"><a title="Overview" href="http://corp.koders.com/downloads"> 
+                  Overview</a> </div>
+                </li>
+                <li>
+                  <div align="left"><a title="Demo" href="http://corp.koders.com/downloads/demo">Demo 
+                  </a> </div>
+                </li><li>
+                  <div align="left"><a title="Download Plugins" href="http://corp.koders.com/downloads/plugins">Plugins</a> </div>
+                </li><li>
+                  <div align="left"><a title="Download Plugins" href="http://corp.koders.com/downloads/plugins#IDE">IDE Plugins</a> </div>
+                </li><li>
+                  <div align="left"><a title="Download Plugins" href="http://corp.koders.com/downloads/plugins#browser">Browser Plugins</a> </div>
+                </li>
+              </ul></li>
+              <li class="top_level"><a class=" subheader" href="http://corp.koders.com/support/overview"><img class="rollovers" id="news_rollover" alt="" src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/support_button_top.gif"></a> 
+
+              <ul>
+                <li>
+                  <div align="left"><a title="Customer Support" href="http://corp.koders.com/support/overview">Overview</a> </div>
+                </li>
+                <li>
+                  <div align="left"><a title="Getting Started Guide" href="http://corp.koders.com/support/getting-started">Getting Started Guide</a> </div>
+                </li><li>
+                  <div align="left"><a title="Search Examples" href="http://corp.koders.com/support/getting-started#search">Search Examples</a> </div>
+                </li>
+                <li>
+                  <div align="left"><a title="Contact Support" href="http://corp.koders.com/support/contact-support">Contact Support</a> </div>
+                </li>
+                
+		</ul></li>
+              <li class="top_level"><a class=" subheader" href="http://www.blackducksoftware.com/" target="_blank"><img class="rollovers" id="blackduck_rollover" alt="" src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/bds_button_top.gif"></a> 
+
+              <ul>
+                <li>
+                  <div align="left"><a href="http://www.blackducksoftware.com/" title="An overview of Black Duck Software" target="_blank">About Black Duck Software</a></div>
+                </li>
+                <li>
+                  <div align="left"><a href="http://www.blackducksoftware.com/black-duck-suite" title="The Black Duck Suite" target="_blank">The Black Duck Suite</a> </div>
+                </li>
+                <li>
+                  <div align="left"><a href="http://www.blackducksoftware.com/oss" title="OSS Page" target="_blank">Open Source Resource Center</a> </div>
+                </li>
+                <li>
+                  <div align="left"><a href="http://www.blackducksoftware.com/resources" title="Black Duck Knowledge Center" target="_blank">Black Duck Knowledge Center</a> </div>
+                </li><li>
+                  <div align="left"><a href="http://www.blackducksoftware.com/about/contact" title="Contact" target="_blank">Contact</a> </div>
+                </li>
+              </ul></li>
+              <li class="top_level"><a href="http://corp.koders.com/submitproject"><img src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/submit_button_top.gif" alt="" name="company_rollover" class="rollovers" id="company_rollover" border="0"></a></li>
+</ul></div></td>
+
+        </tr></tbody></table></div></td></tr>
+
+		
+
+  <tr>
+
+    <td colspan="2" align="left" bgcolor="#006699" height="7" valign="top"></td></tr>
+
+  
+
+  
+
+  </tbody></table>
+
+   <div align="center"><a href="http://www.blackducksoftware.com/code-sight/download" target="_blank"><img src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/free_728x45.gif" alt="A" border="0" vspace="10"></a>
+
+   </div>
+
+
+<!-- media header ends -->
+	
+ 
+    <form name="FRM" method="post" action="kv.aspx?fid=96CE0EF6F6647F51434400EE49DACF85DF428C87" id="FRM">
+<div>
+<input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
+<input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" type="hidden">
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTAwNjE0MDQ3Mw9kFgYCAQ9kFgICBg8PFgQeBkZpbGVJRAKt+64GHglQcm9qZWN0SUQCr+ABZGQCBw9kFgQCAw8WAh4HVmlzaWJsZWhkAgcPDxYCHwJnZBYKZg8PFgQeCEltYWdlVXJsBRQvaW1hZ2VzL2Rvd25sb2FkLmdpZh4HVG9vbFRpcAUXRG93bmxvYWQgR3JvdXBDaGF0LmphdmFkZAICDxYCHgtfIUl0ZW1Db3VudAIBFgJmD2QWAmYPFQUOR3JvdXBDaGF0LmphdmEESmF2YQBNQ29weXJpZ2h0OiAoYykgMTk5OS0yMDAwIEphYmJlci5jb20sIEluYy4gIEFsbCBSaWdodHMgUmVzZXJ2ZWQuICBDb250YWN0Cjxicj4HTE9DOiA2NWQCAw8WAh8FAgEWAmYPZBYGZg8VAosCSmFiYmVyQXBwbGV0IGlzIGEgQ2hhdCBBcHBsZXQgdXNpbmcgdGhlIEphYmJlciBwcm90b2NvbC4gVGhlIGdvYWxzIGFyZTogJmx0O2JyJmd0OzEpIGtlZXAgaXQgc21hbGwgJmx0O2JyJmd0OzIpIGVhc3kgdG8gdXNlICZsdDticiZndDszKSBzdXBwb3J0IGFzIG1hbnkgb3BlcmF0aW5nIHN5c3RlbXMvYnJvd3NlciBjb21iaW5hdGlvbnMgYXMgcG9zc2libGUuDQombHQ7YnImZ3Q7Jmx0O2JyJmd0O1Zpc2l0IEhvbWUgUGFnZSBmb3IgZGV0YWlsZWQgaW5mb3JtYXRpb24uNy9pbmZvLmFzcHg/Yz1Qcm9qZWN0SW5mbyZwaWQ9RVJMRVdDOFJBMlFINVpOWTVWUTNONjQxOENkAgEPZBYCZg8VARtKYWJiZXIgQXBwbGV0KGphYmJlcmFwcGxldClkAgIPFQILU291cmNlRm9yZ2UDY3ZzZAIFD2QWAmYPZBYGAgEPDxYCHgtOYXZpZ2F0ZVVybAU3L2luZm8uYXNweD9jPVByb2plY3RJbmZvJnBpZD1FUkxFV0M4UkEyUUg1Wk5ZNVZRM042NDE4Q2QWAmYPDxYEHwMFEi9pbWFnZXMvZm9sZGVyLmdpZh8EBTZTb3VyY2VGb3JnZVxqXGphYmJlcmFwcGxldFxqYWJiZXJhcHBsZXRcSmFiYmVyQXBwbGV0MlxkZAIDDw8WBB4EVGV4dAUeLi4uamFiYmVyYXBwbGV0XEphYmJlckFwcGxldDJcHwQFNlNvdXJjZUZvcmdlXGpcamFiYmVyYXBwbGV0XGphYmJlcmFwcGxldFxKYWJiZXJBcHBsZXQyXGRkAgUPFgIfBQIJZAIHDxYCHwJoZAIJDxYCHwcFowM8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+DQp2YXIgZ2FKc0hvc3QgPSAoKCJodHRwczoiID09IGRvY3VtZW50LmxvY2F0aW9uLnByb3RvY29sKSA/ICJodHRwczovL3NzbC4iIDogImh0dHA6Ly93d3cuIik7DQpkb2N1bWVudC53cml0ZSh1bmVzY2FwZSgiJTNDc2NyaXB0IHNyYz0nIiArIGdhSnNIb3N0ICsgImdvb2dsZS1hbmFseXRpY3MuY29tL2dhLmpzJyB0eXBlPSd0ZXh0L2phdmFzY3JpcHQnJTNFJTNDL3NjcmlwdCUzRSIpKTsNCjwvc2NyaXB0Pg0KPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPg0KdmFyIHBhZ2VUcmFja2VyID0gX2dhdC5fZ2V0VHJhY2tlcigiVUEtMTQ1MDQ4MC0zIik7DQpwYWdlVHJhY2tlci5faW5pdERhdGEoKTsNCnBhZ2VUcmFja2VyLl90cmFja1BhZ2V2aWV3KCk7DQo8L3NjcmlwdD4NCmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFGktvZGV2aWV3ZXIxJERvd25sb2FkQnV0dG9u" type="hidden">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['FRM'];
+if (!theForm) {
+    theForm = document.FRM;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/WebResource.js" type="text/javascript"></script>
+
+
+<script src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/ScriptResource_002.js" type="text/javascript"></script>
+<script src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/ScriptResource.js" type="text/javascript"></script>
+<script src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/js.js" type="text/javascript"></script>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl09$scriptManager', document.getElementById('FRM'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+//]]>
+</script>
+
+        
+        
+        <div id="leaderboard" style="">
+            <center>
+				
+<!-- Media Server Begin: 728x90 -->
+
+<!-- Media Server End: 728x90 -->
+               
+            </center>
+		</div>
+        
+        <div class="kodeViewerContDiv">
+            
+<!-- <div class="SidePadding" align="left"> -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td>
+			<table id="Table2" border="0" cellspacing="5" width="100%">
+				<tbody><tr>
+					<td class="info_panel" valign="top">
+						<table id="Table3" border="0">
+							<tbody><tr>
+								<td align="center" valign="middle" width="60">
+									<input name="Kodeviewer1$DownloadButton" id="Kodeviewer1_DownloadButton" title="Download GroupChat.java" src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/download.gif" style="border-width:0px;" type="image">
+									<a id="Kodeviewer1_LinkButton1" href="javascript:__doPostBack('Kodeviewer1$LinkButton1','')">download</a>
+								</td>
+								<td>
+											<b>
+												GroupChat.java
+											</b>
+											<br>
+											Language: <b>
+												Java
+											</b>
+											<br>
+											
+											Copyright: (c) 1999-2000 Jabber.com, Inc.  All Rights Reserved.  Contact
+<br>
+											LOC: 65
+											<br>
+										</td>
+							</tr>
+						</tbody></table>
+					</td>
+					<td class="kodeviewer_info_panel" valign="top" width="200">
+								<b>Project Info</b><br>
+								<a title="JabberApplet is a Chat Applet using the Jabber protocol. The goals are: &lt;br&gt;1) keep it small &lt;br&gt;2) easy to use &lt;br&gt;3) support as many operating systems/browser combinations as possible.
+&lt;br&gt;&lt;br&gt;Visit Home Page for detailed information." href="http://www.koders.com/info.aspx?c=ProjectInfo&amp;pid=ERLEWC8RA2QH5ZNY5VQ3N6418C">
+									<b>
+										<span id="Kodeviewer1_ProjectView_ctl00_Label2">Jabber Applet(jabberapplet)</span></b></a>
+								<br>
+								Server:
+								SourceForge
+								<br>
+								Type:
+								cvs
+							
+						
+						
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+
+<style type="text/css"> 
+.RightBanner { Z-INDEX: 2; RIGHT: 25px; FLOAT: right; WIDTH: 160px; POSITION: absolute; HEIGHT: 600px } 
+</style>
+
+	<div id="Kodeviewer1_RightBanner" class="RightBanner" style="display:none">
+<div style="MARGIN-BOTTOM: 2px" align="center">[<a style="FONT-SIZE: smaller" href="javascript:HideBanner();">Show Code</a>] </div>
+<div>
+
+<!-- Media Server Begin: 160x600 -->
+
+<!-- Media Server End: 160x600 -->
+<br><br><br>
+<!-- Media Server Begin: 160x602 -->
+
+<!-- Media Server End: 160x602 -->
+<br><br><br>
+<!-- Media Server Begin: 160x603 -->
+
+<!-- Media Server End: 160x603 -->
+</div>
+<div style="MARGIN-TOP: 2px" align="center">[<a style="FONT-SIZE: smaller" href="javascript:HideBanner();">Show Code</a>] </div></div>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td height="100%">
+			<table id="Table9" style="height:100%" border="0" cellpadding="0" cellspacing="8">
+				<tbody><tr>
+					<td valign="top">
+						
+						
+<table id="Table1" style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid; BORDER-COLLAPSE: collapse" border="0" cellpadding="3" cellspacing="0" width="100%">
+	<tbody>
+		<tr>
+			<th class="exp_header" align="left">
+				<a id="Kodeviewer1_ctl00_hyFicon" href="http://www.koders.com/info.aspx?c=ProjectInfo&amp;pid=ERLEWC8RA2QH5ZNY5VQ3N6418C"><img id="Kodeviewer1_ctl00_ficon" title="SourceForge\j\jabberapplet\jabberapplet\JabberApplet2\" src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/folder.gif" style="border-width:0px;" align="left"></a>
+				<b>
+					<span id="Kodeviewer1_ctl00_Label1" title="SourceForge\j\jabberapplet\jabberapplet\JabberApplet2\">...jabberapplet\JabberApplet2\</span>
+				</b>
+				<br>
+			</th>
+		</tr>
+		<tr>
+			<td class="exp_items">
+				
+						&nbsp;&nbsp;
+					<a title="ChatWindows.java" href="http://www.koders.com/java/fid0DE2393BD8F565550AA7BD742C08DD064FA23AEF.aspx">ChatWindows.java<br></a>
+						&nbsp;&nbsp;
+					<a title="Config.java" href="http://www.koders.com/java/fidF78B888D2C69CAB4D3B657341C08F7ADF6935EC1.aspx">Config.java<br></a>
+						&nbsp;&nbsp;
+					<a title="GroupChat.java" href="http://www.koders.com/java/fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx">GroupChat.java<br></a>
+						&nbsp;&nbsp;
+					<a title="JabberApplet.java" href="http://www.koders.com/java/fidA7B2E3D65A7A292481E8443673F5E80E76D9C3AD.aspx">JabberApplet.java<br></a>
+						&nbsp;&nbsp;
+					<a title="JID.java" href="http://www.koders.com/java/fid8BE7E691A290B4CE01E25AA38CF11C2B113FA53B.aspx">JID.java<br></a>
+						&nbsp;&nbsp;
+					<a title="JIDGroup.java" href="http://www.koders.com/java/fid902A7AA1BBDAB6829080E3B56D88052C3A074FA5.aspx">JIDGroup.java<br></a>
+						&nbsp;&nbsp;
+					<a title="JIDList.java" href="http://www.koders.com/java/fidA0F3F2ADEF5C6DBCF721D92E170381A4B38C785F.aspx">JIDList.java<br></a>
+						&nbsp;&nbsp;
+					<a title="RosterListener.java" href="http://www.koders.com/java/fid51F97DE50FD56477DC34806A1F95875E73CC9624.aspx">RosterListener.java<br></a>
+						&nbsp;&nbsp;
+					<a title="TestConnect.java" href="http://www.koders.com/java/fidCACA9D4FBB4D466C4D57CFA316C09B633A7F0D0A.aspx">TestConnect.java<br></a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br>
+
+						
+
+
+						
+					</td>
+					<td valign="top">
+						<div>
+							<pre id="kodeViewerLineNumbers"><a href="#L1" name="L1">1</a><br><a href="#L2" name="L2">2</a><br><a href="#L3" name="L3">3</a><br><a href="#L4" name="L4">4</a><br><a href="#L5" name="L5">5</a><br><a href="#L6" name="L6">6</a><br><a href="#L7" name="L7">7</a><br><a href="#L8" name="L8">8</a><br><a href="#L9" name="L9">9</a><br><a href="#L10" name="L10">10</a><br><a href="#L11" name="L11">11</a><br><a href="#L12" name="L12">12</a><br><a href="#L13" name="L13">13</a><br><a href="#L14" name="L14">14</a><br><a href="#L15" name="L15">15</a><br><a href="#L16" name="L16">16</a><br><a href="#L17" name="L17">17</a><br><a href="#L18" name="L18">18</a><br><a href="#L19" name="L19">19</a><br><a href="#L20" name="L20">20</a><br><a href="#L21" name="L21">21</a><br><a href="#L22" name="L22">22</a><br><a href="#L23" name="L23">23</a><br><a href="#L24" name="L24">24</a><br><a href="#L25" name="L25">25</a><br><a href="#L26" name="L26">26</a><br><a href="#L27" name="L27">27</a><br><a href="#L28" name="L28">28</a><br><a href="#L29" name="L29">29</a><br><a href="#L30" name="L30">30</a><br><a href="#L31" name="L31">31</a><br><a href="#L32" name="L32">32</a><br><a href="#L33" name="L33">33</a><br><a href="#L34" name="L34">34</a><br><a href="#L35" name="L35">35</a><br><a href="#L36" name="L36">36</a><br><a href="#L37" name="L37">37</a><br><a href="#L38" name="L38">38</a><br><a href="#L39" name="L39">39</a><br><a href="#L40" name="L40">40</a><br><a href="#L41" name="L41">41</a><br><a href="#L42" name="L42">42</a><br><a href="#L43" name="L43">43</a><br><a href="#L44" name="L44">44</a><br><a href="#L45" name="L45">45</a><br><a href="#L46" name="L46">46</a><br><a href="#L47" name="L47">47</a><br><a href="#L48" name="L48">48</a><br><a href="#L49" name="L49">49</a><br><a href="#L50" name="L50">50</a><br><a href="#L51" name="L51">51</a><br><a href="#L52" name="L52">52</a><br><a href="#L53" name="L53">53</a><br><a href="#L54" name="L54">54</a><br><a href="#L55" name="L55">55</a><br><a href="#L56" name="L56">56</a><br><a href="#L57" name="L57">57</a><br><a href="#L58" name="L58">58</a><br><a href="#L59" name="L59">59</a><br><a href="#L60" name="L60">60</a><br><a href="#L61" name="L61">61</a><br><a href="#L62" name="L62">62</a><br><a href="#L63" name="L63">63</a><br><a href="#L64" name="L64">64</a><br><a href="#L65" name="L65">65</a><br><a href="#L66" name="L66">66</a><br><a href="#L67" name="L67">67</a><br><a href="#L68" name="L68">68</a><br><a href="#L69" name="L69">69</a><br><a href="#L70" name="L70">70</a><br><a href="#L71" name="L71">71</a><br><a href="#L72" name="L72">72</a><br><a href="#L73" name="L73">73</a><br><a href="#L74" name="L74">74</a><br><a href="#L75" name="L75">75</a><br><a href="#L76" name="L76">76</a><br><a href="#L77" name="L77">77</a><br><a href="#L78" name="L78">78</a><br><a href="#L79" name="L79">79</a><br><a href="#L80" name="L80">80</a><br><a href="#L81" name="L81">81</a><br><a href="#L82" name="L82">82</a><br><a href="#L83" name="L83">83</a><br><a href="#L84" name="L84">84</a><br><a href="#L85" name="L85">85</a><br><a href="#L86" name="L86">86</a><br><a href="#L87" name="L87">87</a><br><a href="#L88" name="L88">88</a><br><a href="#L89" name="L89">89</a><br><a href="#L90" name="L90">90</a><br><a href="#L91" name="L91">91</a><br><a href="#L92" name="L92">92</a><br><a href="#L93" name="L93">93</a><br><a href="#L94" name="L94">94</a><br><a href="#L95" name="L95">95</a><br><a href="#L96" name="L96">96</a><br><a href="#L97" name="L97">97</a><br><a href="#L98" name="L98">98</a><br><a href="#L99" name="L99">99</a><br><a href="#L100" name="L100">100</a><br><a href="#L101" name="L101">101</a><br><a href="#L102" name="L102">102</a><br><a href="#L103" name="L103">103</a><br><a href="#L104" name="L104">104</a><br><a href="#L105" name="L105">105</a><br><a href="#L106" name="L106">106</a><br><a href="#L107" name="L107">107</a><br><a href="#L108" name="L108">108</a><br><a href="#L109" name="L109">109</a><br><a href="#L110" name="L110">110</a><br><a href="#L111" name="L111">111</a><br><a href="#L112" name="L112">112</a><br><a href="#L113" name="L113">113</a><br><a href="#L114" name="L114">114</a><br><a href="#L115" name="L115">115</a><br><a href="#L116" name="L116">116</a><br><a href="#L117" name="L117">117</a><br><a href="#L118" name="L118">118</a><br><a href="#L119" name="L119">119</a><br><a href="#L120" name="L120">120</a><br><a href="#L121" name="L121">121</a><br><a href="#L122" name="L122">122</a><br><a href="#L123" name="L123">123</a><br><a href="#L124" name="L124">124</a><br><a href="#L125" name="L125">125</a><br><a href="#L126" name="L126">126</a><br><a href="#L127" name="L127">127</a><br><a href="#L128" name="L128">128</a><br><a href="#L129" name="L129">129</a><br><a href="#L130" name="L130">130</a><br><a href="#L131" name="L131">131</a><br><a href="#L132" name="L132">132</a><br><a href="#L133" name="L133">133</a><br><a href="#L134" name="L134">134</a><br><a href="#L135" name="L135">135</a><br><a href="#L136" name="L136">136</a><br><a href="#L137" name="L137">137</a><br><a href="#L138" name="L138">138</a><br><a href="#L139" name="L139">139</a><br><a href="#L140" name="L140">140</a><br><a href="#L141" name="L141">141</a><br><a href="#L142" name="L142">142</a><br><a href="#L143" name="L143">143</a><br><a href="#L144" name="L144">144</a><br><a href="#L145" name="L145">145</a><br><a href="#L146" name="L146">146</a><br><a href="#L147" name="L147">147</a><br><a href="#L148" name="L148">148</a><br><a href="#L149" name="L149">149</a><br><a href="#L150" name="L150">150</a><br><a href="#L151" name="L151">151</a><br><a href="#L152" name="L152">152</a><br><a href="#L153" name="L153">153</a><br><a href="#L154" name="L154">154</a><br><a href="#L155" name="L155">155</a><br><a href="#L156" name="L156">156</a><br><a href="#L157" name="L157">157</a><br><a href="#L158" name="L158">158</a><br><a href="#L159" name="L159">159</a><br><a href="#L160" name="L160">160</a><br><a href="#L161" name="L161">161</a><br><a href="#L162" name="L162">162</a><br><a href="#L163" name="L163">163</a><br><a href="#L164" name="L164">164</a><br><a href="#L165" name="L165">165</a><br><a href="#L166" name="L166">166</a><br><a href="#L167" name="L167">167</a><br><a href="#L168" name="L168">168</a><br><a href="#L169" name="L169">169</a><br><a href="#L170" name="L170">170</a><br><a href="#L171" name="L171">171</a><br><a href="#L172" name="L172">172</a><br><a href="#L173" name="L173">173</a><br><a href="#L174" name="L174">174</a><br><a href="#L175" name="L175">175</a><br><a href="#L176" name="L176">176</a><br><a href="#L177" name="L177">177</a><br><a href="#L178" name="L178">178</a><br><a href="#L179" name="L179">179</a><br></pre>
+						</div>
+					</td>
+					<td onmouseup="javascript:LogReuse();" valign="top">
+						<div id="CodeDiv">
+							<pre><span class="k">package</span> <a class="r">org</a>.<a class="r">jabber</a>.<a class="r">applet</a>;
+<span class="k">import</span> <a class="r">java</a>.<a class="r">awt</a>.*;
+<span class="k">import</span> <a class="r">java</a>.<a class="r">applet</a>.*;
+<span class="k">import</span> <a class="r">java</a>.<a class="r">awt</a>.<a class="r">event</a>.*;
+<span class="k">import</span> <a class="r">java</a>.<a class="r">util</a>.<a class="r">Vector</a>;
+<span class="k">import</span> <a class="r">java</a>.<a class="r">util</a>.<a class="r">Hashtable</a>;
+<span class="k">import</span> <a class="r">java</a>.<a class="r">net</a>.<a class="r">URL</a>;
+<span class="k">import</span> <a class="r">org</a>.<a class="r">jabber</a>.<a class="r">applet</a>.<a class="r">communication</a>.*;
+<span class="k">import</span> <a class="r">org</a>.<a class="r">jabber</a>.<a class="r">applet</a>.<a class="r">awt</a>.*;
+
+<span class="c">/***************************************************************************
+ * The contents of this file are subject to the Jabber Open Source License
+ * Version 1.0 (the "License").  You may not copy or use this file, in
+ * either source code or executable form, except in compliance with the 
+ * License.  You may obtain a copy of the License at 
+ * 
+ * http://www.jabber.com/license/ or at http://www.opensource.org/.
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied.  See the
+ * License for the specific language governing rights and limitations 
+ * under the License.
+ * 
+ * Copyrights
+ * 
+ * Portions created by or assigned to Jabber.com, Inc. are
+ * Copyright (c) 1999-2000 Jabber.com, Inc.  All Rights Reserved.  Contact
+ * information for Jabber.com, Inc. is available at http://www.jabber.com/.
+ * 
+ * Acknowledgements
+ * 
+ * Special thanks to the Jabber Open Source Contributors for their
+ * suggestions and support of Jabber.
+ ***************************************************************************/</span>
+
+<span class="c">/**
+* This class is used to communicate with groupchat sessions.
+* 
+* @author David Scott
+*/</span>
+<span class="k">class</span> <a class="r">GroupChat</a> {
+    <span class="c">/**
+     * My resource identifier for this groupchat
+     */</span>
+    <a class="r">String</a> <a class="r">myResource</a>=<span class="str">""</span>;
+
+    <span class="c">/**
+     * Groupchat room name
+     */</span>
+    <a class="r">String</a> <a class="r">room</a> = <span class="str">""</span>;
+
+    <span class="c">/**
+     * Server handling the groupchat
+     */</span>
+    <a class="r">String</a> <a class="r">server</a> = <span class="str">""</span>;
+
+    <span class="c">/**
+     * My nickname for this groupchat
+     */</span>
+    <a class="r">String</a> <a class="r">nick</a> = <span class="str">""</span>;
+
+    <span class="c">/**
+     * Secret/password for this groupchat
+     */</span>
+    <a class="r">String</a> <a class="r">secret</a> = <span class="str">""</span>;
+
+    <span class="c">/**
+     * Nicknames associated with all resources in this groupchat
+     */</span>
+    <a class="r">Hashtable</a> <a class="r">resourceNicks</a> = <span class="k">new</span> <a class="r">Hashtable</a>();
+
+    <span class="c">/**
+     * Initialize a groupchat room.
+     * @param room name for this groupchat
+     * @param server handling this groupchat
+     * @param nick name I'm using in this groupchat
+     * @param secret password for this groupchat
+     */</span>
+    <a class="r">GroupChat</a>(<a class="r">String</a> <a class="r">room</a>, <a class="r">String</a> <a class="r">server</a>, <a class="r">String</a> <a class="r">nick</a>, <a class="r">String</a> <a class="r">secret</a>) {
+        <span class="k">this</span>.<a class="r">room</a> = <a class="r">room</a>;
+        <span class="k">this</span>.<a class="r">server</a> = <a class="r">server</a>;
+        <span class="k">this</span>.<a class="r">nick</a> = <a class="r">nick</a>;
+        <span class="k">this</span>.<a class="r">secret</a> = <a class="r">secret</a>;
+    }
+
+    <span class="c">/**
+     * Join a groupchat room.
+     * Use the constructor set room name and server to join a groupchat room.
+     * @param moJabberComm connection to server
+     */</span>
+    <span class="k">public</span> <span class="k">void</span> <a class="r">join</a>(<a class="r">JabberComm</a> <a class="r">moJabberComm</a>) {
+        <span class="k">if</span> (<a class="r">moJabberComm</a>.<a class="r">groupChatJoin</a>(<span class="str">"GroupChatJoin"</span>, <a class="r">room</a>, <a class="r">server</a>) != <a class="r">Constants</a>.<a class="r">SEND_SUCCEEDED</a>)
+            <a class="r">System</a>.<a class="r">out</a>.<a class="r">println</a>(<span class="str">"Trouble with groupChatJoin"</span>);
+    }
+
+    <span class="c">/**
+     * Set my nickname for this room.
+     * Use the constructor set room name, server, secret and nick to set my nick in this room.
+     * @param moJabberComm connection to server
+     */</span>
+    <span class="k">public</span> <span class="k">void</span> <a class="r">nick</a>(<a class="r">JabberComm</a> <a class="r">moJabberComm</a>) {
+        <span class="k">int</span> <a class="r">i</a> = 1;      <span class="c">// create 3 possible nicks for entranct into room</span>
+        <a class="r">String</a> <a class="r">nicks</a> = <a class="r">nick</a> + <span class="str">","</span> + <a class="r">nick</a> + <a class="r">i</a> + <span class="str">","</span> + <a class="r">nick</a> + (<a class="r">i</a>+1);  <span class="c">// setup for multiple nick possibilities</span>
+        <span class="k">if</span> (<a class="r">moJabberComm</a>.<a class="r">groupChatNick</a>(<span class="str">"GroupChatNick"</span>, <a class="r">room</a>, <a class="r">server</a>, <a class="r">nicks</a>, <a class="r">secret</a>, <span class="k">false</span>) != <a class="r">Constants</a>.<a class="r">SEND_SUCCEEDED</a>)
+            <a class="r">System</a>.<a class="r">out</a>.<a class="r">println</a>(<span class="str">"Trouble with groupChatNick"</span>);
+    }
+
+    <span class="c">/**
+     * Officially announce my presence/join the groupchat room.
+     * Use the constructor set room name, server and input resource to inform
+     * server of my presence.
+     * @param moJabberComm connection to server
+     * @param Resource associated with the presence setting.
+     */</span>
+    <span class="k">public</span> <span class="k">void</span> <a class="r">presence</a>(<a class="r">JabberComm</a> <a class="r">moJabberComm</a>, <a class="r">String</a> <a class="r">Resource</a>) {
+        <a class="r">myResource</a> = <a class="r">Resource</a>;
+        <span class="k">if</span> (<a class="r">moJabberComm</a>.<a class="r">groupChatEnter</a>(<span class="str">"GroupChatEnter"</span>,<a class="r">room</a>, <a class="r">server</a>, <a class="r">myResource</a>, <a class="r">nick</a>) != <a class="r">Constants</a>.<a class="r">SEND_SUCCEEDED</a>)
+            <a class="r">System</a>.<a class="r">out</a>.<a class="r">println</a>(<span class="str">"problem joining chatroom"</span>);
+    }
+
+    <span class="c">/**
+     * Leave the groupchat room.
+     * Use the constructor set room name and server and my resource to inform groupchat I'm leaving.
+     * @param moJabberComm connection to server
+     */</span>
+    <span class="k">public</span> <span class="k">void</span> <a class="r">leave</a>(<a class="r">JabberComm</a> <a class="r">moJabberComm</a>) {
+        <span class="k">if</span> (<a class="r">moJabberComm</a>.<a class="r">groupChatLeave</a>(<a class="r">room</a>, <a class="r">server</a>, <a class="r">myResource</a>) != <a class="r">Constants</a>.<a class="r">SEND_SUCCEEDED</a>)
+            <a class="r">System</a>.<a class="r">out</a>.<a class="r">println</a>(<span class="str">"problem leaving chatroom"</span>);
+    }
+
+    <span class="c">/**
+     * Get nickname associated with a resource.
+     * @param sResource associated with a nickname
+     */</span>
+    <span class="k">public</span> <a class="r">String</a> <a class="r">getNick</a>(<a class="r">String</a> <a class="r">sResource</a>) {
+        <span class="k">return</span>((<a class="r">String</a>)<a class="r">resourceNicks</a>.<a class="r">get</a>(<a class="r">sResource</a>));
+    }
+
+    <span class="c">/**
+     * Get my resource
+     */</span>
+    <span class="k">public</span> <a class="r">String</a> <a class="r">getMyResource</a>() {
+        <span class="k">return</span>(<a class="r">myResource</a>);
+    }
+
+    <span class="c">/**
+     * User leaving chatroom
+     */</span>
+    <span class="k">public</span> <span class="k">void</span> <a class="r">userLeave</a>(<a class="r">String</a> <a class="r">sResource</a>) {
+        <span class="c">// resourceNicks.put(sResource, sNick);</span>
+    }
+
+    <span class="c">/**
+     * New user joining groupchat room.
+     * @param sResource of new member
+     * @param sNick of new member
+     */</span>
+    <span class="k">public</span> <span class="k">void</span> <a class="r">userJoin</a>(<a class="r">String</a> <a class="r">sResource</a>, <a class="r">String</a> <a class="r">sNick</a>) {
+        <span class="k">if</span> (<a class="r">sResource</a>.<a class="r">length</a>() == 0) {
+            <span class="k">return</span>;
+        }
+        <a class="r">System</a>.<a class="r">out</a>.<a class="r">println</a>(<span class="str">"Resource: "</span> + <a class="r">sResource</a>);
+        <a class="r">System</a>.<a class="r">out</a>.<a class="r">println</a>(<span class="str">"Nick: "</span> + <a class="r">sNick</a>);
+        <span class="k">if</span> (<a class="r">sNick</a>.<a class="r">equals</a>(<a class="r">nick</a>)) {
+            <a class="r">myResource</a> = <a class="r">sResource</a>;
+        }
+        <a class="r">resourceNicks</a>.<a class="r">put</a>(<a class="r">sResource</a>, <a class="r">sNick</a>);
+    }
+
+    <span class="c">/**
+     * I'm changing my status in this groupchat
+     * @param moJabberComm connection to server
+     * @param sStatus new status
+     */</span>
+    <span class="k">public</span> <span class="k">void</span> <a class="r">presenceChange</a>(<a class="r">JabberComm</a> <a class="r">moJabberComm</a>, <a class="r">String</a> <a class="r">sStatus</a>) {
+        <span class="k">if</span> (<a class="r">moJabberComm</a>.<a class="r">sendPresence</a>(<a class="r">room</a> + <span class="str">"@"</span> + <a class="r">server</a>, <span class="str">""</span>, <span class="str">""</span>, <a class="r">sStatus</a>, <span class="str">"1"</span>, <a class="r">sStatus</a>) != <a class="r">Constants</a>.<a class="r">SEND_SUCCEEDED</a>)
+            <a class="r">System</a>.<a class="r">out</a>.<a class="r">println</a>(<span class="str">"problem sending presence"</span>);
+    }
+}
+</pre>
+						</div>
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+
+
+<script type="text/javascript">
+var jumpLine = "-1";
+if(jumpLine && jumpLine != "-1" && !document.location.hash){
+	if(document.attachEvent){
+		document.attachEvent("onreadystatechange", function(){
+			if(document.readyState != "complete") return;
+			var numbers = document.all["kodeViewerLineNumbers"];
+			var targetA = numbers.children.tags("a")[jumpLine - 1];
+			targetA.scrollIntoView();
+			document.body.scrollLeft = 0;
+		});
+	} else if(window.addEventListener){
+		window.addEventListener("load", function(){
+			document.location.replace(document.location + "#L" + jumpLine);
+		}, false);
+	}
+}
+	
+var homeUrl = "/"; 
+var projectID = "ERLEWC8RA2QH5ZNY5VQ3N6418C";
+var sourceLanguage = "Java";
+var IsLogged = false;
+
+// only logs once
+function LogReuse() {
+	// dynamic image loading
+	if(!IsLogged) {
+		//alert("logging");
+		var	fileImg	= new Image();
+		var fileImgSrc = "/kv.aspx?fid=96CE0EF6F6647F51434400EE49DACF85DF428C87&mode=cp";
+		//alert("fileImgSrc = " + fileImgSrc);
+		fileImg.src	= fileImgSrc;
+		IsLogged = true;
+	} else {
+		//alert("already logged!");
+	}
+	return true;
+}
+</script>
+
+
+            
+        </div>
+        
+        
+        <table align="center" border="0" cellpadding="0" cellspacing="10" width="100%"><tbody>
+  
+  <tr>
+    <td colspan="2" align="left" bgcolor="#ffffff" valign="center">
+      <p align="center"><a href="http://corp.koders.com/about/" class="k_footer">About Koders</a> | <a href="http://corp.koders.com/resources" class="k_footer">Resources</a> | <a href="http://corp.koders.com/downloads/" class="k_footer">Downloads</a> | <a href="http://corp.koders.com/support/overview/" class="k_footer">Support</a> | <a href="http://www.blackducksoftware.com/" target="_blank" class="k_footer">Black Duck</a> | <a href="http://corp.koders.com/terms-of-service/" class="k_footer">Terms of Service </a> | <a href="http://corp.koders.com/DMCA/" class="k_footer">DMCA</a> | <a href="http://corp.koders.com/privacy-policy/" class="k_footer">Privacy Policy</a> | <a href="http://corp.koders.com/about#Contact" class="k_footer">Contact Us</a></p></td></tr>
+  <tr>
+    <td colspan="2" align="left" bgcolor="#ffffff" valign="center">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody>
+        <tr>
+          <td colspan="2">
+            <div align="center"><div id="k_copyright">
+            <p>©2012 Koders is a trademark of Black Duck Software, Inc. 
+Black Duck, Know Your Code, Ohloh, and the Black Duck logo are 
+registered trademarks of Black Duck Software, Inc. in the United States 
+and other jurisdictions.  All other trademarks are the property of their
+ respective holders.</p>
+</div></div></td></tr></tbody></table></td></tr></tbody></table>
+
+
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+    
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="fid96CE0EF6F6647F51434400EE49DACF85DF428C87.aspx_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1450480-3");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+
+<script language="javascript"><!--
+bmi_SafeAddOnload(bmi_load,"bmi_orig_img",0);//-->
+</script></body></html>

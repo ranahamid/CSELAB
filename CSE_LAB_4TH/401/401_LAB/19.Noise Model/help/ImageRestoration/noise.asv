@@ -1,0 +1,2 @@
+A=imread('original.tif');
+R=imnoise2()

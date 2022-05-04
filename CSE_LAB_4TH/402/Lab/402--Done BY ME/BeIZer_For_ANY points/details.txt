@@ -1,0 +1,4 @@
+Have to construct a spline using Bezier spline construction approach.
+No of control point dependent on you. Less control points are preferred. 
+The constructed spline should be in circular form 
+Assume that the center of your computer screen is (0,0) coordinate position.

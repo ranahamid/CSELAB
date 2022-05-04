@@ -1,0 +1,90 @@
+%conv 1D
+clc;
+clear all;
+close all;
+%input
+img=imread('input.tif');
+
+
+[m n]=size(img);
+
+count=zeros(1,300);
+
+for p=0:255
+        numbers=find(p==img(:))
+        count(p+1)=length(numbers)/(m*n);
+end
+
+s=zeros(1,256);
+sk1=zeros(1,256);
+
+s(1)=count(1);
+sk1(1)=round(s(1)*255);
+for i=2:256
+    s(i)=s(i-1)+count(i);
+    sk1(i)=round(s(i)*255);
+end
+
+%referenc
+%input
+img=imread('ref.tif');
+
+
+[m2 n2]=size(img);
+
+count=zeros(1,300);
+
+for p=0:255
+        numbers=find(p==img(:))
+        count(p+1)=length(numbers)/(m2*n2);
+end
+
+s2=zeros(1,256);
+sk2=zeros(1,256);
+
+s2(1)=count(1);
+sk2(1)=round(s2(1)*255);
+for i=2:256
+    s2(i)=s(i-1)+count(i);
+    sk2(i)=round(s2(i)*255);
+end
+
+%matching
+for i=1:256
+    for j=1:256
+        if(sk1(i)==sk2(j))
+            k=j;
+            break;
+        elseif(sk1(i)<sk2(j))
+            k=j-1;
+            break;
+        end
+    end
+    sp(i)=k;
+end
+
+
+%equ
+b=img;
+
+for p=0:255
+    for i=1:m
+        for j=1:n
+            if(img(i,j)==p)
+                b(i,j)=sp(p+1);
+            end
+        end
+    end
+end
+
+
+
+subplot(2,1,1)
+imshow(img);
+subplot(2,1,2)
+
+imshow(uint8(b));
+
+
+        
+        

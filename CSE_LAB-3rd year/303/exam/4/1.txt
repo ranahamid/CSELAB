@@ -1,0 +1,1 @@
+main clrscr 52.6 55 do ++ -- + Notepad is a basic text editor that you can use to create simple documents.

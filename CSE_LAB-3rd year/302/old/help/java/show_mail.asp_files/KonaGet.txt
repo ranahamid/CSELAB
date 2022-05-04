@@ -1,0 +1,11 @@
+konaSafe(function(){
+reJsonResponse({"AutoReport":{},"jsABParameters":{"js_audience_targeting":true,"js_bluekai_enabled":1,"js_comscore_enabled":1,"js_feed_click_delay":true,"js_interstitial_probability":"0","js_legolas_enabled":1,"js_mobile_exclusivity":true,"js_one_layer":1,"js_peel_away_corner_enabled":false,"js_peel_away_corner_style":"default","js_related_enabled":0,"js_related_unit_settings":"disabled"},"konaLat":"23.7231007","konaLon":"90.4085999","konaPostalCode":"","konaUserGuid":"689BBFB6-C12C-11E1-B948-00163E201223","scripts":[{"scriptURL":"http://rt.legolas-media.com/lgrt?ci=2&ti=253&kch=[SUPER_TOPIC]&kst=[SITE_DOMAIN]&ksp=[SEARCH_PHRASE]"},{"postCode":"COMSCORE.beacon({c1:8,c2:\"6036297\",c3:\"12345678\"});","scriptURL":"http://b.scorecardresearch.com/beacon.js"}]});
+teUrl='http://te.kontera.com/ContentLink/ContentLink?publisherId=1896&layout=adlinks&sId=&cb=1340893277&creative=L&cn=bd';
+strAnalysisHostNameFromReaction="http://kona10.kontera.com/";
+konaTweakMode=33636371;
+konaRequestId="154920773267620754";
+konaPageLoadSendReport=0;
+setKonaResults(0,1,"L|0|0|0|white|none&pRfr=http://www.sourcecodesworld.com/source/show.asp?ScriptId=1258&dc_aff_id=");
+onKonaReturn(1);
+}, "reaction response");
+

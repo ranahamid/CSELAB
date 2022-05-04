@@ -1,0 +1,4 @@
+After sorting the elements are...
+
+                     a  i  j  k  l  m  w  x  
+

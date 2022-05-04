@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>matlab - Adding Salt n Pepper noise into an Image manually - Signal Processing Stack Exchange</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/dsp/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/dsp/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Signal Processing Stack Exchange" href="http://dsp.stackexchange.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@StackSignals">
+    <meta name="twitter:domain" content="dsp.stackexchange.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/dsp/img/apple-touch-icon.png?v=ce86280cb8db">
+    <meta name="og:title" content="Adding Salt n Pepper noise into an Image manually">
+    <meta name="og:description" content="When i looked in to the algorithm of Salt n Pepper noise in a Matlab i've found this,
+
+case 'salt &amp;amp; pepper' % Salt &amp;amp; pepper noise
+    b = a;
+    x = rand(sizeA);
+    d = find(x &amp;lt; p3/2);
+...">
+    <meta name="og:url" content="http://dsp.stackexchange.com/questions/3272/adding-salt-n-pepper-noise-into-an-image-manually">
+    <link rel="canonical" href="http://dsp.stackexchange.com/questions/3272/adding-salt-n-pepper-noise-into-an-image-manually">
+
+    
+    
+    <script src="adding-salt-n-pepper-noise-into-an-image-manually_files/ga.js" async="" type="text/javascript"></script><script src="adding-salt-n-pepper-noise-into-an-image-manually_files/quant.js" async="" type="text/javascript"></script><script src="adding-salt-n-pepper-noise-into-an-image-manually_files/adzerk2_2_17_76" async="" type="text/javascript"></script><script type="text/javascript" src="adding-salt-n-pepper-noise-into-an-image-manually_files/jquery.js"></script>
+    <script src="adding-salt-n-pepper-noise-into-an-image-manually_files/stub.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="adding-salt-n-pepper-noise-into-an-image-manually_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Adding Salt n Pepper noise into an Image manually'" href="http://dsp.stackexchange.com/feeds/question/3272">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:3272});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('295', '3272');
+            
+                    });
+    </script>
+
+                <script type="text/x-mathjax-config;executed=true">
+                    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+                                        tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+                                        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+                                        messageStyle: "none"
+                });
+                </script>
+                <script type="text/javascript" src="adding-salt-n-pepper-noise-into-an-image-manually_files/MathJax.js"></script>                
+
+    <script type="text/javascript">
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com,ws://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToInboxNotifications();
+                    StackExchange.realtime.subscribeToReputationNotifications('295');
+                });
+    </script>
+    <script type="text/javascript">
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1383969112,"enableUserHovercards":true,"site":{"name":"Signal Processing Stack Exchange","description":"Q&A for practitioners of the art and science of signal, image and video processing","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","enableSocialMediaInSharePopup":true},"user":{"fkey":"bae4999ba2e8326fb913523c838478da","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"e0bbd4760e83","js/moderator.en.js":"1a411fd265fe","js/full-anon.en.js":"e469ccee4650","js/full.en.js":"2ce5baed34eb","js/wmd.en.js":"993120c4c16d","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"d1d834ef85d2","js/help.en.js":"d3cc74d8a93a","js/tageditor.en.js":"6d51a5f8d7f3","js/tageditornew.en.js":"111b781cf314","js/inline-tag-editing.en.js":"f951bd09dc69","js/revisions.en.js":"33fd38144303","js/review.en.js":"7cf8f6099119","js/tagsuggestions.en.js":"e4e7b952fcc7","js/post-validation.en.js":"c275fe37d674","js/explore-qlist.en.js":"73825bd006fc","js/events.en.js":"130d4e07b47b","js/mathjax-editing.en.js":"a09844f7b738"});
+    </script>
+    <script type="text/javascript">
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script type="text/javascript">
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="adding-salt-n-pepper-noise-into-an-image-manually_files/full-anon.js" type="text/javascript" async=""></script><script src="adding-salt-n-pepper-noise-into-an-image-manually_files/post-validation.js" type="text/javascript" async=""></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+<body class="question-page"><div style="display: none;" id="MathJax_Message"></div>
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    
+<span id="hlinks-user"></span>
+<span id="hlinks-nav">                        <a href="http://dsp.stackexchange.com/users/login?returnurl=%2fquestions%2f3272%2fadding-salt-n-pepper-noise-into-an-image-manually">sign up</a>
+
+ <span class="lsep">|</span>
+                    <a href="http://dsp.stackexchange.com/users/login?returnurl=%2fquestions%2f3272%2fadding-salt-n-pepper-noise-into-an-image-manually">log in</a>
+
+ <span class="lsep">|</span>
+</span>
+<span id="hlinks-custom"></span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get" autocomplete="off">
+                        <div>
+                            <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" maxlength="240" size="28" type="text">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://dsp.stackexchange.com/">
+                    Signal Processing
+                        <span class="beta-title">beta</span>
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                            <li class="youarehere"><a id="nav-questions" href="http://dsp.stackexchange.com/questions">Questions</a></li>
+                            <li><a id="nav-tags" href="http://dsp.stackexchange.com/tags">Tags</a></li>
+                            <li><a id="nav-tour" href="http://dsp.stackexchange.com/about">Tour</a></li>
+                            <li><a id="nav-users" href="http://dsp.stackexchange.com/users">Users</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://dsp.stackexchange.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Article">
+	<link itemprop="image" href="http://cdn.sstatic.net/dsp/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://dsp.stackexchange.com/about" id="tell-me-more" class="button">Tell me more</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Signal Processing Stack Exchange is a question and answer 
+site for practitioners of the art and science of signal, image and video
+ processing. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            }
+            if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/" });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://dsp.stackexchange.com/questions/3272/adding-salt-n-pepper-noise-into-an-image-manually" class="question-hyperlink">Adding Salt n Pepper noise into an Image manually</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="3272" id="question">
+    
+        <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="3272" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span class="vote-count-post ">4</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="description">
+
+        <p>When i looked in to the algorithm of Salt n Pepper noise in a Matlab i've found this,</p>
+
+<pre><code>case 'salt &amp; pepper' % Salt &amp; pepper noise
+    b = a;
+    x = rand(sizeA);
+    d = find(x &lt; p3/2);
+    b(d) = 0; % Minimum value
+    d = find(x &gt;= p3/2 &amp; x &lt; p3);
+    b(d) = 1; % Maximum (saturated) value
+</code></pre>
+
+<p>Which i simplified as this,</p>
+
+<pre><code>% [a, code, classIn, classChanged, p3, p4]
+% p3 = density
+% p4 = variance
+% a = Image
+% code = noise Type 
+% classIn = Image Class i.e unit8 , unit16, double
+</code></pre>
+
+<p><strong>% -------- ALGORITHM ----------%</strong></p>
+
+<pre><code>%     b = a;   &lt;-- Assign b to the input image
+%     x = rand(sizeA); &lt;--- Generate random pixels from the image pixels
+%     d = find(x &lt; p3/2); &lt;--- Find the pixels whose values are less than half of the mean value  
+%     b(d) = 0 &lt;-- Implement minimum noise to them
+%     d = find(x &gt;= p3/2 &amp; x &lt; p3) &lt;--- Find the pixels whose values are
+%                                        greater than half of the mean
+%                                        value &amp; less than mean value
+%     b(d) = 1;     &lt;-- Implement maximum noise to them
+</code></pre>
+
+<p>instead of using imnoise, I am trying to add Salt n Pepper noise manually into the image using the above algorithm,</p>
+
+<pre><code>I = imread('2.jpg');
+J = rgb2gray(I);
+p3=0.05 %default
+b = J;
+x = rand(size(b));
+d = find(x &lt; p3/2);
+b(d) = 0; % Minimum value
+d = find(x &gt;= p3/2 &amp; x &lt; p3);
+b(d) = 1; % Maximum (saturated) value
+</code></pre>
+
+<p>I don't know where the final image is stored as when i use imshow for b it show a simple image without salt n pepper noise.
+Where the final image is stored ? how can i see the it ?</p>
+
+<p>P.S: What does it mean by image class ? that is unit8 , unit16 ?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://dsp.stackexchange.com/questions/tagged/image-processing" class="post-tag" title="show questions tagged 'image-processing'" rel="tag">image-processing</a> <a href="http://dsp.stackexchange.com/questions/tagged/matlab" class="post-tag" title="show questions tagged 'matlab'" rel="tag">matlab</a> <a href="http://dsp.stackexchange.com/questions/tagged/noise" class="post-tag" title="show questions tagged 'noise'" rel="tag">noise</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://dsp.stackexchange.com/q/3272" title="short permalink to this question" class="short-link" id="link-post-3272">share</a><span class="lsep">|</span><a href="http://dsp.stackexchange.com/posts/3272/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+
+<div class="user-info ">
+    <div class="user-action-time">
+        
+        
+        <a href="http://dsp.stackexchange.com/posts/3272/revisions" title="show all edits to this post">edited <span title="2012-08-30 21:17:28Z" class="relativetime">Aug 30 '12 at 21:17</span></a>
+        
+
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        
+<div class="user-info ">
+    <div class="user-action-time">
+        
+        
+            asked <span title="2012-08-30 20:52:25Z" class="relativetime">Aug 30 '12 at 20:52</span>
+        
+
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://dsp.stackexchange.com/users/1324/effected"><div><img src="adding-salt-n-pepper-noise-into-an-image-manually_files/7919b1544b863c2d54a782d6f9afd071.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://dsp.stackexchange.com/users/1324/effected">Effected</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">547</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="24 bronze badges"><span class="badge3"></span><span class="badgecount">24</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3272" class="comments" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="" data-addlink-disabled="true">
+
+    <tr id="comment-16311" class="comment">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="comment-score">
+                            
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+	<span class="comment-copy">b(d) = 255; % Maximum (saturated) value
+This worked for me .</span>
+	–&nbsp;
+		<a href="http://dsp.stackexchange.com/users/4838/aishwarya" title="1 reputation" class="comment-user">Aishwarya</a>
+	<span class="comment-date" dir="ltr"><a class="comment-link" href="#comment16311_3272"><span title="2013-06-17 18:17:32Z" class="relativetime-clean">Jun 17 at 18:17</span></a></span>
+				</div>
+
+        </td>
+    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-3272" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."></a>
+    </td>
+</tr>            </tbody></table>    
+</div>
+
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								1 Answer
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://dsp.stackexchange.com/questions/3272/adding-salt-n-pepper-noise-into-an-image-manually?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://dsp.stackexchange.com/questions/3272/adding-salt-n-pepper-noise-into-an-image-manually?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://dsp.stackexchange.com/questions/3272/adding-salt-n-pepper-noise-into-an-image-manually?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="3275"></a>
+<div id="answer-3275" class="answer accepted-answer" data-answerid="3275">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="3275" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span class="vote-count-post ">3</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+
+
+
+<td class="answercell">
+    <div class="post-text"><p>It seems that the final image is in the 
+variable "b". Observe that the max (salt) and min (pepper) values are 
+respectively 1 and 0. This indicates that your original image needs to 
+be an intensity image with graylevels normalized to [0,1]. This may be 
+the reason why you don't see a sensible result when you display "b" as 
+an image.</p>
+
+<p>In case your image is grayscale {0,...,255} i.e. 8-bit unsigned 
+integer format (unit8), you can change your code to assign 0 and 255 
+instead of 0 and 1.</p>
+
+<p>I suggest you read the documentation on various image storage types here: <a href="http://www.mathworks.com/help/toolbox/images/f14-13543.html" rel="nofollow">http://www.mathworks.com/help/toolbox/images/f14-13543.html</a></p>
+
+<p>It can get pretty confusing at times, mainly because there are so 
+many names (intensity image, grayscale image, RGB, HSV, binary image, 
+indexed image, etc.)</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://dsp.stackexchange.com/a/3275" title="short permalink to this answer" class="short-link" id="link-post-3275">share</a><span class="lsep">|</span><a href="http://dsp.stackexchange.com/posts/3275/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+<div class="user-info ">
+    <div class="user-action-time">
+        
+        
+        <a href="http://dsp.stackexchange.com/posts/3275/revisions" title="show all edits to this post">edited <span title="2012-08-31 09:15:55Z" class="relativetime">Aug 31 '12 at 9:15</span></a>
+        
+
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+<div class="user-info ">
+    <div class="user-action-time">
+        
+        
+            answered <span title="2012-08-31 08:47:33Z" class="relativetime">Aug 31 '12 at 8:47</span>
+        
+
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://dsp.stackexchange.com/users/1825/atul-ingle"><div><img src="adding-salt-n-pepper-noise-into-an-image-manually_files/5b3b07e3c59aaf39ae54ccdea43670e5.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://dsp.stackexchange.com/users/1825/atul-ingle">Atul Ingle</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">628</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3275" class="comments dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-3275" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a>
+    </td>
+</tr>
+    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/3272/answer/submit" method="post" class="post-form">
+							<input id="post-id" value="3272" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+        <script type="text/javascript">
+            StackExchange.ifUsing("editor", function () {
+                return StackExchange.using("mathjaxEditing", function () {
+                    StackExchange.MarkdownEditor.creationCallbacks.add(function (editor, postfix) {
+                        StackExchange.mathjaxEditing.prepareWmdForMathJax(editor, postfix, [["$", "$"], ["\\\\(","\\\\)"]]);
+                    });
+                });
+            }, "mathjax-editing");
+        </script>
+
+    
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+noCode: true,            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="bae4999ba2e8326fb913523c838478da" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://dsp.stackexchange.com/users/login?returnurl=%2fquestions%2f3272%2fadding-salt-n-pepper-noise-into-an-image-manually%23new-answer">login</a></h3>
+                        <script type="text/javascript">
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display: none;" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f3272%2fadding-salt-n-pepper-noise-into-an-image-manually%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://dsp.stackexchange.com/questions/tagged/image-processing" class="post-tag" title="show questions tagged 'image-processing'" rel="tag">image-processing</a> <a href="http://dsp.stackexchange.com/questions/tagged/matlab" class="post-tag" title="show questions tagged 'matlab'" rel="tag">matlab</a> <a href="http://dsp.stackexchange.com/questions/tagged/noise" class="post-tag" title="show questions tagged 'noise'" rel="tag">noise</a>  or <a href="http://dsp.stackexchange.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+							<div class="module question-stats">
+					<p class="label-key">tagged</p>
+					<div class="tagged"><a href="http://dsp.stackexchange.com/questions/tagged/image-processing" class="post-tag" title="show questions tagged 'image-processing'" rel="tag">image-processing</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">625</span></span><br>
+<a href="http://dsp.stackexchange.com/questions/tagged/matlab" class="post-tag" title="show questions tagged 'matlab'" rel="tag">matlab</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">380</span></span><br>
+<a href="http://dsp.stackexchange.com/questions/tagged/noise" class="post-tag" title="show questions tagged 'noise'" rel="tag">noise</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">120</span></span><br>
+</div>
+					<table id="qinfo">
+						<tbody><tr>
+							<td>
+								<p class="label-key">asked</p>
+							</td>
+							<td style="padding-left: 10px;">
+								<p class="label-key" title="2012-08-30 20:52:25Z"><b>1 year ago</b></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="label-key">viewed</p>
+							</td>
+
+							<td style="padding-left: 10px;">
+								<p class="label-key">
+									<b>2312 times</b>
+								</p>
+							</td>
+						</tr>
+							<tr>
+								<td>
+									<p class="label-key">active</p>
+								</td>
+								<td style="padding-left: 10px;">
+									<p class="label-key"><b><a href="http://dsp.stackexchange.com/questions/3272/adding-salt-n-pepper-noise-into-an-image-manually?lastactivity" class="lastactivity-link" title="2013-06-17 18:17:32Z">4 months ago</a></b></p>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <h4>Community Bulletin</h4>
+    <div class="related">
+
+            <div class="spacer">
+                <div class="bulletin-item-type"><a href="http://blog.stackoverflow.com/?cb=1" class="event-date" target="_blank">blog</a></div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2013/11/raised-on-the-net-please-welcome-ana-hevesi-community-manager/?cb=1" class="question-hyperlink" target="_blank">Raised on The ‘Net: please welcome Ana Hevesi, Community Manager</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>
+
+			
+			
+
+<style type="text/css">
+    .ads { margin-left: 60px; }
+    .ad-container { width: 220px; height: 250px; margin-right: 20px; margin-bottom: 20px; }
+    .ad-container .ad { height: 250px; }
+    .ad-container .footer-container { overflow: hidden; height: 30px; position: relative; top: -30px; }
+    .ad-container .footer-container .footer { font-family: Arial,Helvetic,Sans-Serif; font-size: 12px; text-align: center; padding-top: 9px; background-color: #000; color: #EFF; opacity: 0.9; filter: alpha(opacity=90); top: 30px; height: 30px; position: relative; }
+    .ad-container a:hover { text-decoration: underline; }
+    #adzerk2 { height: 250px; }
+</style>
+<script type="text/javascript">
+    StackExchange.ready(function () {
+        $(".ad-container").hover(
+            function () {
+                $(".ad-container .footer-container .footer").stop(true, true).animate({ top: "0px" }, "fast");
+            },
+            function () {
+                $(".ad-container .footer-container .footer").animate({ top: "30px" }, "fast");
+            });
+    });
+</script>
+    <script type="text/javascript">
+        var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = 'http://engine.adzerk.net/z/12057/adzerk2_2_17_76?keywords=x-host-dsp.stackexchange.com'; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+    </script>
+    <div class="everyonelovesstackoverflow" id="adzerk2"><a href="http://engine.adzerk.net/r?e=eyJhdiI6MTUyNCwiYXQiOjE3LCJjbSI6MzM1MywiY2giOjExOTgsImNyIjo3NDA2LCJkaSI6ImMxOWYxMDQ4NmU0ZDQzZTQ5NTM2Yzc3OGFiM2Y4MWVmIiwiZG0iOjEsImZjIjoxMTcxNiwiZmwiOjgyODUsImt3IjoieC1ob3N0LWRzcC5zdGFja2V4Y2hhbmdlLmNvbSIsIm1rIjoieC1ob3N0LWRzcC5zdGFja2V4Y2hhbmdlLmNvbSIsIm53IjoyMiwicnYiOjAsInByIjo3ODUsInN0IjoxMjA1Nywiem4iOjc2LCJ0cyI6MTM4Mzk2OTA1ODkxNiwidXIiOiJodHRwOi8vcGFyZW50aW5nLnN0YWNrZXhjaGFuZ2UuY29tIn0&amp;s=chaV9jy6Cad-_Quw_rxhpD4J5y8" rel="nofollow" target="_blank" title=""><img src="adding-salt-n-pepper-noise-into-an-image-manually_files/9833d7014c624f6990d9bbb4156e6212.jpg" title="" alt="" border="0" height="250" width="220"></a><img src="adding-salt-n-pepper-noise-into-an-image-manually_files/i.gif" border="0" height="0px" width="0px"></div>  
+
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+					<div class="related" data-tracker="rq=1">
+						<div class="spacer">
+<a href="http://dsp.stackexchange.com/q/285?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">10
+    </div>
+</a><a href="http://dsp.stackexchange.com/questions/285/wiener-filter-for-image-noise-reduction?rq=1" class="question-hyperlink">Wiener filter for Image noise reduction</a>
+</div>
+<div class="spacer">
+<a href="http://dsp.stackexchange.com/q/3211?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://dsp.stackexchange.com/questions/3211/how-can-i-measure-noise-and-sharpness-of-an-image?rq=1" class="question-hyperlink">How can I measure noise and sharpness of an image?</a>
+</div>
+<div class="spacer">
+<a href="http://dsp.stackexchange.com/q/3251?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">6
+    </div>
+</a><a href="http://dsp.stackexchange.com/questions/3251/laser-speckle-noise-reduction?rq=1" class="question-hyperlink">laser speckle noise reduction</a>
+</div>
+<div class="spacer">
+<a href="http://dsp.stackexchange.com/q/7505?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://dsp.stackexchange.com/questions/7505/strange-noise-deviation-formula?rq=1" class="question-hyperlink">Strange noise deviation formula</a>
+</div>
+<div class="spacer">
+<a href="http://dsp.stackexchange.com/q/7640?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://dsp.stackexchange.com/questions/7640/local-signal-to-noise-ratio-for-an-image?rq=1" class="question-hyperlink">Local signal-to-noise ratio for an image</a>
+</div>
+<div class="spacer">
+<a href="http://dsp.stackexchange.com/q/7668?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://dsp.stackexchange.com/questions/7668/obtaining-the-variance-of-the-image-noise?rq=1" class="question-hyperlink">Obtaining the variance of the image noise</a>
+</div>
+<div class="spacer">
+<a href="http://dsp.stackexchange.com/q/7809?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://dsp.stackexchange.com/questions/7809/how-to-calculate-noise-and-distortion-of-an-image?rq=1" class="question-hyperlink">How to calculate Noise and distortion of an image?</a>
+</div>
+<div class="spacer">
+<a href="http://dsp.stackexchange.com/q/8172?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://dsp.stackexchange.com/questions/8172/how-to-know-if-the-noise-was-removed-in-an-image?rq=1" class="question-hyperlink">How to know if the noise was removed in an image?</a>
+</div>
+<div class="spacer">
+<a href="http://dsp.stackexchange.com/q/9685?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://dsp.stackexchange.com/questions/9685/cmos-image-sensor-dark-current-noise?rq=1" class="question-hyperlink">CMOS Image sensor dark current/noise</a>
+</div>
+<div class="spacer">
+<a href="http://dsp.stackexchange.com/q/10930?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://dsp.stackexchange.com/questions/10930/image-noise-removal-is-part-of-image-enhancement-or-image-restoration?rq=1" class="question-hyperlink">Image noise removal is part of image enhancement or image restoration?</a>
+</div>
+
+					</div>
+				</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://dsp.stackexchange.com/feeds/question/3272" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+	<script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/3272/ivc/707a');});
+</script>
+<noscript>
+    <div><img src="/posts/3272/ivc/707a" class="dno" alt="" width="0" height="0"></div>
+</noscript></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://dsp.stackexchange.com/about">about</a>
+                    <a href="http://dsp.stackexchange.com/help">help</a>
+                        <a href="http://dsp.stackexchange.com/help/badges">badges</a>
+                    <a href="http://blog.stackexchange.com/?blb=1">blog</a>
+                        <a href="http://chat.stackexchange.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/about/hiring">jobs</a>
+                    <a href="http://stackexchange.com/about/contact">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on", "/questions/3272/adding-salt-n-pepper-noise-into-an-image-manually")'>mobile</a>
+                    <b><a href="http://dsp.stackexchange.com/contact">contact us</a></b>
+                        <b><a href="http://meta.dsp.stackexchange.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Answers</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="statisticians, data analysts, data miners and data visualization experts">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackoverflow.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Overflow</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2013 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> 
+ with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="footer-flair">
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+            </div>
+            <div id="svnrev">
+                rev 2013.11.8.1141
+            </div>
+            
+        </div>
+    <iframe id="global-auth-frame" style="display: none;" src="adding-salt-n-pepper-noise-into-an-image-manually_files/read.htm"></iframe></div>
+    <noscript>
+        <div id="noscript-warning">Signal Processing Stack Exchange works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-24']);
+        _gaq.push(['_setDomainName','.stackexchange.com']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|image-processing|matlab|noise|']); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    var _comscore = _comscore || [];
+    (function () {
+        var ssl='https:'==document.location.protocol,
+            s=document.getElementsByTagName('script')[0],
+            ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src=(ssl?'https://ssl':'http://www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+        s.parentNode.insertBefore(sc, s);
+    })();
+    _comscore.push({ c1: "2", c2: "17440561" });
+    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+
+</body></html>

@@ -1,0 +1,19 @@
+% p3 mean
+ 
+% p4 variance
+ 
+I = imread('main.bmp');
+J = rgb2gray(I);
+a= 1;
+b= 1;
+[M N]=size(J)
+J = im2double(I);
+D= J+a+(-1*b*log(1-rand(M,N)))^(0.5);
+figure,
+subplot(1,2,1);
+imshow(J);
+title('main image');
+subplot(1,2,2);
+imshow(D);
+title('Degraded image');
+%imnoise

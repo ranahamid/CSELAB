@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#define $ .0001
+
+
+double x[10];
+
+double f(double n)
+{
+double t;
+t=x[0]*(pow(n,3))+x[1]*(pow(n,2))+x[2]*(pow(n,1))+x[3];
+return t;
+}
+
+int main()
+{
+double a,b,c,temp,fa,fb,diff,fc;
+int i,j,k;
+printf("Enter the Co-efficient\n");
+printf("Enter -99 to terminate\n");
+i=0;
+do{
+   scanf("%lf",&x[i]);
+   i++;
+   }while(x[i-1]!=-99);
+   
+
+do{
+   printf("Enter value of a and b\n");
+   scanf("%lf",&a);
+   fa=f(a);
+   scanf("%lf",&b);
+   fb=f(b);
+   }while(fa*fb>0);
+   
+j=1;
+do{
+ 
+   printf("N:%-3d  a=%.3lf b=%.3lf   ",j,a,b);
+   j++;
+   c=(a+b)/2;
+   //
+   printf("c=%.3lf  ",c);
+   
+   fa=f(a);
+   //
+   printf("f(a)=%.3lf  ",fa);
+   fb=f(b);
+   //
+   printf("f(b)=%.3lf  ",fb);
+   fc=f(c);
+   //
+   printf("f(c)=%lf\n",fc);
+   if(  (fc<0 && fa<0) || (fc>0 && fa>0)  )
+   a=c;
+   else if(  (fc<0 && f(b)<0 ) || (fc>0 && fb>0) )
+   b=c;
+   
+  }while(fabs(fc)>$);
+
+printf("Ans :  %lf\n",c);
+printf("\n_______________________\n");
+system("PAUSE");
+}

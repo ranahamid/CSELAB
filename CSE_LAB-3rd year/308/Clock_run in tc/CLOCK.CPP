@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<string.h>
+#include<time.h>
+#include<dos.h>
+
+int main()
+{
+  int gd=0,gm,i;
+  char ap[50],s[50];
+  struct time t;
+  initgraph(&gd,&gm,"..\\bgi");
+
+  while(!kbhit())
+  {
+    gettime(&t);
+
+    sprintf(s,"%2d:%2d:%2d",t.ti_hour,t.ti_min,t.ti_sec);
+
+    for(i=0;i<8;i++)
+    {
+     if(s[i]==' ')
+     s[i]='0';
+    }
+
+    settextstyle(7,0,7);
+    setcolor(5);
+    outtextxy(150,200,s);
+    //sleep(1);
+    delay(1000);
+    cleardevice();
+  }
+
+
+ getch();
+return 0;
+}

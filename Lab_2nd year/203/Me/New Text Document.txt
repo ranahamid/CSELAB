@@ -1,0 +1,14 @@
+First you need the space a single animal occupies at an average. 
+This value (in square meters) is then multiplied by the parameter
+ that stands for the farmer's environment-friendliness, resulting 
+in the premium a farmer is paid per animal he owns. To compute the
+ final premium of a farmer just multiply this premium per animal with 
+the number of animals the farmer owns.
+
+Problem said " We won't make a difference between different
+
+animals, although this is far from reality". So You have only calculate
+
+( size of farmyard * environment-friendliness). And sum of total
+
+value is answer. Confirm it yourself. ^^

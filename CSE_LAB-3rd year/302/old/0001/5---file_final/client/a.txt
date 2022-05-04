@@ -1,0 +1,9 @@
+The javaw command is identical to java,
+except that with javaw there is no
+ associated console window. 
+Use javaw when you don't want a 
+command prompt window to appear. 
+The javaw launcher will, however, 
+display a dialog box with error information
+ if a launch fails for some reason.
+EOF

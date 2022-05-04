@@ -1,0 +1,45 @@
+create table BBC
+(
+Name varchar(20),
+Region varchar(20),
+Population number(15,0),
+Gdp number(10,2),
+Area number(10,2)
+);
+
+insert into BBc values ('Bangladesh','A','160',5.6,100);
+insert into BBc values ('Iran','A','10',4.6,100);
+insert into BBc values ('India','B','320',3.2,300);
+insert into BBc values ('Pakistan','B','200',4.2,150);
+insert into BBc values ('Denmark','C','50',1.6,100);
+insert into BBc values ('Algeria','E','50',1.7,30);
+insert into BBc values ('Canada','E','100',6.2,600);
+
+
+select * from BBC;
+
+//list all countries population greater than bangladesh
+
+
+select Name from BBC where population > (select population from BBC where Name = 'Bangladesh');
+select Name from BBC where population > (select population from BBC where Name = 'Iran');  
+
+
+//list all countries and region  of countries in the region containing 'India' and 'Iran'
+
+
+select Name,Region  from BBC where Region = (select Region from BBC where Name ='India') 
+union all
+select Name,Region from BBC where Region = (select Region from BBC where Name ='Iran') ;
+
+
+select Name,Region  from BBC where Region = (select Region from BBC where Name ='India') 
+or Region = (select Region from BBC where Name ='Iran') ;
+
+
+select Name , Region from BBC where Region IN (select Region from BBC where Name in ('India','Iran')); 
+
+
+//which country has a population that is more than canada but less than Algeria
+
+

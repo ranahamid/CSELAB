@@ -1,0 +1,14 @@
+konaSafe(function(){
+teUrl='http://te10.kontera.com/ContentLink/ContentLink?publisherId=1896&layout=adlinks&sId=183,187,94&cb=1340893941&creative=L&cn=bd';
+directAdsPrefetch=true;
+setMaxLinksOnPage(6);
+reJsonResponse({"AutoReport":{"rep":"re231.dc3.str.kontera.com","stopic":4},"jsABParameters":{"js_audience_targeting":true,"js_bluekai_enabled":1,"js_comscore_enabled":1,"js_feed_click_delay":true,"js_interstitial_probability":"0","js_legolas_enabled":1,"js_mobile_exclusivity":true,"js_one_layer":1,"js_peel_away_corner_enabled":false,"js_peel_away_corner_style":"default","js_related_enabled":0,"js_related_unit_settings":"disabled"},"konaLat":"23.7231007","konaLon":"90.4085999","konaPostalCode":"","konaUserGuid":"689BBFB6-C12C-11E1-B948-00163E201223","pageHash":"jp_ATFsssvcpoooeSveecertneexopSsiSrCeodtvwofeilktnimdtyehsdnrebkidrsesTaVmue","scripts":[{"scriptURL":"http://rt.legolas-media.com/lgrt?ci=2&ti=253&kch=[SUPER_TOPIC]&kst=[SITE_DOMAIN]&ksp=[SEARCH_PHRASE]"},{"postCode":"COMSCORE.beacon({c1:8,c2:\"6036297\",c3:\"12345678\"});","scriptURL":"http://b.scorecardresearch.com/beacon.js"}],"topics":[[183,29,4]],"utf8":false});
+pageTopicVector="";
+}, "reaction response");
+konaSafe(function(){
+konaTweakMode=75843091;
+konaRequestId="154927412252781447";
+konaPageLoadSendReport=0;
+setKonaResults(1,1,"L|0|0|0|white|none&pRfr=http://www.sourcecodesworld.com/source/show.asp?ScriptID=937&dc_aff_id=");
+onKonaReturn(1);
+}, "reaction response");

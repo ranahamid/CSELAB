@@ -1,0 +1,28 @@
+%count 1+2+3+......
+
+domains
+predicates
+	count
+	print(integer,integer,integer)
+clauses
+	count:-
+		write("How many number"),
+		readint(B),
+		A=1,
+		M=0,
+		print(M,A,B).
+		
+	
+			
+	print(M,A,B):-
+		A<=B,
+		write("Input no ",A," :"),
+		readint(N),
+		MM=M+N,
+		AA=A+1,
+		
+		print(MM,AA,B).
+	print(M,_,_):-
+		write("\n"),
+		write(M,"\n").
+		

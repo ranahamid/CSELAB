@@ -1,0 +1,9 @@
+javac AddServerIntf.java
+javac AddServerImpl.java
+javac AddServer.java
+javac AddClient.java
+rmic AddServerImpl
+
+start rmiregistry
+start java AddServer
+java AddClient localhost

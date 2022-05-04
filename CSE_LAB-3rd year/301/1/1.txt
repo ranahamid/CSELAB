@@ -1,0 +1,14 @@
+create table student2
+	(
+	name varchar2(20),
+	roll number(8,0),
+	marks number(10,2),
+	bdate  getdate()
+	);
+
+insert into student
+values('a-305',5,350,'1-JAN-1992');
+
+select * from student;
+
+

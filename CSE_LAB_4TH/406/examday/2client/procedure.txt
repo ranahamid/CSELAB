@@ -1,0 +1,20 @@
+javac client2.java
+javac client2Imp.java
+javac client2Int.java
+
+javac MainServer.java
+javac MainServerImp.java
+javac MainServerInt.java
+
+javac client.java
+
+rmic client2Imp
+rmic MainServerImp
+
+
+start rmiregistry
+
+start java  client2
+start java MainServer
+
+java client

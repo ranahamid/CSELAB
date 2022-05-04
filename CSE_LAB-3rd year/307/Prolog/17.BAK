@@ -1,0 +1,24 @@
+%print 0,2,4,6......
+
+domains
+predicates
+	count
+	print(integer,integer)
+clauses
+	count:-
+		write("Input upper limit"),
+		readint(B),
+		A=0,
+		print(A,B).
+		
+	print(A,B):-
+			A>B,
+			write("Upper limit negetive\n").
+	print(A,B):-
+		write(A," "),
+		AA=A+2,
+		AA<=B,
+		print(AA,B).
+	print(_,_):-
+		write("\n").
+		

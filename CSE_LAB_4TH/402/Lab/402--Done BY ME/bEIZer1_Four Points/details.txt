@@ -1,0 +1,2 @@
+You will be given n = 4 control point position in 2D space. Have to construct the spline using Bezier spline construction approach. 
+Assume that the center of your computer screen is (0,0) coordinate position.

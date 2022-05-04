@@ -1,0 +1,52 @@
+﻿body 
+    {
+        
+    }
+h3
+    {
+    margin:0 0 10px 0;
+		background:#3a3 url(../images/div_form/form_heading.gif) repeat-x;		
+		color:#fff;
+		font-size:20px;
+		border:1px solid #57a700;
+		border-bottom:none;
+		text-align:center;
+		border-bottom:8px ridge #666;
+    }
+
+
+.google_button{
+	
+	padding: 2px;
+	background-color:#90305c;
+	border:2px double #5513c5;
+	font:bold 92% Arial;
+	color:#fff;
+	text-transform:uppercase;	
+}
+
+.google_button:hover{
+	background-color:#5513c5;
+}
+
+
+.google_button:active, .google_button:focus{
+	background-color:#784;
+}
+
+
+
+.div_form{
+	
+	width:60%;
+	float:left;
+	margin:auto;
+	display:block;
+
+	padding-bottom:5px;
+
+	width:100%;
+	
+    padding: 4px 8px;
+    border: 1px dashed #333;
+}

@@ -1,0 +1,12 @@
+1caeser cipher 
+2.simple transposition 
+3.lehman
+
+another(would be)
+1.double transpositon
+2.rabin miller
+3.rsa
+
+1.ceasar
+2.one time pad
+3.rsa

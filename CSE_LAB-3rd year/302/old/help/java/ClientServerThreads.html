@@ -1,0 +1,499 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><script src="ClientServerThreads_files/bmi.js" language="javascript"></script><title>Multi-threaded Client/Server Applications</title> </head><body bgcolor="#ffffff"><center><h1>Multithreaded Client/Server Applications</h1></center><h2>Sockets Programming in Java</h2>A
+ socket is the one end-point of a two-way communication link between two
+ programs running over the network. Running over the network means that 
+the programs run on different computer. However one can run these two 
+programs on the same computer. These two communicating programs form a 
+Client/Server application.<p>In Client/Server applications the server 
+normally listens to a specific port waiting for connection requests from
+ a client. When a connection request arrives, the client and the server 
+establish a dedicated connection to communicate. During the connection 
+process, the client is assigned a local port number, and binds a socket 
+to it. The client talks to the server by writing to the socket and gets 
+information from the server by reading from it. Similarly, the server 
+gets a new local port number to communicate with the client. The server 
+also binds a socket to its local port and communicates with the client 
+by reading from and writing to it. The server uses a specific port 
+dedicated only to listening for connection requests from other clients. 
+It can not use this specific port for communication with the clients.</p><p>The
+ client and the server must agree on a protocol. They must agree on the 
+language of the information transferred back and forth through the 
+socket.</p><p>The java.net package in the Java development environment provides the class <tt>Socket</tt> which implements the client side and the class <tt>ServerSocket</tt> class which implements the server side of the two-way link.</p><p>There 3 types of sockets:</p><ul><li>Stream socket (to listen for client requests): the class ServerSocket. </li><li>Stream socket: the class Socket. </li><li>Datagram socket: the class DatagramSocket.</li></ul>There are two communication protocols that one can use for socket programming: stream communication and datagram communication.<p>The
+ stream communication protocol is known as TCP (transfer control 
+protocol). TCP is a connection-oriented protocol. In order to 
+communicate over the TCP protocol, a connection must first be 
+established between two sockets. While one of the sockets listens for a 
+connection request (server), the other asks for a connection (client). 
+Once two sockets have been connected, they can be used to transmit data 
+in both (or either one of the) directions.</p><p>The datagram 
+communication protocol, known as UDP (user datagram protocol), is a 
+connectionless protocol, meaning that each time a datagram is sent, the 
+local socket descriptor and the receiving socket's address must be also 
+sent in the same datagram. Thus, additional data must be sent each time a
+ communication is established.</p><p>UDP is an unreliable protocol, 
+there is no guarantee that datagrams will be received in the same order 
+by the receiving socket. On the other hand, TCP is a reliable protocol; 
+it is guaranteed that the packets will be received in the order in which
+ they were sent.</p><p>TCP is useful for implementing network services, 
+which require data of indefinite length to be transferred. UDP is less 
+complex and is often used in implementing client/server applications in 
+distributed systems running over local area networks.</p><p>This article shows how to program sockets in Java using the TCP/IP protocol.</p><h3>Opening a socket</h3>When programming a client, a socket must be opened like this:<pre> Socket MyClient;
+ MyClient = new Socket("Machine name", PortNumber);
+</pre>or using the exception handling,<pre> Socket MyClient;
+ try {
+       MyClient = new Socket("Machine name", PortNumber);
+     }
+     catch (IOException e) {
+       System.out.println(e);
+     }
+</pre>Where Machine name is the machine to open a connection to, and 
+PortNumber is the port (a number) on which the server to connect to is 
+running. When selecting a port number, one has to know that the port 
+numbers in the range from 0 to 1023 are reserved for standard services, 
+such as email, FTP, HTTP, etc.<p>When programming a server, a server 
+socket must be opened first. The server socket is dedicated to listen 
+for and accept connections from clients.</p><pre> ServerSocket MyService;
+ try {
+       MyServerice = new ServerSocket(PortNumber);
+     }
+     catch (IOException e) {
+       System.out.println(e);
+     }
+</pre>When implementing a server one also needs to create a client socket to communicate (send/receive data) with the client programs.<pre> Socket clientSocket = null;
+ try {
+       serviceSocket = MyService.accept();
+     }
+     catch (IOException e) {
+       System.out.println(e);
+     }
+</pre><h3>Creating an input stream</h3>On the client side, you can use the DataInputStream class to create an input stream to receive response from the server:<pre> DataInputStream input;
+ try {
+    input = new DataInputStream(MyClient.getInputStream());
+ }
+ catch (IOException e) {
+    System.out.println(e);
+ }
+</pre>The class DataInputStream allows you to read lines of text and 
+Java primitive data types in a portable way. It has several read methods
+ such as read, readChar, readInt, readDouble, and readLine. One has to 
+use whichever function depending on the type of data to receive from the
+ server.<p>On the server side, the DataInputStream is used to receive input from the client:</p><pre> DataInputStream input;
+ try {
+      input = new DataInputStream(serviceSocket.getInputStream());
+ }
+ catch (IOException e) {
+    System.out.println(e);
+ }
+</pre><h3>Create an output stream</h3>On the client side, an output 
+stream must be created to send teh data to the server socket using the 
+class PrintStream or DataOutputStream of java.io package:<pre> PrintStream output;
+ try {
+    output = new PrintStream(MyClient.getOutputStream());
+ }
+ catch (IOException e) {
+    System.out.println(e);
+ }
+</pre>The class PrintStream implements the methods for displaying Java 
+primitive data types values, like write and println methods. Also, one 
+may want to use the DataOutputStream:<pre> DataOutputStream output;
+ try {
+    output = new DataOutputStream(MyClient.getOutputStream());
+ }
+ catch (IOException e) {
+    System.out.println(e);
+ }
+</pre>The class DataOutputStream allows to write Java primitive data 
+types; many of its methods write a single Java primitive type to the 
+output stream.<p>On the server side, one can use the class PrintStream to send data to the client.</p><pre> PrintStream output;
+ try {
+    output = new PrintStream(serviceSocket.getOutputStream());
+ }
+ catch (IOException e) {
+    System.out.println(e);
+ }
+</pre><h3>Closing sockets</h3>The output and input streams must be closed before the socket is closed. On the client side:<pre> try {
+    output.close();
+    input.close();
+    MyClient.close();
+ } 
+ catch (IOException e) {
+    System.out.println(e);
+ }
+</pre>On the server side:<pre> try {
+    output.close();
+    input.close();
+    serviceSocket.close();
+    MyService.close();
+ } 
+ catch (IOException e) {
+    System.out.println(e);
+ }
+</pre><h2>A simple Client/Server example</h2><h3>The client</h3>This is a
+ simple client which reads a line from the standard input and sends it 
+to the echo server. It keeps then reading from the socket till it 
+receives the message "Ok" from the server. Once it receives the "Ok" 
+message then it breaks.<pre>//Example 23
+
+import java.io.*;
+import java.net.*;
+
+public class client {
+    public static void main(String[] args) {
+
+// declaration section:
+// clientClient: our client socket
+// os: output stream
+// is: input stream
+
+        Socket clientSocket = null;
+        DataInputStream is = null;
+        PrintStream os = null;
+        DataInputStream inputLine =null;
+
+// Initialization section:
+// Try to open a socket on port 2222
+// Try to open input and output streams
+                
+        try {
+            clientSocket = new Socket("ti.utm.md", 2222);
+            os = new PrintStream(clientSocket.getOutputStream());
+            is = new DataInputStream(clientSocket.getInputStream());
+            inputLine = new DataInputStream(new BufferedInputStream(System.in)); 
+        } catch (UnknownHostException e) {
+            System.err.println("Don't know about host");
+        } catch (IOException e) {
+            System.err.println("Couldn't get I/O for the connection to host");
+        }
+
+// If everything has been initialized then we want to write some data
+// to the socket we have opened a connection to on port 2222
+
+        if (clientSocket != null &amp;&amp; os != null &amp;&amp; is != null) {
+            try {
+
+// keep on reading from/to the socket till we receive the "Ok" from the server,
+// once we received that then we want to break.
+
+                String responseLine;
+                os.println(inputLine.readLine()); 
+                while ((responseLine = is.readLine()) != null) {
+                    System.out.println(responseLine);
+                    if (responseLine.indexOf("Ok") != -1) {
+			break;
+                    }
+		    os.println(inputLine.readLine()); 
+                }
+		
+// clean up:
+// close the output stream
+// close the input stream
+// close the socket
+
+                os.close();
+                is.close();
+                clientSocket.close();   
+            } catch (UnknownHostException e) {
+                System.err.println("Trying to connect to unknown host: " + e);
+            } catch (IOException e) {
+                System.err.println("IOException:  " + e);
+            }
+        }
+    }           
+}
+
+</pre><h3>The server</h3>This is a simple echo server. As long as it 
+receives data it echos that data back to the client appending it to the 
+"From server :" string.<pre>//Example 24
+
+import java.io.*;
+import java.net.*;
+
+public class server {
+    public static void main(String args[]) {
+
+// declaration section:
+// declare a server socket and a client socket for the server
+// declare an input and an output stream
+
+        ServerSocket echoServer = null;
+        String line;
+        DataInputStream is;
+        PrintStream os;
+        Socket clientSocket = null;
+           
+// Try to open a server socket on port 2222
+// Note that we can't choose a port less than 1023 if we are not
+// privileged users (root)
+
+        try {
+           echoServer = new ServerSocket(2222);
+        }
+        catch (IOException e) {
+           System.out.println(e);
+        }   
+
+// Create a socket object from the ServerSocket to listen and accept 
+// connections.
+// Open input and output streams
+
+        try {
+           clientSocket = echoServer.accept();
+           is = new DataInputStream(clientSocket.getInputStream());
+           os = new PrintStream(clientSocket.getOutputStream());
+
+// As long as we receive data, echo that data back to the client.
+
+           while (true) {
+             line = is.readLine();
+             os.println("From server: "+ line); 
+           }
+        }   
+        catch (IOException e) {
+           System.out.println(e);
+        }
+    }
+}
+
+</pre><h2>A multithreaded Client/Server example</h2>This is a 
+multithreaded chat application. The client uses two threads to interact 
+with the server and with the standard input. The server uses a separate 
+thread for every client. It spawns a new client thread every time a new 
+connection from a client is established.<h3>The chat client</h3>This is 
+the multithreaded chat client. It uses two threads: one to read the data
+ from the standard input and to sent it to the server, the other to read
+ the data from the server and to print it on the standard output.<pre>//Example 25
+
+import java.io.*;
+import java.net.*;
+
+public class MultiThreadChatClient implements Runnable{
+    
+    // Declaration section
+    // clientClient: the client socket
+    // os: the output stream
+    // is: the input stream
+    
+    static Socket clientSocket = null;
+    static PrintStream os = null;
+    static DataInputStream is = null;
+    static BufferedReader inputLine = null;
+    static boolean closed = false;
+    
+    public static void main(String[] args) {
+	
+	// The default port	
+	
+	int port_number=2222;
+        String host="localhost";
+	
+	if (args.length &lt; 2)
+	    {
+		System.out.println("Usage: java MultiThreadChatClient <host> <port_number>\n"+
+				   "Now using host="+host+", port_number="+port_number);
+	    } else {
+		host=args[0];
+		port_number=Integer.valueOf(args[1]).intValue();
+	    }
+	// Initialization section:
+	// Try to open a socket on a given host and port
+	// Try to open input and output streams
+	try {
+            clientSocket = new Socket(host, port_number);
+            inputLine = new BufferedReader(new InputStreamReader(System.in));
+            os = new PrintStream(clientSocket.getOutputStream());
+            is = new DataInputStream(clientSocket.getInputStream());
+        } catch (UnknownHostException e) {
+            System.err.println("Don't know about host "+host);
+        } catch (IOException e) {
+            System.err.println("Couldn't get I/O for the connection to the host "+host);
+        }
+	
+	// If everything has been initialized then we want to write some data
+	// to the socket we have opened a connection to on port port_number 
+	
+        if (clientSocket != null &amp;&amp; os != null &amp;&amp; is != null) {
+            try {
+		
+		// Create a thread to read from the server
+		
+                new Thread(new MultiThreadChatClient()).start();
+		
+		while (!closed) {
+                    os.println(inputLine.readLine()); 
+                }
+		
+		// Clean up:
+		// close the output stream
+		// close the input stream
+		// close the socket
+		
+		os.close();
+		is.close();
+		clientSocket.close();   
+            } catch (IOException e) {
+                System.err.println("IOException:  " + e);
+            }
+        }
+    }           
+    
+    public void run() {		
+	String responseLine;
+	
+	// Keep on reading from the socket till we receive the "Bye" from the server,
+	// once we received that then we want to break.
+	try{ 
+	    while ((responseLine = is.readLine()) != null) {
+		System.out.println(responseLine);
+		if (responseLine.indexOf("*** Bye") != -1) break;
+	    }
+            closed=true;
+	} catch (IOException e) {
+	    System.err.println("IOException:  " + e);
+	}
+    }
+}
+</port_number></host></pre><h3>The chat server</h3>This is a 
+multithreaded chat server. It uses a separate thread for every client. 
+It spawns a new client thread every time a new connection from a client 
+is established. This client thread opens the input and the output 
+streams for a particular client, ask the client's name, informs all the 
+clients currently connected to the server about the fact that a new 
+client has joined the chat room, and as long as it receive data, echos 
+that data back to all other clients. When the client leaves the chat 
+room this thread informs also all the clients about that and terminates.<pre>//Example 26
+
+import java.io.*;
+import java.net.*;
+
+public class MultiThreadChatServer{
+
+    // Declaration section:
+    // declare a server socket and a client socket for the server
+    // declare an input and an output stream
+    
+    static  Socket clientSocket = null;
+    static  ServerSocket serverSocket = null;
+
+    // This chat server can accept up to 10 clients' connections
+
+    static  clientThread t[] = new clientThread[10];           
+    
+    public static void main(String args[]) {
+	
+	// The default port
+
+	int port_number=2222;
+	
+	if (args.length &lt; 1)
+	    {
+		System.out.println("Usage: java MultiThreadChatServer <port_number>\n"+
+				   "Now using port number="+port_number);
+	    } else {
+		port_number=Integer.valueOf(args[0]).intValue();
+	    }
+	
+	// Initialization section:
+	// Try to open a server socket on port port_number (default 2222)
+	// Note that we can't choose a port less than 1023 if we are not
+	// privileged users (root)
+
+        try {
+	    serverSocket = new ServerSocket(port_number);
+        }
+        catch (IOException e)
+	    {System.out.println(e);}
+	
+	// Create a socket object from the ServerSocket to listen and accept 
+	// connections.
+	// Open input and output streams for this socket will be created in 
+	// client's thread since every client is served by the server in
+	// an individual thread
+	
+	while(true){
+	    try {
+		clientSocket = serverSocket.accept();
+		for(int i=0; i&lt;=9; i++){
+		    if(t[i]==null)
+			{
+			    (t[i] = new clientThread(clientSocket,t)).start();
+			    break;
+			}
+		}
+	    }
+	    catch (IOException e) {
+		System.out.println(e);}
+	}
+    }
+} 
+
+// This client thread opens the input and the output streams for a particular client,
+// ask the client's name, informs all the clients currently connected to the 
+// server about the fact that a new client has joined the chat room, 
+// and as long as it receive data, echos that data back to all other clients.
+// When the client leaves the chat room this thread informs also all the
+// clients about that and terminates. 
+
+class clientThread extends Thread{
+    
+    DataInputStream is = null;
+    PrintStream os = null;
+    Socket clientSocket = null;       
+    clientThread t[]; 
+    
+    public clientThread(Socket clientSocket, clientThread[] t){
+	this.clientSocket=clientSocket;
+        this.t=t;
+    }
+    
+    public void run() 
+    {
+	String line;
+        String name;
+	try{
+	    is = new DataInputStream(clientSocket.getInputStream());
+	    os = new PrintStream(clientSocket.getOutputStream());
+	    os.println("Enter your name.");
+	    name = is.readLine();
+	    os.println("Hello "+name+" to our chat room.\nTo leave enter /quit in a new line"); 
+	    for(int i=0; i&lt;=9; i++)
+		if (t[i]!=null &amp;&amp; t[i]!=this)  
+		    t[i].os.println("*** A new user "+name+" entered the chat room !!! ***" );
+	    while (true) {
+		line = is.readLine();
+                if(line.startsWith("/quit")) break; 
+		for(int i=0; i&lt;=9; i++)
+		    if (t[i]!=null)  t[i].os.println("&lt;"+name+"&gt; "+line); 
+	    }
+	    for(int i=0; i&lt;=9; i++)
+		if (t[i]!=null &amp;&amp; t[i]!=this)  
+		    t[i].os.println("*** The user "+name+" is leaving the chat room !!! ***" );
+	    
+	    os.println("*** Bye "+name+" ***"); 
+
+	    // Clean up:
+	    // Set to null the current thread variable such that other client could
+	    // be accepted by the server
+
+	    for(int i=0; i&lt;=9; i++)
+		if (t[i]==this) t[i]=null;  
+		
+	    // close the output stream
+	    // close the input stream
+	    // close the socket
+	    
+	    is.close();
+	    os.close();
+	    clientSocket.close();
+	}
+	catch(IOException e){};
+    }
+}
+</port_number></pre><h2>Conclusions</h2>Java sockets API (Socket and 
+ServerSocket classes) allow to implement Client/Server applications and 
+provide a powerful and flexible infrastructure for network programming. 
+Other network programming classes can be also used. For example, 
+URLConnection class is probably more suitable for some applications. 
+URLConnection class provides a higher lever interface for network 
+programming where the sockets are part of the underlying implementation.<h2>Exercises</h2><ol><li>Study and try all the examples presented above. </li><li>Modify the multithreaded chat program so that the server could accept an unlimited number of clients.</li></ol><h2>Useful links and credits:</h2><ol><li><a href="http://www.javaworld.com/javaworld/jw-12-1996/jw-12-sockets.html">Sockets programming in Java: A tutorial</a></li></ol><hr width="100%"><em>Last Revised: </em><br><hr width="100%"><b><a href="http://www.ase.md/%7Eaursu/Concurrent_Programming_en.html">Back to Concurrent Programming Page</a></b> <script language="javascript"><!--
+bmi_SafeAddOnload(bmi_load,"bmi_orig_img",0);//-->
+</script></body></html>

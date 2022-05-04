@@ -1,0 +1,15 @@
+C:/Users/MAIN_HOON_NA/Desktop/ranahamid/counter.v {1 {vlog -work work -nocovercells C:/Users/MAIN_HOON_NA/Desktop/ranahamid/counter.v
+Model Technology ModelSim ALTERA vlog 6.6d Compiler 2010.11 Nov  2 2010
+-- Compiling module counter
+
+Top level modules:
+	counter
+
+} {} {}} C:/Users/MAIN_HOON_NA/Desktop/ranahamid/tcounter.v {1 {vlog -work work -nocovercells C:/Users/MAIN_HOON_NA/Desktop/ranahamid/tcounter.v
+Model Technology ModelSim ALTERA vlog 6.6d Compiler 2010.11 Nov  2 2010
+-- Compiling module test_counter
+
+Top level modules:
+	test_counter
+
+} {} {}}

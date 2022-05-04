@@ -1,0 +1,153 @@
+﻿body 
+    {
+     
+    }
+    
+h3
+    {
+    margin:0 0 10px 0;
+		background:#3a3 url(../images/div_form/form_heading.gif) repeat-x;		
+		color:#fff;
+		font-size:20px;
+		border:1px solid #57a700;
+		border-bottom:none;
+		text-align:center;
+		border-bottom:8px ridge #666;
+    }
+
+
+
+.google_button{
+	
+	padding: 2px;
+	background-color:#90305c;
+	border:2px double #5513c5;
+	font:bold 92% Arial;
+	color:#fff;
+	text-transform:uppercase;	
+	width:244px;
+    margin-left: 36px;
+}
+
+.google_button:hover{
+	background-color:#5513c5;
+}
+.google_button:active, .google_button:focus{
+	background-color:#784;
+}
+
+.google_button2{
+	
+	padding: 2px;
+	background-color:#33305c;
+	border:2px double #ff13c5;
+	font:bold 92% Arial;
+	color:#eee;
+	text-transform:uppercase;	
+	width:244px;
+	
+}
+
+.google_button2:hover{
+	background-color:#0013c5;
+}
+
+
+.google_button2:active, .google_button2:focus{
+	background-color:#f84;
+}
+
+
+
+.google_button3{
+	
+	padding: 2px;
+	background-color:#2270fc;
+	border:2px double #ff13c5;
+	font:bold 92% Arial;
+	color:#eee;
+	text-transform:uppercase;	
+	width:244px;
+	
+}
+
+.google_button3:hover{
+	background-color:#ff13c5;
+}
+
+
+.google_button3:active, .google_button3:focus{
+	background-color:#f84;
+}
+
+
+
+
+.google_button4{
+	
+	padding: 2px;
+	background-color:#4330fc;
+	border:2px double #4f13f5;
+	font:bold 92% Arial;
+	color:#e0e;
+	text-transform:uppercase;	
+	margin-left: 36px;
+}
+
+.google_button4:hover{
+	background-color:#00f3c5;
+}
+
+
+.google_button4:active, .google_button4:focus{
+	background-color:#48f;
+}
+
+.google_button5{
+	
+	padding: 2px;
+	background-color:#12304c;
+	border:2px double #4ff3c5;
+	font:bold 92% Arial;
+	color:#5ee;
+	text-transform:uppercase;	
+	width:244px;
+	
+}
+
+.google_button5:hover{
+	background-color:#991355;
+}
+
+
+.google_button5:active, .google_button5:focus{
+	background-color:#7f4;
+}
+
+
+.div_form{
+	width:200px;
+	float:left;
+	margin:auto;
+	display:block;
+
+	padding-bottom:5px;
+
+	padding: 4px 8px;
+    border: 1px dashed #333;
+}
+
+.div_form2{
+	
+	width:200px;
+	float:left;
+	margin:auto;
+	display:block;
+
+	padding-bottom:5px;
+
+	width:100%;
+	
+    padding: 4px 8px;
+    border: 1px dashed #f56;
+}

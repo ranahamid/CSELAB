@@ -1,0 +1,24 @@
+%count
+
+domains
+	list=symbol*
+predicates
+	c(list)
+	count(list,integer)
+clauses
+	
+	c(List):-
+		N=0,
+		count(List,N),
+		write(N).
+		
+	count([],N):-
+		write(N).
+		
+	count([_|T],N):-
+		NN=N+1,
+		count(T,NN).
+		
+		
+	
+	

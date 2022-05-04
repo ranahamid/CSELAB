@@ -1,0 +1,28 @@
+javac serverInt1.java
+javac serverImpl1.java
+javac server1.java
+
+
+
+javac serverInt2.java
+javac serverImpl2.java
+javac server2.java
+javac client.java
+
+javac  MainServer_Imp.java
+javac  MainServer_Int.java
+javac MainServer.java
+
+
+rmic  MainServer_Imp 
+rmic serverImpl1
+rmic serverImpl2
+
+start rmiregistry
+
+
+
+start java server1
+start java server2
+start java MainServer
+java client

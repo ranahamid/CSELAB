@@ -1,0 +1,79 @@
+TITLE PRIME_OR_NOT
+.MODEL SMALL
+.STACK 100
+.DATA 
+CR EQU 0DH
+LF EQU 0AH
+LINE DB CR,LF,'$'
+MSG1 DB 'ENTER A NUMBER : ','$'
+VAL1 DB ?
+VAL2 DB ?
+.CODE
+MAIN PROC
+MOV AX,@DATA
+            MOV DS,AX
+
+            LEA DX,MSG1
+            MOV AH,09H
+            INT 21H
+    
+            CALL INDEC
+            MOV VAL1,AL
+			
+		
+			
+			INC AL
+			MOV VAL2,AL
+            
+			
+			MOV AH,9
+			LEA DX,LINE
+			INT 21H 
+			
+			
+			MOV BL,VAL1
+			MOV AL,VAL2
+			MUL BL
+			
+           MOV CL,2
+           DIV CL
+		   
+		   
+		   CALL OUTDEC 
+
+EXIT:
+	MOV AH,4CH
+	INT 21H
+MAIN ENDP
+
+OUTDEC PROC
+
+	OR AX,AX
+	JGE FIRST
+	PUSH AX
+	MOV DL,'-'
+	MOV AH,2
+	INT 21H
+	POP AX
+	NEG AX
+
+FIRST:
+	XOR CX,CX;CX=NUMBER OF DIGIT;cx=0
+	MOV BX,10D
+SEC:
+	XOR DX,DX;HIGHER PART=0
+	DIV BX;DX:AX=DX:AX/BX
+	PUSH DX
+	INC CX
+	OR AX,AX
+	JNE SEC
+PRINT:
+	MOV AH,2
+	POP DX
+	OR DL,30H
+	INT 21H
+	LOOP PRINT
+	RET
+OUTDEC ENDP
+
+	END MAIN

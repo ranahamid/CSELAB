@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><link rel="canonical" href="http://msdn.microsoft.com/en-us/library/ms972966.aspx">
+        <title>Regular Expressions in ASP.NET</title>
+
+
+
+
+<meta name="DCS.dcsuri" content="/en-us/library/ms972966(d=default,l=en-us,v=msdn.10).aspx">
+
+<meta name="NormalizedUrl" content="http://msdn.microsoft.com/en-us/library/ms972966(d=default,l=en-us,v=msdn.10).aspx">
+
+<meta name="VotingContextUrl" content="http://msdn.microsoft.com/en-us/library/ms972966(d=default,l=en-us,v=msdn.10).aspx">
+
+<meta name="MN" content="61C41DD4-5:38:28 AM">
+
+<meta name="Search.ShortId" content="ms972966">
+
+<meta name="Ms.Locale" content="en-us">
+
+
+
+
+
+
+
+        
+    <link rel="stylesheet" type="text/css" href="Regular%20Expressions%20in%20ASP.NET_files/Combined.css"><script class="mtps-injected">try {
+/**/
+(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
+	"image": "http://i.msdn.microsoft.com", 
+	"js": "http://i2.msdn.microsoft.com", 
+	"css": "http://i3.msdn.microsoft.com"
+});
+/**/
+} finally { MTPS._injectNextScript_0 && MTPS._injectNextScript_0(); }</script><script src="Regular%20Expressions%20in%20ASP.NET_files/jquery-1.js" class="mtps-injected"></script><script class="mtps-injected">try {
+//
+  var literalNormalizedUrl = '/en-us/library/ms972966(d=default,l=en-us,v=msdn.10).aspx';
+  var wt_nvr_ru = 'WT_NVR_RU';
+  var wt_fpcdom = '.microsoft.com';
+  var wt_domlist = 'msdn.microsoft.com';
+  var wt_pathlist = '';
+  var wt_paramlist = 'DCSext.mtps_devcenter';
+  var wt_siteid = 'MSDN';
+  var gDomain = 'm.webtrends.com';
+  var gDcsId = 'dcsmgru7m99k7mqmgrhudo0k8_8c6m';
+  var gFpc = 'WT_FPC';
+
+
+
+  if (document.cookie.indexOf(gFpc + "=") == -1) {
+    var wtidJs = document.createElement("script");
+    wtidJs.src = "//" + gDomain + "/" + gDcsId + "/wtid.js";
+    document.getElementsByTagName("head")[0].appendChild(wtidJs);
+  }
+
+
+
+  var detectedLocale = 'en-us';
+  var wtsp = 'msdnlib_dotnet';
+  var gTrackEvents = '0';
+/**/
+} finally { MTPS._injectNextScript_2 && MTPS._injectNextScript_2(); }</script><script src="Regular%20Expressions%20in%20ASP.NET_files/wtid.js"></script><script class="mtps-injected">try {
+/**/
+  var omni_guid = "1a472adf-cd08-4224-af5d-78963ddbc538";
+/**/
+} finally { MTPS._injectNextScript_3 && MTPS._injectNextScript_3(); }</script><script src="Regular%20Expressions%20in%20ASP.NET_files/Combined.js" class="mtps-injected"></script><script src="Regular%20Expressions%20in%20ASP.NET_files/SearchBox" class="mtps-injected"></script><script src="Regular%20Expressions%20in%20ASP.NET_files/Combined_002.js" class="mtps-injected"></script><script class="mtps-injected">try {
+$(document).ready(function() {
+        try {
+            var token = $("#globalRequestVerification input[name='__RequestVerificationToken']").clone();
+            $("#siteFeedbackForm").append(token);
+        } catch(err) {
+            
+        }
+    });
+} finally { MTPS._injectNextScript_7 && MTPS._injectNextScript_7(); }</script></head>
+    <body class="library">
+        <div id="page">
+            
+            
+  
+            
+        <div id="ux-header">
+        <header>
+            <div class="row">
+				<div class="top mobile"></div>
+                <div class="left">
+                    <div data-fragmentname="SiteLogo" id="Fragment_SiteLogo" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://msdn.microsoft.com/en-us" id="27762_1" xmlns="http://www.w3.org/1999/xhtml">Developer Network</a>
+</div>     
+                </div>
+                <div id="grip"></div>  
+                <div class="right desktop">
+                    <div class="auxNav">
+                        <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://msdn.microsoft.com/dn369243" id="27762_5" xmlns="http://www.w3.org/1999/xhtml">MSDN subscriptions</a>
+</div>   
+                        <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409" id="27762_3" xmlns="http://www.w3.org/1999/xhtml">Get tools</a>
+</div>   
+                        
+
+    <div class="signIn"><a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=11&amp;ct=1385991508&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=MSDN%24MSDN%24MSDN&amp;wreply=http%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fms972966.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-US" title="Sign in">Sign in</a></div>
+
+                    </div>
+                    <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get" action="http://social.msdn.microsoft.com/Search" onsubmit="return Epx.Controls.SearchBox.searchBoxOnSubmit(this, this.title);">
+      <input id="HeaderSearchTextBox" name="query" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(this, this.title, 'SearchBoxOnFocus')" onblur="Epx.Controls.SearchBox.watermarkBlur(this, this.title, 'SearchBoxOnFocus')" type="text">
+      <input id="RefinementId" name="refinement" value="" type="hidden">
+      <button id="HeaderSearchButton" value="" type="submit" class="header-search-button"></button>
+    </form>
+    
+  </div>
+</div> 
+                </div>
+            </div>
+       
+            <div class="row" id="droor">
+                <div class="left">
+                            <nav>
+            <ul>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/dn308572" title="Home">Home</a>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/dn271881" title="Opportunity">Opportunity</a>
+                                 <div class="area">
+                                     <div class="arrow"></div>
+                                 </div>
+                                 <div class="subNav">
+                                     <ul>
+                                                 <li><a href="http://msdn.microsoft.com/dn338450" title=".NET">.NET</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn338159" title="Cloud">Cloud</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn469160" title="Desktop">Desktop</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn338268" title="Phone">Phone</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn308583" title="Tablet &amp; PC">Tablet &amp; PC</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn338449" title="Web">Web</a></li>
+                                     </ul>
+                                 </div>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/dn271880" title="Platform">Platform</a>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/dn338064" title="Connect">Connect</a>
+                                 <div class="area">
+                                     <div class="arrow"></div>
+                                 </div>
+                                 <div class="subNav">
+                                     <ul>
+                                                 <li><a href="http://msdn.microsoft.com/dn338452" title="Perspectives">Perspectives</a></li>
+                                                 <li><a href="http://events.msdn.microsoft.com/en-us" title="Events">Events</a></li>
+                                                 <li><a href="http://social.msdn.microsoft.com/forums/" title="Forums">Forums</a></li>
+                                     </ul>
+                                 </div>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://msdn.microsoft.com/dn292944" title="Downloads">Downloads</a>
+                                 <div class="area">
+                                     <div class="arrow"></div>
+                                 </div>
+                                 <div class="subNav">
+                                     <ul>
+                                                 <li><a href="http://msdn.microsoft.com/dn369242" title="Developer tools">Developer tools</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn369240" title="SDKs">SDKs</a></li>
+                                                 <li><a href="http://msdn.microsoft.com/dn369243" title="MSDN subscriptions">MSDN subscriptions</a></li>
+                                     </ul>
+                                 </div>
+
+                     </li>
+                     <li class="active current">
+
+                         <a href="http://msdn.microsoft.com/library" title="Library">Library</a>
+
+                     </li>
+                     <li class="inactive">
+
+                         <a href="http://code.msdn.microsoft.com/" title="Samples">Samples</a>
+
+                     </li>
+            </ul>
+          
+        </nav>        
+       
+                </div>
+                <div class="right mobile"></div>
+                <div class="right">
+                    <div data-fragmentname="SocialLinks" id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Join us</div>
+    <div class="Links">
+      <ul class="LinkColumn horizontal">
+        <li>
+          <a href="http://www.facebook.com/microsoftdeveloper" target="_blank" id="SocialLinks_430_7" class="facebook" xmlns="http://www.w3.org/1999/xhtml">http://www.facebook.com/microsoftdeveloper</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/msdev" target="_blank" id="SocialLinks_430_8" class="twitter" xmlns="http://www.w3.org/1999/xhtml">https://twitter.com/msdev</a>
+        </li>
+        <li>
+          <a href="http://plus.google.com/111221966647232053570/" target="_blank" id="SocialLinks_430_9" class="googlePlus" xmlns="http://www.w3.org/1999/xhtml">http://plus.google.com/111221966647232053570/</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div> 
+                </div>
+			    <span id="singleCol"></span>
+			    <span id="doubleCol"></span>
+            </div>
+        </header>
+    </div>
+    
+    
+
+        
+    <div class="printExportMenus ltr">
+        <a id="isd_printABook" href="http://msdn.microsoft.com/en-us/library/export/help/?returnUrl=%2fen-us%2flibrary%2fms972966.aspx">
+            Export (<span class="count">0</span>)
+        </a>
+        <a id="isd_print" href="http://msdn.microsoft.com/en-us/library/ms972966%28d=printer%29.aspx" rel="nofollow">
+            Print 
+        </a>
+    </div>
+    
+
+        <div class="printExportMenus ltr">
+        <a id="expandCollapseAll" href="javascript:void(0)">Expand All</a>
+    </div>
+
+    
+
+        
+            <div id="body">
+                
+
+
+
+
+
+    <div id="leftNav">
+
+
+
+<div id="tocnav">
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/ms123401.aspx" id="ms310241_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="5DDC0A78-6B2C-43E3-9C56-55F45C0DFFA5_MSDN.10_en-us" mtpsshortid="ms123401_MSDN.10_en-us" title="MSDN Library">MSDN Library</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/ff361664%28v=vs.110%29.aspx" id="aa139615_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="43e22490-fb00-409c-8301-585a03034ae2_MSDN.10_en-us" mtpsshortid="ff361664_VS.110_en-us" title=".NET Development">.NET Development</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/dd560515.aspx" id="dd560515_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="MSDN|NETDEV_TA|$\netdev_ta.hxt@0,0_MSDN.10_en-us" mtpsshortid="dd560515_MSDN.10_en-us" title="Articles and Overviews">Articles and Overviews</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/aa286485.aspx" id="dd560524_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="MSDN|dnanchor|~\html\anchoraspdotnet.htm_MSDN.10_en-us" mtpsshortid="aa286485_MSDN.10_en-us" title="Web Applications (ASP.NET)">Web Applications (ASP.NET)</a>            </div>
+            <div class="toclevel0" data-toclevel="0">
+<a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/aa137125.aspx" id="aa137125_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="MSDN|dnaspp|$\dnaspp.hxt@0,1_MSDN.10_en-us" mtpsshortid="aa137125_MSDN.10_en-us" title="ASP.NET">ASP.NET</a>            </div>
+            <div class="toclevel1" data-toclevel="1">
+<a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/aa531253.aspx" id="aa531253_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="MSDN|dnaspp|$\dnaspp.hxt@0,1,5_MSDN.10_en-us" mtpsshortid="aa531253_MSDN.10_en-us" title="Infrastructure">Infrastructure</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/aa479328.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The ASP.NET HTTP Runtime">The ASP.NET HTTP Runtime</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/aa479007.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The ASP.NET Page Object Model">The ASP.NET Page Object Model</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/ms972959.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="ASP.NET Performance Monitoring, and When to Alert Administrators">ASP.NET Performance Monitoring, and When to Alert Administrators</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/ms972957.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="E Pluriblog Unum: Merging RSS Feeds">E Pluriblog Unum: Merging RSS Feeds</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/aa479334.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Enterprise Localization Toolkit">Enterprise Localization Toolkit</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/aa478972.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Finite State Machines, Wizards and the Web">Finite State Machines, Wizards and the Web</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/aa478974.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Globalization Architecture for ASP.NET">Globalization Architecture for ASP.NET</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/aa479005.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="One Site, Many Faces">One Site, Many Faces</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/aa479040.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="The Quest for ASP.NET Scalability">The Quest for ASP.NET Scalability</a>            </div>
+            <div class="toclevel2 current" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/ms972966.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Regular Expressions in ASP.NET">Regular Expressions in ASP.NET</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/aa479319.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Rich Custom Error Handling with ASP.NET">Rich Custom Error Handling with ASP.NET</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/ms972968.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Search Dynamically for Plug-Ins">Search Dynamically for Plug-Ins</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/ms972972.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="skmFAQs.NET: An ASP.NET FAQ Application">skmFAQs.NET: An ASP.NET FAQ Application</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/ms972965.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Turn Your Log Files into Searchable Data Using Regex and the XML Classes">Turn Your Log Files into Searchable Data Using Regex and the XML Classes</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/ms972976.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Understanding ASP.NET View State">Understanding ASP.NET View State</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/ms972977.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Using Visual SourceSafe for ASP.NET--Start to Finish">Using Visual SourceSafe for ASP.NET--Start to Finish</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/aa479329.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Walkthrough: Tracking Server Progress from an ASP.NET Client Application">Walkthrough: Tracking Server Progress from an ASP.NET Client Application</a>            </div>
+            <div class="toclevel2" data-toclevel="2">
+<a href="http://msdn.microsoft.com/en-us/library/aa479014.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Watching Your Server Processes">Watching Your Server Processes</a>            </div>
+</div>
+        
+
+        
+
+        
+        
+        <div id="toc-resizable-ew" class="toc-resizable-ew"></div>
+        
+
+<a id="NavigationResize" href="javascript:void(0)">
+    <img class="cl_nav_resize_open" src="Regular%20Expressions%20in%20ASP.NET_files/ImageSprite.png" title="Expand" alt="Expand">
+    <img class="cl_nav_resize_close" src="Regular%20Expressions%20in%20ASP.NET_files/ImageSprite.png" title="Minimize" alt="Minimize">
+</a>
+
+
+
+    </div>
+<div id="content" class="content">
+
+
+
+
+
+
+
+    
+    
+
+    <div id="ratingCounterSeperator" class="cl_lw_vs_seperator" style="display: none;"></div>
+
+    <div id="ratingCounter">
+        <span id="rcA" class="ratingText">
+            477 out of 544 rated this helpful <span id="rateThisPrefix">- </span><a id="rateThisTopic" href="#feedback" title="Rate this topic">Rate this topic</a>
+            
+        </span>
+    </div>
+
+        
+
+<div class="topic" xmlns="http://www.w3.org/1999/xhtml">
+  <h1 class="title">Regular Expressions in ASP.NET</h1>
+  
+
+
+<div id="nstext">&nbsp;
+<p><strong>A Crash Course</strong></p>
+
+<p>Steven A. Smith</p>
+
+<p>March 2004</p>
+
+<p>Applies to:<br>
+&nbsp;&nbsp;&nbsp;Microsoft® .NET Framework<br>
+&nbsp;&nbsp;&nbsp;Microsoft® ASP.NET<br>
+&nbsp;&nbsp;&nbsp;Regular Expression API</p>
+
+<p><strong>Summary: </strong>Regular expressions are an extremely useful
+ tool for working with text. Whether you need to validate user input, 
+search for patterns within strings, or reformat text in powerful ways, 
+regular expressions can help. (14 printed pages)</p>
+
+<p><a href="http://download.microsoft.com/download/6/4/6/64652343-72d4-45b3-975e-884c0c39f68d/MSDNRegExASPNET.msi">Download the source code for this article</a>.</p>
+
+
+<h4 class="dtH1">Contents</h4>
+
+<p><a href="#regexnet_topic2">Introduction</a><br>
+<a href="#regexnet_topic3">Brief History of Regular Expressions</a><br>
+<a href="#regexnet_topic4">Simple Expressions</a><br>
+<a href="#regexnet_topic5">Quantifiers</a><br>
+<a href="#regexnet_topic6">Metacharacters</a><br>
+<a href="#regexnet_topic7">Character Classes</a><br>
+<a href="#regexnet_topic8">Predefined Set Metacharacters</a><br>
+<a href="#regexnet_topic9">Sample Expressions</a><br>
+<a href="#regexnet_topic10">Validation in ASP.NET</a><br>
+<a href="#regexnet_topic11">Regular Expression API</a><br>
+<a href="#regexnet_topic12">Free Tools</a><br>
+<a href="#regexnet_topic13">Advanced Topics</a><br>
+<a href="#regexnet_topic14">Conclusion</a><br>
+<a href="#regexnet_topic15">Resources</a><br>
+<a href="#regexnet_topic16">About the Author</a></p>
+
+<h2 class="dtH1"><a id="regexnet_topic2"></a>Introduction</h2>
+
+<p>Support for regular expressions in the Microsoft®.NET Framework is 
+first-class, and even just within Microsoft® ASP.NET there are controls 
+that rely on the language of regular expressions. This article covers 
+the basics and recommends where to go to learn more.</p>
+
+<p>This article is designed for beginners with little or no experience 
+with regular expressions, but who are familiar with ASP.NET and 
+programming in .NET. I hope it will also make a handy 
+reference/refresher for developers who have used regular expressions 
+before, in conjunction with my <a href="http://www.regexlib.com/cheatsheet.htm">regular expression cheat sheet</a>. In this article, I will discuss:
+
+</p><ol>
+	<li>Brief History of Regular Expressions</li>
+
+	<li>Simple Expressions</li>
+
+	<li>Quantifiers</li>
+
+	<li>Metacharacters</li>
+
+	<li>Character Classes</li>
+
+	<li>Predefined Set Metacharacters</li>
+
+	<li>Sample Expressions In Detail</li>
+
+	<li>Validation in ASP.NET</li>
+
+	<li>Regular Expression API</li>
+
+	<li>Free Tools</li>
+
+	<li>Advanced Topics Overview</li>
+
+	<li>Summary and Additional Resources</li>
+</ol>
+
+<p>If you have questions about this article or regular expressions in general, I invite you to ask them on the <a href="http://aspadvice.com/login.aspx?ReturnUrl=/SignUp/list.aspx?l=68&amp;c=16&amp;l=68&amp;c=16">regex mailing list</a> at <a href="http://www.aspadvice.com/">http://aspadvice.com</a>, which as I'm writing this has over 350 subscribers.</p>
+
+<h2 class="dtH1"><a id="regexnet_topic3"></a>Brief History of Regular Expressions</h2>
+
+<p>Regular expressions as they exist today were invented in the 1950s. 
+Regular expressions were originally used to describe "regular sets," 
+which were patterns under study by neurophysiologists. Credit for the 
+first regular expressions is given to the mathematician Stephen Kleene. 
+Eventually, Ken Thompson built support for regular expressions into qed 
+and grep, both very popular text utilities. Jeffrey Friedl goes into 
+more depth in his book, Mastering Regular Expressions (2<span class="sup">nd</span>
+ edition), which is strongly recommended for those wishing to learn more
+ about the theory and history behind regular expressions.</p>
+
+<p>In the last five decades, regular expressions have slowly made their 
+way from mathematic obscurity to a staple feature of many tools and 
+software packages. While regular expressions were supported by many UNIX
+ tools for decades, it was only in the last decade or so that they have 
+found their way into most Windows developers' toolkits. Using regular 
+expressions in Microsoft® Visual Basic® 6 or Microsoft® VBScript was 
+awkward at best, but with the introduction of the .NET Framework, 
+regular expression support is top-notch and available to all Microsoft 
+developers and all .NET languages.</p>
+
+<p>So just what are regular expressions? Regular expressions are a 
+language that can be used to explicitly describe patterns within strings
+ of text. In addition to simply describing such patterns, regular 
+expression engines can typically be used to iterate through matches, to 
+parse strings into substrings using patterns as delimiters, or to 
+replace or reformat text in an intelligent fashion. They provide a 
+powerful and usually very succinct way to solve many common tasks 
+related to text manipulation.</p>
+
+<p>It is common when discussing regular expressions to analyze them 
+based on text they would or would not match. In this article (and in the
+ <strong>System.Text.RegularExpressions</strong> classes), we'll refer to three players in the regular expression interaction: the regular expression <strong>pattern</strong>, the <strong>input</strong> string, and any <strong>matches</strong> the pattern makes within the string.</p>
+
+<h2 class="dtH1"><a id="regexnet_topic4"></a>Simple Expressions</h2>
+
+<p>The simplest regular expression is one you're already familiar 
+with—the literal string. A particular string can be described, 
+literally, by itself, and thus a regular expression pattern like <strong>foo</strong> would match the input string <strong>foo</strong> exactly once. In this case, it would also match the input: <strong>The food was quite tasty</strong>, which might be not be desired if only a precise match is sought.</p>
+
+<p>Of course, matching exact strings to themselves is a trivial 
+implementation of regular expressions, and doesn't begin to reveal their
+ power. What if instead of <strong>foo</strong> you wanted to find all words starting with the letter <strong>f</strong>,
+ or all three letter words? Now you've gone beyond what literal strings 
+can do (within reason)—it's time to learn some more about regular 
+expressions. Below is a sample literal expression and some inputs it 
+would match.</p>
+<div class="tablediv"><table class="dtTABLE">
+
+<tbody><tr><th>Pattern</th><th>Inputs (Matches)</th></tr>
+
+<tr><td>foo</td><td>foo, food, foot, "There's evil afoot."  </td></tr>
+</tbody></table></div>
+
+<h2 class="dtH1"><a id="regexnet_topic5"></a>Quantifiers</h2>
+
+<p>Quantifiers provide a simple way to specify within a pattern how many
+ times a particular character or set of characters is allowed to repeat 
+itself. There are three non-explicit quantifiers:
+
+</p><ol>
+	<li><strong>*</strong>, which describes "0 or more occurrences", </li>
+
+	<li>+, which describes "1 or more occurrences", and</li>
+
+	<li><strong>?</strong>, which describes "0 or 1 occurrence". </li>
+</ol>
+
+<p>Quantifiers always refer to the pattern immediately preceding (to the
+ left of) the quantifier, which is normally a single character unless 
+parentheses are used to create a pattern group. Below are some sample 
+patterns and inputs they would match.</p>
+<div class="tablediv"><table class="dtTABLE">
+
+<tbody><tr><th>Pattern</th><th>Inputs (Matches)</th></tr>
+
+<tr><td>fo*</td><td>foo, foe, food, fooot, "forget it", funny, puffy</td></tr>
+
+<tr><td>fo+</td><td>foo, foe, food, foot, "forget it"</td></tr>
+
+<tr><td>fo?</td><td>foo, foe, food, foot, "forget it", funny, puffy</td></tr>
+</tbody></table></div>
+
+<p>In addition to specifying that a given pattern may occur exactly 0 or 1 time, the <strong>?</strong>
+ character also forces a pattern or subpattern to match the minimal 
+number of characters when it might match several in an input string.</p>
+
+<p>In addition to the non-explicit quantifiers (generally just referred 
+to as quantifiers, but I'm distinguishing them from this next group), 
+there are also <em>explicit</em> quantifiers. Where quantifiers are 
+fairly vague in terms of how many occurrences there may be of a pattern,
+ explicit quantifiers allow an exact number, range, or set of numbers to
+ be specified. Explicit quantifiers are positioned following the pattern
+ they apply to, just like regular quantifiers. Explicit quantifiers use 
+curly braces {} and number values for upper and lower occurrence limits 
+within the braces. For example, <strong>x{5}</strong> would match 
+exactly five x characters (xxxxx). When only one number is specified, it
+ is used as the upper bound unless it is followed by a comma, such as <strong>x{5,}</strong>, which would match any number of x characters greater than 4. Below are some sample patterns and inputs they would match.</p>
+<div class="tablediv"><table class="dtTABLE">
+
+<tbody><tr><th>Pattern</th><th>Inputs (Matches)</th></tr>
+
+<tr><td>ab{2}c</td><td>abbc, aaabbccc</td></tr>
+
+<tr><td>ab{,2}c</td><td>ac, abc, abbc, aabbcc</td></tr>
+
+<tr><td>ab{2,3}c</td><td>abbc, abbbc, aabbcc, aabbbcc</td></tr>
+</tbody></table></div>
+
+<h2 class="dtH1"><a id="regexnet_topic6"></a>Metacharacters</h2>
+
+<p>The constructs within regular expressions that have special meaning 
+are referred to as metacharacters. You've already learned about several 
+metacharacters, such as the <strong>*</strong>, <strong>?</strong>, <strong>+</strong>, and <strong>{</strong> <strong>}</strong>
+ characters. Several other characters have special meaning within the 
+language of regular expressions. These include the following: <strong>$ ^ . [ ( | ) ] </strong>and <strong>\</strong>.</p>
+
+<p>The <strong>. </strong>(period or dot) metacharacter is one of the 
+simplest and most used. It matches any single character. This can be 
+useful for specifying that certain patterns can contain any combination 
+of characters, but must fall within certain length ranges by using 
+quantifiers. Also, we have seen that expressions will match any instance
+ of the pattern they describe within a larger string, but what if you 
+only want to match the pattern exactly? This is often the case for 
+validation scenarios, such as ensuring the user entered something that 
+is the proper format for a postal code or telephone number. The <strong>^</strong> metacharacter is used to designate the beginning of a string (or line), and the <strong>$</strong>
+ metacharacter is used to designate the end of a string (or line). By 
+adding these characters to the beginning and end of a pattern, you can 
+force it to only match input strings that exactly match the pattern. The
+ <strong>^</strong> metacharacter also has special meaning when used at the start of a character class, designated by hard braces <strong>[ ]</strong>. These are covered below.</p>
+
+<p>The <strong>\ </strong>(backslash) metacharacter is used to "escape" 
+characters from their special meaning, as well as to designate instances
+ of predefined set metacharacters. These too are covered below. In order
+ to include a literal version of a metacharacter in a regular 
+expression, it must be "escaped" with a backslash. So for instance if 
+you wanted to match strings that begin with "c:\" you might use this: <strong>^c:\\</strong>   Note that we used the <strong>^</strong>
+ metacharacter to indicate that the string must begin with this pattern,
+ and we escaped our literal backslash with a backslash metacharacter.</p>
+
+<p>The <strong>|</strong> (pipe) metacharacter is used for alternation, essentially to specify 'this OR that' within a pattern. So something like <strong>a|b</strong> would match anything with an 'a' or a 'b' in it, and would be very similar to the character class <strong>[ab]</strong>.</p>
+
+<p>Finally, the parentheses <strong>( ) </strong>are used to group 
+patterns. This can be done to allow a complete pattern to occur multiple
+ times using quantifiers, for readability only, or to allow certain 
+portions of the input to be matched separately, perhaps to allow for 
+reformatting or parsing.</p>
+
+<p>Some examples of metacharacter usage are listed below.</p>
+<div class="tablediv"><table class="dtTABLE">
+
+<tbody><tr><th>Pattern</th><th>Inputs (Matches)</th></tr>
+
+<tr><td>.</td><td>a, b, c, 1, 2, 3</td></tr>
+
+<tr><td>.*</td><td>Abc, 123, any string, even no characters would match</td></tr>
+
+<tr><td>^c:\\</td><td>c:\windows, c:\\\\\, c:\foo.txt, c:\ followed by anything else</td></tr>
+
+<tr><td>abc$</td><td>abc, 123abc, any string ending with abc </td></tr>
+
+<tr><td>(abc){2,3}</td><td>abcabc, abcabcabc </td></tr>
+</tbody></table></div>
+
+<h2 class="dtH1"><a id="regexnet_topic7"></a>Character Classes</h2>
+
+<p>Character classes are a mini-language within regular expressions, defined by the enclosing hard braces <strong>[ ]</strong>. The simplest character class is simply a list of characters within these braces, such as <strong>[aeiou]</strong>.
+ When used in an expression, any one of these characters can be used at 
+this position in the pattern (but only one unless quantifiers are used).
+ It's important to note that character classes cannot be used to define 
+words or patterns, only single characters.</p>
+
+<p>To specify any numeric digit, the character class <strong>[0123456789]</strong>
+ could be used. However, since this would quickly get cumbersome, ranges
+ of characters can be defined within the braces by using the hyphen 
+character, <strong>-</strong>. The hyphen character has special meaning 
+within character classes, not within regular expressions (thus it 
+doesn't qualify as a regular expression metacharacter, exactly), and it 
+only has special meaning within a character class if it is not the first
+ character. To specify any numeric digit using a hyphen, you would use <strong>[0-9]</strong>. Similarly for any lowercase letter, you could use <strong>[a-z]</strong>, or for any uppercase letter <strong>[A-Z]</strong>.
+ The range defined by the hyphen depends on the character set being 
+used, so the order in which the characters occur in the (for example) 
+ASCII or Unicode table determines which characters are included in the 
+range. If you need a hyphen to be included in your range, specify it as 
+the first character. For example, <strong>[-.? ]</strong> would match 
+any one of those four characters (note the last character is a space). 
+Also note, the regular expression metacharacters are not treated special
+ within character classes, so they do not need escaped. Consider 
+character classes to be a separate language from the rest of the regular
+ expression world, with their own rules and syntax. </p>
+
+<p>You can also match any character except a member of a character class by negating the class using the carat <strong>^</strong> as the first character in the character class. Thus, to match any non-vowel character, you could use a character class of <strong>[^aAeEiIoOuU]</strong>. Note that if you want to negate a hyphen, it should be the second character in the character class, as in <strong>[^-]</strong>. Remember that the <strong>^ </strong>has a totally different meaning within a character class than it has at the start of a regular expression pattern.</p>
+
+<p>Some examples of character classes in action are listed below.</p>
+<div class="tablediv"><table class="dtTABLE">
+
+<tbody><tr><th>Pattern</th><th>Inputs (Matches)</th></tr>
+
+<tr><td>^b[aeiou]t$</td><td>Bat, bet, bit, bot, but</td></tr>
+
+<tr><td>^[0-9]{5}$</td><td>11111, 12345, 99999</td></tr>
+
+<tr><td>^c:\\</td><td>c:\windows, c:\\\\\, c:\foo.txt, c:\ followed by anything else</td></tr>
+
+<tr><td>abc$</td><td>abc, 123abc, any string ending with abc </td></tr>
+
+<tr><td>(abc){2,3}</td><td>abcabc, abcabcabc </td></tr>
+
+<tr><td>^[^-][0-9]$</td><td>0, 1, 2, …  (will not match -0, -1, -2, etc.)</td></tr>
+</tbody></table></div>
+
+<p>In in the next version of the .NET Framework, code-named "Whidbey", a
+ new feature is slated to be added to character classes, called 
+character class subtraction. Basically this would allow one character 
+class to be subtracted from another, which would provide a more readable
+ way to describe some patterns. The specification is available now, at <a href="http://www.gotdotnet.com/team/clr/bcl/TechArticles/techarticles/Specs/Regex/CharacterClassSubtraction.doc">http://www.gotdotnet.com/team/clr/bcl/TechArticles/techarticles/Specs/Regex/CharacterClassSubtraction.doc</a>. The syntax would be something like <strong>[a-z-[aeiou]]</strong> to match all lowercase consonants.</p>
+
+<h2 class="dtH1"><a id="regexnet_topic8"></a>Predefined Set Metacharacters</h2>
+
+<p>There's a great deal that can be done with the tools we've covered so far. However, it is still rather longwinded to use <strong>[0-9]</strong> for every numeric digit in a pattern, or worse, <strong>[0-9a-zA-Z]</strong>
+ for any alphanumeric character. To ease the pain of dealing with these 
+common but lengthy patterns, a set of predefined metacharacters was 
+defined. Different implementations of regular expressions define 
+different sets of predefined metacharacters—the ones I describe here are
+ supported by the <strong>System.Text.RegularExpressions</strong> API in the .NET Framework. The standard syntax for these predefined metacharacters is a backslash <strong>\</strong>
+ followed by one or more characters. Most of these are just one 
+character long, making them easy to use and an ideal replacement for 
+lengthy character classes. Two such examples are <strong>\d</strong> which matches any numeric digit and <strong>\w</strong>
+ which matches any word character (alphanumeric plus underscore). The 
+exceptions are specific character code matches, which must specify the 
+address of the character they are matching, such as <strong>\u000D </strong>which
+ would match the Unicode carriage return character. Some of the most 
+common character classes and their metacharacter equivalents are listed 
+below.</p>
+<div class="tablediv"><table class="dtTABLE">
+
+<tbody><tr><th>Metacharacter</th><th>Equivalent Character Class</th></tr>
+
+<tr><td>\a</td><td>Matches a bell (alarm); \u0007</td></tr>
+
+<tr><td>\b</td><td>Matches a word boundary except <strong>in</strong> a character class, where it matches a backspace character, \u0008</td></tr>
+
+<tr><td>\t</td><td>Matches a tab; \u0009</td></tr>
+
+<tr><td>\r</td><td>Matches a carriage return; \u000D</td></tr>
+
+<tr><td>\w</td><td>Matches a vertical tab; \u000B</td></tr>
+
+<tr><td>\f</td><td>Matches a form feed; \u000C</td></tr>
+
+<tr><td>\n</td><td>Matches a new line; \u000A</td></tr>
+
+<tr><td>\e</td><td>Matches an escape; \u001B</td></tr>
+
+<tr><td>\040</td><td>Matches an ASCII character with a three-digit octal. \040 represents a space (Decimal 32).</td></tr>
+
+<tr><td>\x20</td><td>Matches an ASCII character using 2-digit hexadecimal. In this case, \x2- represents a space.</td></tr>
+
+<tr><td>\cC</td><td>Matches an ASCII control character, in this case ctrl-C.</td></tr>
+
+<tr><td>\u0020</td><td>Matches a Unicode character using exactly four hexadecimal digits. In this case \u0020 is a space.</td></tr>
+
+<tr><td>\*</td><td>Any character that does not represent a predefined character class is simply treated as that character. Thus <strong>\*</strong> is the same as <strong>\x2A </strong>(a literal *, not the * metacharacter).</td></tr>
+
+<tr><td>\p{name}</td><td>Matches any character in the named character 
+class 'name'. Supported names are Unicode groups and block ranges. For 
+example Ll, Nd, Z, IsGreek, IsBoxDrawing, and Sc (currency).</td></tr>
+
+<tr><td>\P{name}</td><td>Matches text not included in the named character class 'name'.</td></tr>
+
+<tr><td>\w</td><td>Matches any word character. For non-Unicode and ECMAScript implementations, this is the same as <strong>[a-zA-Z_0-9]</strong>. In Unicode categories, this is the same as <strong>[\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}]</strong>.</td></tr>
+
+<tr><td>\W</td><td>The negation of \w, this equals the ECMAScript compliant set <strong>[^a-zA-Z_0-9]</strong> or the Unicode character categories <strong>[^\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}]</strong>.</td></tr>
+
+<tr><td>\s</td><td>Matches any white-space character. Equivalent to the Unicode character classes <strong>[\f\n\r\t\v\x85\p{Z}]</strong>. If ECMAScript-compliant behavior is specified with the ECMAScript option, \s is equivalent to <strong>[ \f\n\r\t\v] </strong>(note leading space).</td></tr>
+
+<tr><td>\S</td><td>Matches any non-white-space character. Equivalent to the Unicode character categories <strong>[^\f\n\r\t\v\x85\p{Z}]</strong>. If ECMAScript-compliant behavior is specified with the ECMAScript option, \S is equivalent to <strong>[^ \f\n\r\t\v]</strong> (note space after ^).</td></tr>
+
+<tr><td>\d</td><td>Matches any decimal digit. Equivalent to <strong>[\p{Nd}]</strong> for Unicode and <strong>[0-9]</strong> for non-Unicode, ECMAScript behavior.</td></tr>
+
+<tr><td>\D</td><td>Matches any non-decimal digit. Equivalent to <strong>[\P{Nd}]</strong> for Unicode and <strong>[^0-9]</strong> for non-Unicode, ECMAScript behavior.</td></tr>
+</tbody></table></div>
+
+<h2 class="dtH1"><a id="regexnet_topic9"></a>Sample Expressions</h2>
+
+<p>Most people learn best by example, so here are a very few sample 
+expressions. For more samples, you should visit the online regular 
+expression library, at <a href="http://www.regexlib.com/">http://RegexLib.com</a>.</p>
+<div class="tablediv"><table class="dtTABLE">
+
+<tbody><tr><th>Pattern</th><th>Description</th></tr>
+
+<tr><td>^\d{5}$</td><td>5 numeric digits, such as a US ZIP code.</td></tr>
+
+<tr><td>^(\d{5})|(\d{5}-\d{4}$</td><td>5 numeric digits, or 5 digits-dash-4 digits. This matches a US ZIP or US ZIP+4 format.</td></tr>
+
+<tr><td>^(\d{5})(-\d{4})?$</td><td>Same as previous, but more efficient.
+ Uses ? to make the -4 digits portion of the pattern optional, rather 
+than requiring two separate patterns to be compared individually (via 
+alternation).</td></tr>
+
+<tr><td>^[+-]?\d+(\.\d+)?$</td><td>Matches any real number with optional sign.</td></tr>
+
+<tr><td>^[+-]?\d*\.?\d*$</td><td>Same as above, but also matches empty string.</td></tr>
+
+<tr><td>^(20|21|22|23|[01]\d)[0-5]\d$</td><td>Matches any 24-hour time value.</td></tr>
+
+<tr><td>/\*.*\*/</td><td>Matches the contents of a C-style comment /* … */</td></tr>
+</tbody></table></div>
+
+<h2 class="dtH1"><a id="regexnet_topic10"></a>Validation in ASP.NET</h2>
+
+<p>ASP.NET provides a suite of validation controls, which make 
+validating inputs on web forms extremely easy compared to the same task 
+using legacy (or <em>classic</em> if you prefer) ASP. One of the more powerful validators is the <strong>RegularExpressionValidator</strong>
+ which, as you might guess, allows you to validate inputs by providing a
+ regular expression which must match the input. The regular expression 
+pattern is specified by setting the <strong>ValidationExpression</strong> property of the control. An example validator for a ZIP code field is shown below:</p>
+
+<pre class="code">&lt;asp:RegularExpressionValidator runat="server" id="ZipCodeValidator" 
+ControlToValidate="ZipCodeTextBox" ErrorMessage="Invalid ZIP code 
+format; format should be either 12345 or 12345-6789."  
+ValidationExpression="(\d{5}(-\d{4})?" /&gt;
+</pre>
+
+<p>A few things to note about the <strong>RegularExpressionValidator</strong>:
+
+</p><ul>
+	<li>It will never be activated by an empty string in the control it is 
+validating. Only the RequiredFieldValidator catches empty strings</li>
+
+	<li>You do not need to specify beginning of string and end of string matching characters (<strong>^</strong> and <strong>$</strong>)—they are assumed. If you add them, it won't hurt (or change) anything—it's simply unnecessary.</li>
+
+	<li>As with all validation controls, the validation is done client-side
+ as well as server side. If your regular expression is not ECMAScript 
+compliant, it will fail on the client. To avoid this, either ensure your
+ expression is ECMAScript compliant, or set the control to perform its 
+validation only on the server.</li>
+</ul>
+
+<h2 class="dtH1"><a id="regexnet_topic11"></a>Regular Expression API</h2>
+
+<p>Outside of the ASP.NET validation controls, most of the time when 
+you're using regular expressions in .NET, you'll use the classes found 
+in the <strong>System.Text.RegularExpressions</strong> namespace. In particular, the main classes you'll want to become familiar with are <strong>Regex</strong>, <strong>Match</strong>, and <strong>MatchCollection</strong>.</p>
+
+<p>Incidentally, there is some dispute as to whether the shortened 
+version of regular expression, regex, should be pronounced /reg-eks/ or 
+/rej-eks/. Personally I prefer the latter, but there are experts in both
+ pronunciation camps, so pick whichever sounds better to you.</p>
+
+<p>The <strong>Regex</strong> class has a rich set of methods and 
+properties, which can be rather daunting if you haven't used it before. A
+ summary of the most frequently used methods is included here:</p>
+<div class="tablediv"><table class="dtTABLE">
+
+<tbody><tr><th>Method</th><th>Description</th></tr>
+
+<tr><td>Escape / Unescape</td><td>Escapes metacharacters in a string for use as literals in an expression.</td></tr>
+
+<tr><td>IsMatch</td><td>Returns true if the regex finds a match in the input string.</td></tr>
+
+<tr><td>Match</td><td>Returns a Match object if a match is found in the input string.</td></tr>
+
+<tr><td>Matches</td><td>Returns a MatchCollection object containing any and all matches found in the input string.</td></tr>
+
+<tr><td>Replace</td><td>Replaces matches in the input string with a given replacement string.</td></tr>
+
+<tr><td>Split</td><td>Returns an array of strings by splitting up the input string into array elements separated by regex matches.</td></tr>
+</tbody></table></div>
+
+<p>In addition to many methods, there are also a number of options that can be specified, usually in the constructor of the <strong>Regex</strong>
+ object. These options are part of a bitmask, and thus can be OR'd 
+together (yes, you can have both Multiline and Singleline turned on at 
+the same time).</p>
+<div class="tablediv"><table class="dtTABLE">
+
+<tbody><tr><th>Option</th><th>Description</th></tr>
+
+<tr><td>Compiled</td><td>Use this option when you will be doing many 
+match operations in a loop. This saves the step of parsing the 
+expression on each iteration.</td></tr>
+
+<tr><td>Multiline</td><td>Has nothing to do with how many lines are in the input string. Rather, this simply modifies the behavior of <strong>^</strong> and <strong>$</strong> so that they match BOL and EOL instead of the beginning and end of the entire input string.</td></tr>
+
+<tr><td>IgnoreCase</td><td>Causes the pattern to ignore case sensitivity when matching the search string.</td></tr>
+
+<tr><td>IgnorePatternWhitespace</td><td>Allows pattern to have as much 
+white space as desired, and also enables the use of in-pattern comments,
+ using the (?# comment #) syntax.</td></tr>
+
+<tr><td>SingleLine</td><td>Has nothing to do with how many lines are in the input string. Rather, will cause the <strong>.</strong> (period) metacharacter to match any character, instead of any character except \n, which is the default.</td></tr>
+</tbody></table></div>
+
+<p>Some common things you may use regular expressions for include 
+validating, matching, and replacing. In many cases, these can be 
+accomplished using static methods of the <strong>Regex</strong> class, without any need to instantiate the <strong>Regex</strong>
+ class itself. To perform validation, all you must do is create or find 
+the right expression and apply it to your input string using the 
+IsMatch() method of the <strong>Regex</strong> class. For example, the following function demonstrates how to use a regular expression to validate a ZIP code:</p>
+
+<pre class="code">private void ValidateZipButton_Click(object sender, System.EventArgs e)
+{
+   String ZipRegex = @"^\d{5}$";
+   if(Regex.IsMatch(ZipTextBox.Text, ZipRegex))
+   {
+      ResultLabel.Text = "ZIP is valid!";
+   }
+   else
+   {
+      ResultLabel.Text = "ZIP is invalid!";
+   }
+}
+</pre>
+
+<p>Similarly, the static <strong>Replace</strong>() method can be used to replace matches with a particular string, as this snippet demonstrates:</p>
+
+<pre class="code">String newText = Regex.Replace(inputString, pattern, replacementText);
+</pre>
+
+<p>Finally, you can iterate through a collection of matches in an input string using code like this:</p>
+
+<pre class="code">private void MatchButton_Click(object sender, System.EventArgs e)
+{
+   MatchCollection matches = Regex.Matches(SearchStringTextBox.Text, 
+MatchExpressionTextBox.Text);
+   MatchCountLabel.Text = matches.Count.ToString();
+   MatchesLabel.Text = "";
+   foreach(Match match in matches)
+   {
+      MatchesLabel.Text += "Found " + match.ToString() + " at 
+position " + match.Index + ".&lt;br&gt;";
+   }
+}
+</pre>
+
+<p>Where you'll typically need to instantiate an instance of the <strong>Regex</strong>
+ class is when you need to specify anything outside the default 
+behavior. In particular, setting options. For example, to create an 
+instance of Regex that ignores case and pattern white space, and then 
+retrieve the set of matches for that expression, you would use code like
+ the following:</p>
+
+<pre class="code">Regex re = new Regex(pattern, 
+&nbsp;&nbsp;&nbsp;RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
+MatchCollection mc = re.Matches(inputString);
+</pre>
+
+<p>Complete working versions of these samples are included in the download for this article, as simple ASP.NET pages.</p>
+
+<h2 class="dtH1"><a id="regexnet_topic12"></a>Free Tools</h2>
+
+<p>The Regulator (<a href="http://royo.is-a-geek.com/iserializable/regulator/">http://royo.is-a-geek.com/iserializable/regulator/</a>)
+ – A regular expression testing tool designed to run client-side, it 
+includes tight integration with RegexLib via web services and provides 
+support for Match, Split, Replace and more. Includes performance 
+analysis and syntax highlighting.</p>
+
+<p>RegexDesigner.NET (<a href="http://www.sellsbrothers.com/tools/">http://www.sellsbrothers.com/tools/#regexd</a>)
+ – A powerful visual tool for helping you construct and test regular 
+expressions. Will generate C# and/or VB.NET code and compiled 
+assembliles to help you integrate expressions into your applications.</p>
+
+<p>Regular Expression Workbench (v2.0) (<a href="http://www.gotdotnet.com/Community/UserSamples/Details.aspx?SampleGuid=C712F2DF-B026-4D58-8961-4EE2729D7322">http://www.gotdotnet.com/Community/UserSamples/Details.aspx?SampleGuid=C712F2DF-B026-4D58-8961-4EE2729D7322</a>)
+ – Eric Gunnerson's tool for creating, testing, and studying regular 
+expressions. Has "Examine-o-matic" feature, allowing you to hover the 
+mouse over a regex to decode its meaning.</p>
+
+<h2 class="dtH1"><a id="regexnet_topic13"></a>Advanced Topics</h2>
+
+<p>Two regular expression features that really make me have to think are
+ named groups and lookaround processing. Since you'll only need these on
+ rare occasions, I'll only briefly describe these topics here.</p>
+
+<p>With named groups, you can name individual matching groups and then 
+refer to these groups within the expression programmatically. This can 
+be especially powerful when combined with the Replace method as a way of
+ reformatting an input string by re-arranging the order and placement of
+ the elements within the input string. For example, suppose you were 
+given a date in string format of the form MM/DD/YYYY and you wanted it 
+in the form DD-MM-YYYY. You could use write an expression to capture the
+ first format, iterate through its Matches collection, parse each 
+string, and use string manipulation to build the replacement string. 
+This would require a fair amount of code and a fair amount of 
+processing. Using named groups, you could accomplish the same things 
+like so:</p>
+
+<pre class="code">String MDYToDMY(String input)
+{
+   return Regex.Replace(intput, @"\b(?&lt;month&gt;\d{1,2})/(?&lt;day&gt;\d{1,2}/(?&lt;year&gt;\d{4})\b", "${day}-
+${month}-${year}");
+}
+</pre>
+
+<p>You can also refer to groups by number as well as by name. In any event such references are collectively referred to as <em>backreferences</em>.
+ Another common use of backreferences is within matching expressions 
+themselves, such as this expression for finding repeated letters: <strong>[a-z]\1</strong>. This will match 'aa', 'bb', 'cc' and is not the same as <strong>[a-z]{2}</strong> or <strong>[a-z][a-z]</strong>
+ which are equivalent and would allow 'ab' or 'ac' or any other 
+two-letter combination. Backreferences allow an expression to remember 
+things about parts of the input string it has already parsed and 
+matched.</p>
+
+<p>"Lookaround processing" refers to positive and negative lookahead and
+ lookbehind capabilities supported by many regular expression engines. 
+Not all regular expression engines support all variations of lookaround 
+processing. These constructs do not consume characters even though they 
+may match them. Some patterns are impossible to describe without 
+lookaround processing, especially ones in which the existence of one 
+part of the pattern depends on the existence of a separate part. The 
+syntax for each flavor of lookaround is described below.</p>
+<div class="tablediv"><table class="dtTABLE">
+
+<tbody><tr><th>Syntax</th><th>Description</th></tr>
+
+<tr><td>(?=…)</td><td>Positive Lookahead</td></tr>
+
+<tr><td>(?!...)</td><td>Negative Lookahead</td></tr>
+
+<tr><td>(?&lt;=…)</td><td>Positive Lookbehind</td></tr>
+
+<tr><td>(?&lt;!...)</td><td>Negative Lookbehind</td></tr>
+</tbody></table></div>
+
+<p>One example of where lookaround processing is necessary is password 
+validation. Consider a password restriction where the password must be 
+between 4 and 8 characters long, and must contain at least one digit. 
+You could do this by just testing <strong>\d</strong> for a match and 
+using string operations to test the length, but to do the whole thing in
+ a regular expression requires lookahead. Specifically positive 
+lookahead, as this expression demonstrates: <strong>^(?=.*\d).{4,8}$</strong> </p>
+
+<h2 class="dtH1"><a id="regexnet_topic14"></a>Conclusion</h2>
+
+<p>Regular expressions provide a very powerful way to describe patterns 
+in text, making them an excellent resource for string validation and 
+manipulation. The .NET Framework provides first-rate support for regular
+ expressions in its <strong>System.Text.RegularExpressions</strong> namespace and specifically the <strong>Regex</strong>
+ class found there. Using the API is simple; coming up with the right 
+regular expression is often the tough part. Luckily, regular expressions
+ are highly reusable, and there are many resources online where you can 
+find expressions designed by others or get help with ones you are 
+struggling to create.</p>
+
+<h2 class="dtH1"><a id="regexnet_topic15"></a>Resources</h2>
+
+<p><strong>Regular Expression Library </strong><a href="http://www.regexlib.com/">http://regexlib.com/</a></p>
+
+<p>Regular Expression Discussion List <a href="http://aspadvice.com/login.aspx?ReturnUrl=/SignUp/list.aspx?l=68&amp;c=16&amp;l=68&amp;c=16">http://aspadvice.com/login.aspx?ReturnUrl=%2fSignUp%2flist.aspx%3fl%3d68%26c%3d16&amp;l=68&amp;c=16</a></p>
+
+<p>Regular Expression Forums <a href="http://forums.regexadvice.com/">http://forums.regexadvice.com/</a></p>
+
+<p>Regular Expression Web Logs <a href="http://blogs.regexadvice.com/">http://blogs.regexadvice.com/</a></p>
+
+<p>Mastering Regular Expressions (O'Reilly), by Jeffrey Friedl <a href="http://www.regex.info/">http://regex.info/</a></p>
+
+<p>.NET Regular Expression Reference <a href="http://msdn.microsoft.com/library/en-us/cpref/html/frlrfSystemTextRegularExpressions.asp">http://msdn.microsoft.com/library/en-us/cpref/html/frlrfSystemTextRegularExpressions.asp</a> </p>
+
+<p>Jscript Regular Expression Syntax <a href="http://msdn.microsoft.com/en-us/library/1400241x.aspx">http://msdn.microsoft.com/library/en-us/script56/html/js56jsgrpregexpsyntax.asp</a></p>
+
+<p>Regular Expression Info <a href="http://www.regular-expressions.info/">http://www.regular-expressions.info</a></p>
+
+<h2 class="dtH1"><a id="regexnet_topic16"></a>About the Author</h2>
+
+<p>Steven A. Smith, Microsoft ASP.NET MVP, is president and owner of 
+ASPAlliance.com and DevAdvice.com. He is also the owner and head 
+instructor for ASPSmith Ltd, a .NET-focused training company. He has 
+authored two books, the ASP.NET Developer's Cookbook and ASP.NET By 
+Example, as well as articles in MSDN and AspNetPRO magazines. Steve 
+speaks at several conferences each year and is a member of the INETA 
+speaker's bureau. Steve has a Master's degree in Business Administration
+ and a Bachelor of Science degree in&nbsp;Computer Science Engineering.</p>
+
+<p>Steve can be reached at <a href="mailto:ssmith@aspalliance.com">ssmith@aspalliance.com</a>.</p>
+
+<div class="footer">
+<br>
+
+<p></p>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms369863.aspx">© Microsoft Corporation. All rights reserved.</a></p></div> 
+</div> 
+
+</div>
+
+
+
+
+
+<div id="contentFeedback">
+    <form method="post" action="/en-us/library/feedback/add/ms972966.aspx">
+        <input name="__RequestVerificationToken" value="tubPIsOdNCkA_zrxbuIsdJsoe21ZyYwo68NTHae8hAYB819pAr_v529dYSmiGhALslHBOz7bF00RjERMaPIE1h44XInASy2acTOZL7wutSm2I0xVKfBBwyScLaNdzNb4xUCAHw2" type="hidden">
+    <div id="contentFeedbackContainer">
+        <div class="FeedbackTitleContainer">
+            <a name="feedback"></a>
+        Did you find this helpful?
+            <input id="rdIsUsefulYes" name="rdIsUseful" value="1" onclick="toggleContentFeedback('Yes');" type="radio"><label for="rdIsUsefulYes">Yes</label>
+            <input id="rdIsUsefulNo" name="rdIsUseful" value="0" onclick="toggleContentFeedback('No');" type="radio"><label for="rdIsUsefulNo">No</label>
+        
+        </div>
+        
+            <div id="contentFeedbackQAContainer">
+                
+                    <div id="feedbackListNoContainer" class="FeedbackListContainer">
+                        
+                            <div>
+                                <input id="chkbxNo201" name="chkbxNo" value="201" type="checkbox">
+                                <label for="chkbxNo201">Not accurate</label>
+                            </div>
+                        
+                            <div>
+                                <input id="chkbxNo202" name="chkbxNo" value="202" type="checkbox">
+                                <label for="chkbxNo202">Not enough depth</label>
+                            </div>
+                        
+                            <div>
+                                <input id="chkbxNo203" name="chkbxNo" value="203" type="checkbox">
+                                <label for="chkbxNo203">Need more code examples</label>
+                            </div>
+                        
+                    </div>
+                
+                <div class="FeedbackTellUsMoreContainer">
+                    <input id="feedbackDescription" name="feedbackDescription" value="" type="hidden">
+                    <input id="feedbackPriority" name="feedbackPriority" value="" type="hidden">
+                    <input id="feedbackSourceUrl" name="feedbackSourceUrl" value="" type="hidden">
+                    <input id="ClientIP" name="ClientIP" value="" type="hidden">
+                    <input id="ClientOS" name="ClientOS" value="" type="hidden">
+                    <input id="ClientBrowser" name="ClientBrowser" value="" type="hidden">
+                    <input id="ClientTime" name="ClientTime" value="" type="hidden">
+                    <input id="ClientTimeZone" name="ClientTimeZone" value="" type="hidden">
+                    <textarea id="feedbackText" name="feedbackText" class="TellUsMoreTextBoxSearchLoaded" onfocus="WatermarkFocus(this, 'Tell us more...', 'TellUsMoreTextBoxSearch')" onblur="WatermarkBlur(this, 'Tell us more...', 'TellUsMoreTextBoxSearchLoaded')" onmouseover="TextBoxCharactersCounter(this, document.getElementById('feedbackTextCounter'), 1500)" onkeydown="TextBoxCharactersCounter(this, document.getElementById('feedbackTextCounter'), 1500)" onkeyup="TextBoxCharactersCounter(this, document.getElementById('feedbackTextCounter'), 1500)">Tell us more...</textarea>
+                </div>
+                <span class="counter">(<span id="feedbackTextCounter">1500</span> characters remaining)</span>
+                <input id="returnUrl" name="returnUrl" value="http://msdn.microsoft.com/en-us/library/ms972966.aspx" type="hidden">
+                <input id="submit" value="Submit" title="Click to Submit Feedback" onclick="WatermarkOnSubmit(document.getElementById('feedbackText'), 'Tell us more...', 'TellUsMoreTextBoxSearch')" type="submit">
+                <div style="clear: both;"></div>
+            </div>  
+        
+    </div>
+    </form>
+</div>
+    
+
+
+
+
+<div class="libraryMemberFilter">
+    <div class="filterContainer">
+        <span>Show:</span>
+        <label>
+            <input class="libraryFilterInherited" checked="checked" value="Inherit" type="checkbox">Inherited
+        </label>
+        <label>
+            <input class="libraryFilterProtected" checked="checked" value="Protected" type="checkbox">Protected
+        </label>
+    </div>
+</div>
+    
+<input id="libraryMemberFilterEmptyWarning" value="There are no members available with your current filter settings." type="hidden">
+
+
+ 
+</div>
+
+
+
+            </div>
+            <div class="clear"></div>
+        
+            
+    
+<input name="__RequestVerificationToken" value="HnQAIOHyqr8WrvtwEERDYZlBzYXqZbxGLMBCYIWVLwPeAdpG_uUJkMeQjcpguitKXx1QOsifu9C5PaeS1eRP09qUJXRHxa6rUJDnjKrZAJf61jxz1yO03qRZqWrK3l-QeNDFyQ2" type="hidden">
+<input id="ratingSubmitUrl" value="http://msdn.microsoft.com/en-us/library/feedback/add/ms972966.aspx" type="hidden">
+<input id="isTopicRated" value="false" type="hidden">
+
+
+
+
+    <div id="ux-footer" class="" style="">
+    <footer class="top">
+        <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Dev centers</div>
+    <div class="Links">
+      <ul class="LinkColumn" style="width: 100%">
+        <li>
+          <a href="http://msdn.microsoft.com/windows" id="27861_1" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+        </li>
+        <li>
+          <a href="http://dev.windowsphone.com/" id="27861_2" class="windowsPurple" xmlns="http://www.w3.org/1999/xhtml">Windows Phone</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/office" id="27861_3" class="office" xmlns="http://www.w3.org/1999/xhtml">Office</a>
+        </li>
+        <li>
+          <a href="http://www.windowsazure.com/en-us/documentation/" id="27861_4" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows Azure</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/vstudio" id="27861_5" class="visualStudio" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/aa937802" id="27861_6" xmlns="http://www.w3.org/1999/xhtml">More...</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>    
+        <div id="rightLinks">
+            <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Learning resources</div>
+    <div class="LinkListDescription"></div>
+    <div class="Links">
+      <ul class="LinkColumn" style="width: 100%">
+        <li>
+          <a href="http://www.microsoftvirtualacademy.com/" id="27861_14" xmlns="http://www.w3.org/1999/xhtml">Microsoft Virtual Academy</a>
+        </li>
+        <li>
+          <a href="http://channel9.msdn.com/" id="27861_16" xmlns="http://www.w3.org/1999/xhtml">Channel 9</a>
+        </li>
+        <li>
+          <a href="http://www.interoperabilitybridges.com/" id="27861_17" xmlns="http://www.w3.org/1999/xhtml">Interoperability Bridges</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/magazine/" id="CenterLinks1_427_33" xmlns="http://www.w3.org/1999/xhtml">MSDN Magazine</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+            <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Community</div>
+    <div class="LinkListDescription"></div>
+    <div class="Links">
+      <ul class="LinkColumn" style="width: 100%">
+        <li>
+          <a href="http://social.msdn.microsoft.com/forums/en-us/home" id="27861_19" xmlns="http://www.w3.org/1999/xhtml">Forums</a>
+        </li>
+        <li>
+          <a href="http://blogs.msdn.com/b/developer-tools/" id="27861_20" xmlns="http://www.w3.org/1999/xhtml">Blogs</a>
+        </li>
+        <li>
+          <a href="http://www.codeplex.com/" id="27861_22" xmlns="http://www.w3.org/1999/xhtml">Codeplex</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+            <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Support</div>
+    <div class="LinkListDescription"></div>
+    <div class="Links">
+      <ul class="LinkColumn" style="width: 100%">
+        <li>
+          <a href="http://msdn.microsoft.com/hh361695" id="CenterLinks3_427_34" xmlns="http://www.w3.org/1999/xhtml">Self support</a>
+        </li>
+        <li>
+          <a href="http://support.microsoft.com/" id="27861_24" xmlns="http://www.w3.org/1999/xhtml">Other support options</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+            <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListTitle">Programs</div>
+    <div class="LinkListDescription"></div>
+    <div class="Links">
+      <ul class="LinkColumn" style="width: 100%">
+        <li>
+          <a href="http://www.microsoft.com/bizspark/" id="27861_27" xmlns="http://www.w3.org/1999/xhtml">BizSpark (for startups)</a>
+        </li>
+        <li>
+          <a href="https://www.dreamspark.com/" id="27861_28" xmlns="http://www.w3.org/1999/xhtml">DreamSpark</a>
+        </li>
+        <li>
+          <a href="https://www.microsoft.com/faculty" id="27861_29" xmlns="http://www.w3.org/1999/xhtml">Faculty Connection</a>
+        </li>
+        <li>
+          <a href="http://www.microsoft.com/student/" id="CenterLinks4_427_32" xmlns="http://www.w3.org/1999/xhtml">Microsoft Student</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+        </div>
+    </footer>
+    
+    <footer class="bottom">
+        <span class="localeContainer">
+            
+    <form class="selectLocale" id="selectLocaleForm" action="http://msdn.microsoft.com/en-us/SelectLocale">
+        <input name="fromPage" value="http%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fms972966.aspx" type="hidden">
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">United States (English)</a>
+    </form>    
+
+
+        </span>
+        
+        <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="LinkList">
+    <div class="LinkListDescription"></div>
+    <div class="Links">
+      <ul class="LinkColumn horizontal">
+        <li>
+          <a href="http://msdn.microsoft.com/newsletter.aspx" id="27861_8" xmlns="http://www.w3.org/1999/xhtml">Newsletter</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/dn529288" id="27861_10" xmlns="http://www.w3.org/1999/xhtml">Privacy &amp; cookies</a>
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/cc300389.aspx" id="27861_11" xmlns="http://www.w3.org/1999/xhtml">Terms of Use</a>
+        </li>
+        <li>
+          <a href="http://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" id="27861_12" xmlns="http://www.w3.org/1999/xhtml">Trademarks</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>    
+        <span class="logoLegal">
+            <span class="logo"></span>
+            <span class="copyright">© 2013 Microsoft</span>
+        </span>
+    </footer>
+</div>
+    
+
+
+            <div class="footerPrintView">
+                <div class="footerCopyrightPrintView">© 2013 Microsoft. All rights reserved.</div>
+            </div>
+
+            
+            
+    
+    
+    <input id="tocPaddingPerLevel" value="17" type="hidden">
+
+
+        
+            <input id="MtpsDevice" value="Default" type="hidden">
+
+
+<!--[CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]-->
+        
+            
+            
+            
+            
+            
+        
+
+
+
+
+
+<noscript><div><img alt="DCSIMG" id="Img1" width="1" height="1" src="http://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" /></div></noscript>
+
+
+
+
+
+
+
+
+
+<noscript>
+  <a href="http://www.omniture.com" title="Web Analytics">
+    <img src="//msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" />
+  </a>
+</noscript>
+
+
+
+
+<div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" value="69_HWENN4MFgy4AKm6JMqX2Ecd1WuWG1JYqHZ-UJMd4KB5zECejUVp6GtgEoJ_CgcYUq14NmiwEV9g5sSp4J3ag9iaFFvIm3erphyLUiyXT3WXN-gkgPsn4HwWODgQ_vAKF6OQ2" type="hidden">
+</div>
+
+
+        </div>
+    <script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"http://i.msdn.microsoft.com\", \r\n\t\"js\": \"http://i2.msdn.microsoft.com\", \r\n\t\"css\": \"http://i3.msdn.microsoft.com\"\r\n});\r\n/**/" },
+	{ url: "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js" },
+	{ txt: "//\n  var literalNormalizedUrl = \u0027/en-us/library/ms972966(d=default,l=en-us,v=msdn.10).aspx\u0027;\n  var wt_nvr_ru = \u0027WT_NVR_RU\u0027;\n  var wt_fpcdom = \u0027.microsoft.com\u0027;\n  var wt_domlist = \u0027msdn.microsoft.com\u0027;\n  var wt_pathlist = \u0027\u0027;\n  var wt_paramlist = \u0027DCSext.mtps_devcenter\u0027;\n  var wt_siteid = \u0027MSDN\u0027;\n  var gDomain = \u0027m.webtrends.com\u0027;\n  var gDcsId = \u0027dcsmgru7m99k7mqmgrhudo0k8_8c6m\u0027;\n  var gFpc = \u0027WT_FPC\u0027;\n\n\n\n  if (document.cookie.indexOf(gFpc + \"=\") == -1) {\n    var wtidJs = document.createElement(\"script\");\n    wtidJs.src = \"//\" + gDomain + \"/\" + gDcsId + \"/wtid.js\";\n    document.getElementsByTagName(\"head\")[0].appendChild(wtidJs);\n  }\n\n\n\n  var detectedLocale = \u0027en-us\u0027;\n  var wtsp = \u0027msdnlib_dotnet\u0027;\n  var gTrackEvents = \u00270\u0027;\n/**/" },
+	{ txt: "/**/\n  var omni_guid = \"1a472adf-cd08-4224-af5d-78963ddbc538\";\n/**/" },
+	{ url: "http://i2.msdn.microsoft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,2:Footer,0:Topic,3:webtrendsscript,4:omni_rsid_MSDN,5:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Centers/Themes/Base/Content:1,/Areas/Centers/Themes/Msdn/Content:2,/Areas/Global/Content/Webtrends/resources:3,/Areas/Global/Content/Omniture/resources/MSDN:4,/Areas/Epx/Themes/Base/Content:5\u0026amp;hashKey=A3523FF0EEC07487F80DC29A6EEE87B1" },
+	{ url: "http://i3.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026brand=MSDN\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "http://i2.msdn.microsoft.com/Combined.js?resources=0:PrintExportButton,1:Toc,1:NavigationResize,2:FeedbackCounter,2:Feedback,1:LibraryMemberFilter,1:Toc_Fixed,3:CodeSnippet,3:TopicNotInScope,3:CollapsibleArea,3:VersionSelector,3:SurveyBroker;/Areas/Epx/Themes/Base/Content:0,/Areas/Epx/Library/Content:1,/Areas/Epx/Shared/Content:2,/Areas/Epx/Content/Scripts:3\u0026amp;hashKey=286382F690AFDDBABE9889E6ABCAB4CF" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+</script>
+</body></html>

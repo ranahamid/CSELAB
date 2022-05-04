@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1408482418 source:c:\users\rana-hamid\desktop\exam_day\fighter_bomber\fighter_bomber\fighter_bomber.cpp
+	<iostream>
+	<cstdlib>
+	<graphics.h>
+	<stdio.h>
+	<math.h>
+
+1266076214 c:\program files\codeblocks-ep\sdk\winbgim\include\graphics.h
+	<windows.h>
+	<limits.h>
+	<sstream>
+

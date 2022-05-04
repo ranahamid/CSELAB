@@ -1,0 +1,20 @@
+%last element
+
+domains
+	list=symbol*
+predicates
+	%element(list)
+	last(list,list)
+	goal
+		last([a,b,c,d],X).
+clauses
+	
+			
+	last([A],L):-
+		L=A.
+	last([_|T],L):-
+		last(T,L).
+		
+		
+	
+	

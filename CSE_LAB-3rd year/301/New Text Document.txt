@@ -1,0 +1,38 @@
+1b. List the name and region of countries in the regions containing ‘India’, ‘Iran’.
+SELECT name,region FROM bbc WHERE region in 
+
+(SELECT region FROM bbc WHERE name IN (’India’,'Iran’))
+
+1c. Show the countries in Europe with a per capita GDP greater than ‘United Kingdom’. (Denmark Iceland Ireland Luxembourg Norway Sweden Switzerland)
+
+SELECT name FROM bbc WHERE region=’Europe’ AND gdp/population>(SELECT gdp/population FROM bbc WHERE name=’United Kingdom’)
+
+1d. Which country has a population that is more than Canada but less than Algeria? (Kenya)
+
+SELECT name FROM bbc WHERE population>(SELECT population FROM bbc WHERE name=’Canada’) AND population<(SELECT population from bbc WHERE name='Algeria')
+
+2a. Which countries have a GDP greater than any country in Europe? [Give the name only.]
+SELECT name FROM bbc WHERE gdp > ALL (SELECT gdp FROM bbc WHERE region=’Europe’)
+may be SELECT name FROM bbc WHERE gdp > ANY (SELECT gdp FROM bbc WHERE region=’Europe’)
+SUM and COUNT
+
+1b. List all the regions - just once each.
+SELECT DISTINCT region FROM bbc
+
+1c. Give the total GDP of Africa (410196200000)
+SELECT sum(gdp) from bbc WHERE region=’Africa’
+
+1d. How many countries have an area of at least 1000000 (29)
+SELECT COUNT(name) FROM bbc WHERE area>=1000000
+
+1e. What is the total population of (’France’,'Germany’,'Spain’) (187300000)
+SELECT SUM(population) FROM bbc WHERE name IN(’France’,'Germany’,'Spain’)
+
+2a. For each region show the region and number of countries.
+SELECT region, COUNT(name) FROM bbc GROUP BY region
+
+2b. For each region show the region and number of countries with populations of at least 10 million.
+SELECT region, COUNT(name) FROM bbc WHERE population>=10000000 GROUP BY region
+
+2c. List the regions with total populations of at least 100 million.
+SELECT region FROM bbc GROUP BY region HAVING SUM(population)>=100000000

@@ -1,0 +1,110 @@
+Binary to Decimal
+
+
+void Bin2Dec()
+{
+int bin,n,r,s=0,i;
+printf("Enter a binary number\n");
+scanf("%d",&bin);
+n=bin;
+for(i=0;n!=0;i++)
+{
+r=n%10;
+s=s+r*(int)pow(2,i);
+n=n/10;
+}
+printf("The equivalent number of %d is %d\n",bin,s);
+}
+
+Octal to Decimal
+
+
+void Oct2Dec()
+{
+int oct,n,r,s=0,i;
+printf("Enter an octal number\n");
+scanf("%d",&oct);
+n=oct;
+for(i=0;n!=0;i++)
+{
+r=n%10;
+s=s+r*(int)pow(8,i);
+n=n/10;
+}
+printf("The equivalent number of %d is %d\n",oct,s);
+}
+
+Hex to Decimal
+
+
+void Hex2Dec()
+{
+char hex[N];
+int i,j,n[N],l;
+long double dec=0;
+printf("Enter the hexa decimal number and find it's decimal equivalent\n");
+fflush(stdin);
+gets(hex);
+l=strlen(hex);
+for(i=0;i=0;j--)
+{
+printf("%d",bin[j]);
+}
+printf("\n");
+}
+
+
+Decimal to Octal
+
+
+void Dec2Oct()
+{
+int n,r[10],i;
+printf("Enter a number to find it's octal equivalent\n");
+scanf("%d",&n);
+printf("The octal equivalent of %d is ",n);
+
+for(i=0;n!=0;i++)
+{
+r[i]=n%8;
+n=n/8;
+}
+i--;
+for(;i>=0;i--)
+printf("%d",r[i]);
+printf("\n");
+}
+
+Decimal to Hex
+
+
+void Dec2Hex()
+{
+int n,r[10],i;
+printf("Enter a number to get its hexadecimal equivalent\n");
+scanf("%d",&n);
+for(i=0;n!=0;i++)
+{
+r[i]=n%16;
+n=n/16;
+}
+i--;
+for(;i>=0;i--)
+{
+if(r[i]==10)
+printf("A");
+else if(r[i]==11)
+printf("B");
+else if(r[i]==12)
+printf("C");
+else if(r[i]==13)
+printf("D");
+else if(r[i]==14)
+printf("E");
+else if(r[i]==15)
+printf("F");
+else
+printf("%d",r[i]);
+}
+printf("\n");
+}

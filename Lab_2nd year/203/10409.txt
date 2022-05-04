@@ -1,0 +1,73 @@
+	//http://uva.onlinejudge.org/external/104/10409.html
+02	 
+03	#include <iostream>
+04	using namespace std;
+05	 
+06	int main ()
+07	{
+08	    int n;
+09	 
+10	    while ( cin >> n && n ) {
+11	 
+12	        int top = 1;
+13	        int down = 6;
+14	        int east = 4;
+15	        int west = 3;
+16	        int north = 2;
+17	        int south = 5;
+18	        int temp = 0;
+19	 
+20	        while ( n-- ) {
+21	            string str;
+22	            cin >> str;
+23	 
+24	            int x;
+25	            if ( str == "north" )
+26	                x = 0;
+27	            else if ( str == "south" )
+28	                x = 1;
+29	            else if ( str == "west" )
+30	                x = 2;
+31	            else
+32	                x = 3;
+33	 
+34	            switch (x) {
+35	                case 0 :
+36	                temp = north;
+37	                north = top;
+38	                top = south;
+39	                south = down;
+40	                down = temp;
+41	                break;
+42	 
+43	                case 1 :
+44	                temp = top;
+45	                top = north;
+46	                north = down;
+47	                down = south;
+48	                south = temp;
+49	                break;
+50	 
+51	                case 2 :
+52	                temp = top;
+53	                top = east;
+54	                east = down;
+55	                down = west;
+56	                west = temp;
+57	                break;
+58	 
+59	                case 3 :
+60	                temp = top;
+61	                top = west;
+62	                west = down;
+63	                down = east;
+64	                east = temp;
+65	                break;
+66	            }
+67	        }
+68	 
+69	        printf ("%d\n", top);
+70	    }
+71	 
+72	    return 0;
+73	}

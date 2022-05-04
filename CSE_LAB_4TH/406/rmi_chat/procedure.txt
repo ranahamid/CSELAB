@@ -1,0 +1,17 @@
+
+
+
+javac Chat.java
+javac ChatClient.java
+javac ChatInterface.java
+javac ChatServer.java
+
+rmic Chat
+
+rmid -J-Djava.security.policy=rmid.policy
+
+start rmiregistry
+start java -Djava.security.policy=rmid.policy ChatServer
+java -Djava.security.policy=rmid.policy  ChatClient
+
+

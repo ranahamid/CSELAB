@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html class="wf-futurapt-n4-inactive wf-futurapt-i4-inactive wf-futurapt-n5-inactive wf-futurapt-i5-inactive wf-futurapt-n7-inactive wf-futurapt-i7-inactive wf-automate-n7-inactive wf-minionprosubhead-n4-inactive wf-museoslab-n7-inactive wf-nimbussanscondensed-n7-inactive wf-inactive" itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="imnoise_files/auth016.js" type="text/javascript"></script><link media="all" href="imnoise_files/widget118.css" type="text/css" rel="stylesheet">
+<meta charset="utf-8">
+<title>Add noise to image - MATLAB imnoise</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="imnoise_files/reset.css" rel="stylesheet" type="text/css">
+<link href="imnoise_files/960.css" rel="stylesheet" type="text/css">
+<link href="imnoise_files/site5.css" rel="stylesheet" type="text/css">
+<!--[if IE 6]>
+<link href="/includes_content/nextgen/css/site5_ie6.css?20131015" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if IE 7]>
+<link href="/includes_content/nextgen/css/site5_ie7.css?20131015" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if IE 8]>
+<link href="/includes_content/nextgen/css/site5_ie8.css?20131015" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if IE 9]>
+<link href="/includes_content/nextgen/css/site5_ie9.css?20131015" rel="stylesheet" type="text/css">
+<![endif]-->
+<link rel="stylesheet" href="imnoise_files/doc_center.css">
+<!--[if IE 6]>
+<link href="/includes_content/nextgen/css/doc_center/doc_center_ie6.css?20130417" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if IE 7]>
+<link href="/includes_content/nextgen/css/doc_center/doc_center_ie7.css?20130417" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if IE 8]>
+<link href="/includes_content/nextgen/css/doc_center/doc_center_ie8.css?20130417" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if IE 9]>
+<link href="/includes_content/nextgen/css/doc_center/doc_center_ie9.css?20130417" rel="stylesheet" type="text/css">
+<![endif]-->
+<script type="text/javascript" src="imnoise_files/jquery-latest.js"></script>
+<script type="text/javascript" src="imnoise_files/jquery.js"></script>
+<script type="text/javascript" src="imnoise_files/localnav.js"></script>
+<script type="text/javascript" src="imnoise_files/global.js"></script>
+<script type="text/javascript" language="JavaScript1.3">var domain = "com";</script>
+<script type="text/javascript" src="imnoise_files/xvy5baa.js"></script>
+<style type="text/css">.tk-futura-pt{font-family:"futura-pt","Arial","Helvetica",sans-serif;}.tk-automate{font-family:"automate",sans-serif;}.tk-minion-pro-subhead{font-family:"minion-pro-subhead",serif;}.tk-museo-slab{font-family:"museo-slab",serif;}.tk-nimbus-sans-condensed{font-family:"nimbus-sans-condensed",sans-serif;}</style><link href="imnoise_files/xvy5baa-d.css" rel="stylesheet"><script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<link rel="stylesheet" href="imnoise_files/docstyle.css" type="text/css"><meta name="chunktype" content="refpage"><meta name="refentity" itemprop="refentity" content="function:imnoise">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="toctype" itemprop="pagetype" content="fcn">
+<meta name="infotype" itemprop="infotype" content="ref/function">
+<meta name="description" itemprop="description" content="This MATLAB function adds noise of a given type to the intensity image I.">
+<script type="text/javascript" src="imnoise_files/l10n.js"></script>
+<script type="text/javascript" src="imnoise_files/docscripts.js"></script>
+<script type="text/javascript" src="imnoise_files/mw.js"></script>
+<script type="text/javascript" src="imnoise_files/mw_003.js"></script>
+<script type="text/javascript" src="imnoise_files/mw_004.js"></script>
+<script type="text/javascript" src="imnoise_files/mw_002.js"></script>
+<script type="text/javascript" src="imnoise_files/jquery_002.js"></script>
+<script type="text/javascript" src="imnoise_files/nanoscroller.js"></script>
+<script type="text/javascript" src="imnoise_files/doc_omniture.js"></script>
+<script type="text/javascript" src="imnoise_files/respond.js"></script>
+<!-- Additions/overrides from the doc side -->
+<script type="text/javascript" src="imnoise_files/docsearch.js"></script>
+<script type="text/javascript" src="imnoise_files/jquery_003.js"></script>
+<!-- CUSTOM CSS -->
+<style>
+.fat_footer { padding:0px; }
+.fat_footer a:link, .fat_footer a:visited { color:#005fce; }
+.fat_footer .callout_container { margin-left:5px; font-size:1.0em; border:none; }
+.fat_footer .callout_container.rounded { border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px; }
+.fat_footer .callout_container.gradient { background:transparent none; }
+.fat_footer .callout_content { min-height:45px; padding-top:10px; }
+</style>
+</head>
+      <body id="nextgen_b-dc" class="adjusted_template">
+      <div class="container_192">
+        <div class="grid_192">
+          <div class="page_container">
+            <div class="grid_192"><div class="header_container">
+<div class="headernav">
+<ul>
+<li class="headernav_country rollover_delay inactive_state"><a href="http://www.mathworks.com/company/worldwide/?s_tid=gn_loc">United States</a>
+<div class="countrynav_container gradient shadow">
+<ul>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.com/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">United States</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.com/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Canada</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.com.au/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Australia</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.de/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Österreich</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.nl/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Belgium</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.cn/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">中国</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.se/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Denmark</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.se/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Finland</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.fr/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">France</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.de/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Deutschland</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.in/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">India</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.co.uk/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Ireland</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.it/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Italia</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.co.jp/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">日本</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.co.kr/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">한국</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.nl/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Luxembourg</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.nl/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Netherlands</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.com.au/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">New Zealand</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.se/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Norway</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.com/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Portugal</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.es/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">España</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.se/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Sweden</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.ch/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">Schweiz / Suisse</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.co.uk/help/images/ref/imnoise.html?action=changeCountry&amp;s_tid=gn_loc_drop">United Kingdom</a></li>
+<!-- Code to Remove Tracking from Previous page and add new tracking -->
+<li><a href="http://www.mathworks.com/company/worldwide/?s_tid=gn_loc_drop?action=changeCountry&amp;s_tid=gn_loc_drop">All Other Countries</a></li>
+</ul>
+</div>
+</li>
+<li class="headernav_contact"><a href="http://www.mathworks.com/company/aboutus/contact_us/?s_tid=gn_cntus">Contact Us</a></li>
+<li class="headernav_store"><a href="http://www.mathworks.com/store/default.do?s_tid=gn_store">Store</a></li>
+<li class="headernav_search"><form name="search" id="site_search" class="site_search" action="/searchresults/" method="get">
+<input name="c[]" value="entiresite" type="hidden">
+<input name="q" id="query" class="textfield" type="text">
+<input id="searchbutton" value="Search" class="submit_go" type="submit">
+</form></li>
+</ul>
+</div>
+<div class="mwa-nav">
+<ul>
+<li class="mwa-nav_account"><a id="mwa-create_account" href="https://www.mathworks.com/accesslogin/createProfile.do?uri=http://www.mathworks.com/help/images/ref/imnoise.html">Create Account</a></li>
+<li class="mwa-nav_logout"><a id="mwa-log_in" href="https://www.mathworks.com/accesslogin/login.do?uri=http://www.mathworks.com/help/images/ref/imnoise.html">Log In</a></li>
+</ul>
+</div>
+<div class="logo_container">
+<a href="http://www.mathworks.com/index.html?s_tid=gn_logo"><img src="imnoise_files/bg_header_mwlogo_notag.jpg" alt="MathWorks" class="mw_logo"></a>
+<p class="tagline">Accelerating the pace of engineering and science</p>
+</div>
+</div></div>
+            <div class="grid_192"> <div class="topnav_container">
+<div class="topnav_frame">
+<div class="topnav">
+<ul>
+<li class="topnav_products "><a href="http://www.mathworks.com/products/?s_tid=gn_ps">Products &amp; Services</a></li>
+<li class="topnav_solutions "><a href="http://www.mathworks.com/solutions/?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="http://www.mathworks.com/academia/?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="http://www.mathworks.com/support/?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="http://www.mathworks.com/matlabcentral/?s_tid=gn_mlc">User Community</a></li>
+<li class="topnav_events "><a href="http://www.mathworks.com/company/events/?s_tid=gn_ev">Events</a></li>
+<li class="topnav_company "><a href="http://www.mathworks.com/company/?s_tid=gn_co">Company</a></li>
+</ul>
+</div>
+</div>
+</div> </div>
+            <div class="grid_192">        <div class="section_image level_3" style="background-color:#04478b; background-image:url(/images/nextgen/global/bg_banner_wide.jpg);
+        ">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tbody><tr>
+          <td>                <h1>Documentation Center</h1>
+</td>
+<td class="ctabox_container"><ul class="ctabox rounded_corner">
+  <li><a href="http://www.mathworks.com/programs/bounce/doc_tryit.html" class="trial" target="">Trial Software</a></li>
+  <li><a href="http://www.mathworks.com/support/web_downloads_bounce.html?s_cid=1008_degr_docdn_270055" class="update" target="">Product Updates</a></li>
+  <li class="banner_share">
+    <div class="addthis_toolbox addthis_default_style"> <a href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=mathworks" class="addthis_button_compact at300m"><span class="at300bs at15nc at15t_compact"></span>Share</a>
+      <div class="atclear"></div>
+      
+    <div class="atclear"></div></div>
+    <script type="text/javascript">var addthis_config = {"data_track_clickback":true, "services_compact":"facebook,email,twitter,print,linkedin,favorites,google_plusone_share,more", "ui_open_windows":true, "ui_header_color":"#ffffff", "ui_header_background":"#3F74C1", "ui_cobrand":"MathWorks","data_track_clickback":true, ui_language: "en" };</script> 
+    <script type="text/javascript" src="imnoise_files/addthis_widget.js"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="imnoise_files/sh142.htm" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0pt none; left: 0pt; top: 0pt;" title="AddThis utility frame" id="_atssh377"></iframe></div><script src="imnoise_files/core108.js" type="text/javascript"></script> 
+  </li>
+  </ul>
+ </td>
+        </tr>
+          </tbody></table>
+    </div>
+</div>
+            <div class="content_frame">
+              <div class="grid_192">
+                <div class="site_container site_toc_closed">
+                  <div class="toc_pane"><div xmlns:atict="http://www.arbortext.com/namespace/atict">
+<div class="toc_container_wrapper" tabindex="0" style="display: block; height: 468px; max-height: 468px; top: auto; position: relative;">
+<div class="toc_header" lang="en">
+<div class="toc_icon" id="toc.images">
+
+</div>
+<h3>Contents</h3>
+</div><!--close_toc_header-->
+<div style="height: 436px; max-height: 436px;" class="toc_scroll_pane has-scrollbar">
+<div tabindex="0" style="height: 431px; max-height: 431px; right: -17px;" class="toc_container">
+<!--BEGINNING OF TOC DATA-->
+<div class="toc_doc_center_home">
+<a href="http://www.mathworks.com/help/documentation-center.html">Documentation Center</a>
+</div>
+<ul>
+<li id="images.index.html" class="toc_expanded"><div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/index.html" class="corrected_url">Image Processing Toolbox</a></div>
+</div>
+<ul>
+<li id="images.getting-started-with-image-processing-toolbox.html.0" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/getting-started-with-image-processing-toolbox.html" class="corrected_url">Getting Started with Image Processing Toolbox</a></div>
+</div>
+</li><li id="images.examples.index.html">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper">
+<a href="http://www.mathworks.com/help/images/examples/index.html" class="corrected_url">Examples</a>
+</div>
+</div>
+</li>
+<li id="images.release-notes.html">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper">
+<a href="http://www.mathworks.com/help/images/release-notes.html" class="corrected_url">Release Notes</a></div>
+</div>
+</li>
+<li id="images.functionlist.html">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper">
+<a href="http://www.mathworks.com/help/images/functionlist.html" class="corrected_url">Functions</a>
+</div>
+</div>
+</li>
+<li id="images.classeslist.html">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper">
+<a href="http://www.mathworks.com/help/images/classeslist.html" class="corrected_url">Classes</a>
+</div>
+</div>
+</li>
+<li id="images.index.html.1" class="toc_expanded">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/index.html#image-display-and-exploration" class="corrected_url">Import, Export, and Conversion</a></div>
+</div>
+<ul>
+<li id="images.basic-import-and-export.html.0" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/basic-import-and-export.html" class="corrected_url">Basic Import and Export</a></div>
+</div>
+</li><li id="images.scientific-file-formats.html.1" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/scientific-file-formats.html" class="corrected_url">Scientific File Formats</a></div>
+</div>
+</li><li id="images.high-dynamic-range-images.html.2" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/high-dynamic-range-images.html" class="corrected_url">High Dynamic Range Images</a></div>
+</div>
+</li><li id="images.large-image-files.html.3" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/large-image-files.html" class="corrected_url">Large Image Files</a></div>
+</div>
+</li><li id="images.image-type-conversions.html.4" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/image-type-conversions.html" class="corrected_url">Image Type Conversion</a></div>
+</div>
+</li><li id="images.image-sequences.html.5" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/image-sequences.html" class="corrected_url">Image Sequences</a></div>
+</div>
+</li><li id="images.synthetic-images.html.6" class="toc_expanded">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/synthetic-images.html" class="corrected_url">Synthetic Images</a></div>
+</div>
+<ul>
+<li class="toc_expanded"><div class="node_element"><div class="wrapper img_wrapper"></div><div class="wrapper text_wrapper">Functions</div></div><ul>
+<li id="images.checkerboard.html"><div class="node_element"><div class="wrapper img_wrapper"></div><div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/ref/checkerboard.html" class="corrected_url">checkerboard</a></div></div></li>
+<li id="images.phantom.html"><div class="node_element"><div class="wrapper img_wrapper"></div><div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/ref/phantom.html" class="corrected_url">phantom</a></div></div></li>
+<li id="images.imnoise.html" class="current_page"><div class="node_element"><div class="wrapper img_wrapper"></div><div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/ref/imnoise.html" class="corrected_url">imnoise</a></div></div></li>
+</ul>
+</li>
+</ul>
+</li></ul>
+</li><li id="images.index.html.2" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/index.html#gui-tools" class="corrected_url">Display and Exploration</a></div>
+</div>
+</li><li id="images.index.html.3" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/index.html#spatial-transformation-and-image-registration" class="corrected_url">Geometric Transformation, Spatial Referencing, and Image Registration</a></div>
+</div>
+</li><li id="images.index.html.4" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/index.html#btdrtag" class="corrected_url">Image Enhancement</a></div>
+</div>
+</li><li id="images.index.html.5" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/index.html#btdrwz5" class="corrected_url">Image Analysis</a></div>
+</div>
+</li><li id="images.color.html.6" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/color.html" class="corrected_url">Color</a></div>
+</div>
+</li><li id="images.code-generation.html.7" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/code-generation.html" class="corrected_url">Code Generation</a></div>
+</div>
+</li><li id="images.gpu-computing.html.8" class="toc_collapsed">
+<div class="node_element">
+<div class="wrapper img_wrapper"></div>
+<div class="wrapper text_wrapper"><a href="http://www.mathworks.com/help/images/gpu-computing.html" class="corrected_url">GPU Computing</a></div>
+</div>
+</li></ul>
+</li>
+</ul>
+<!--END OF TOC DATA-->
+</div><!--close_toc_container-->
+<div style="display: none;" class="pane"><div style="height: 11182px; top: -10746px;" class="slider"></div></div></div><!--close_toc_scroll_pane-->
+</div><!--close_toc_container_wrapper-->
+</div>
+</div><!--close_toc_pane-->
+                  <div class="doc_content_container">
+                    <div class="content_container" id="content_container"> 
+
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+
+
+               
+ 
+            
+<div style="width: 755px;" id="search_crumb_container"><div class="docsearch_container">
+<form id="docsearch_form" name="docsearch_form" method="get" action="/help/search/doccenter/en/R2013b">
+<label for="docsearch" class="hidden">Search MATLAB Documentation</label>
+<input name="qdoc" id="docsearch" class="textfield toggleval" autocomplete="off" value="Search R2013b Documentation" type="text">
+<input disabled="disabled" name="submitsearch" id="submitsearch" value="Search" class="docsearch_submit" type="submit">
+<script type="text/javascript">
+         $("input[name='qdoc']").toggleVal({
+            focusClass: "hasFocus"
+         });
+       </script>
+</form>
+</div>
+<div class="breadcrumb_container">
+<div class="breadcrumbs">
+<div class="breadcrumbs_outer"><div class="breadcrumbs_inner"><ul><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb" class="breadcrumb_first"><a href="http://www.mathworks.com/help/documentation-center.html" itemprop="url"><span itemprop="title">R2013b</span></a></li><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb" class="breadcrumb_product"><a href="http://www.mathworks.com/help/images/index.html" itemprop="url"><span itemprop="title">Image Processing Toolbox</span></a></li><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="http://www.mathworks.com/help/images/index.html#image-display-and-exploration" itemprop="url"><span itemprop="title">Import, Export, and Conversion</span></a></li><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb" class="breadcrumb_last"><a href="http://www.mathworks.com/help/images/synthetic-images.html" itemprop="url"><span itemprop="title">Synthetic Images</span></a></li>
+</ul></div></div></div>
+</div>
+
+</div><section id="doc_center_content">
+<a name="f5-195189"></a><a class="indexterm" name="zmw57dd0e41643"></a><a class="indexterm" name="zmw57dd0e41647"></a><div itemprop="content"><h1 class="r2013b" itemprop="title">imnoise</h1><!-- SYNCHTO: _bqj6g67.html --><div class="doc_topic_desc"><div class="purpose_container"><p itemprop="purpose">Add noise to image</p><div class="switch"><a href="javascript:void(0);" id="expandAllPage">expand all in page</a></div></div></div></div>
+<a name="f5-72064"></a><h2 id="syntax">Syntax</h2><div class="syntax_signature"><p class="synopsis"><tt>J = imnoise(I,<i><tt>type</tt></i>)<br>J = imnoise(I,<i><tt>type</tt></i>,<i><tt>parameters</tt></i>) <br>J = imnoise(I,'gaussian',M,V)<br><tt>J = imnoise(I,'localvar',V)</tt><br>J = imnoise(I,'localvar',image_intensity,var)<br>J = imnoise(I,'poisson')<br>J = imnoise(I,'salt &amp; pepper',d)<br>J = imnoise(I,'speckle',v)<br>gpuarrayJ = imnoise(gpuarrayI,<span class="argument_placeholder">___</span>)<br></tt></p></div><div class="clear"></div><div itemprop="content"><a name="f5-172590"></a><h2>Description</h2><a class="indexterm" name="zmw57dd0e41664"></a><a class="indexterm" name="zmw57dd0e41669"></a><a class="indexterm" name="zmw57dd0e41674"></a><a class="indexterm" name="zmw57dd0e41679"></a><p><span itemprop="syntax"><tt><a name="f5-172680"></a>J = imnoise(I,<i><tt>type</tt></i>)</tt></span> adds
+noise of a given type to the intensity image <tt>I</tt>. <i><tt>type</tt></i> is
+a string that specifies any of the following types of noise. Note
+that certain types of noise support additional parameters. See the
+related syntax.</p><table class="body" border="2" cellpadding="4" cellspacing="0"><colgroup><col width="23%"><col width="77%"></colgroup><thead><tr valign="top"><th><p>Value</p></th><th><p>Description</p></th></tr>
+</thead><tbody><tr valign="top"><td><p><tt>'gaussian'</tt></p></td><td><p>Gaussian white noise with constant mean and variance</p></td></tr>
+<tr valign="top"><td><p><tt>'localvar'</tt></p></td><td><p>Zero-mean Gaussian white noise with an intensity-dependent
+variance</p></td></tr>
+<tr valign="top"><td><p><tt>'poisson'</tt></p></td><td><p>Poisson noise</p></td></tr>
+<tr valign="top"><td><p><tt>'salt &amp; pepper'</tt></p></td><td><p>On and off pixels</p></td></tr>
+<tr valign="top"><td><p><tt>'speckle'</tt></p></td><td><p>Multiplicative noise</p></td></tr>
+</tbody></table><p></p><p><span itemprop="syntax"><tt><a name="f5-500009"></a>J = imnoise(I,<i><tt>type</tt></i>,<i><tt>parameters</tt></i>) </tt></span> 
+Depending on <tt>type</tt>, you can specify additional 
+parameters to <tt>imnoise</tt>. All numerical parameters
+are normalized— they correspond to operations with images with
+intensities ranging from 0 to 1.</p><p><span itemprop="syntax"><tt><a name="f5-72073"></a>J = imnoise(I,'gaussian',M,V)</tt></span> 
+adds Gaussian white noise of mean <tt>m</tt> and variance <tt>v</tt> to
+the image <tt>I</tt>. The default is zero mean noise with
+0.01 variance.</p><p><span itemprop="syntax"><tt><a name="f5-383985"></a><tt>J = imnoise(I,'localvar',V)</tt></tt></span> 
+adds zero-mean, Gaussian white noise of local variance <tt>V</tt> to
+the image <tt>I</tt>. <tt>V</tt> is an array of
+the same size as <tt>I</tt>.</p><p><span itemprop="syntax"><tt><a name="f5-383986"></a>J = imnoise(I,'localvar',image_intensity,var)</tt></span> 
+ adds zero-mean, Gaussian noise to an image <tt>I</tt>,
+where the local variance of the noise, <tt>var</tt>, is
+a function of the image intensity values in <tt>I</tt>.
+The <tt>image_intensity</tt> and <tt>var</tt> arguments
+are vectors of the same size, and <tt>plot(image_intensity,var)</tt> plots
+the functional relationship between noise variance and image intensity.
+The <tt>image_intensity</tt> vector must contain normalized
+intensity values ranging from 0 to 1.</p><p><span itemprop="syntax"><tt><a name="f5-384016"></a>J = imnoise(I,'poisson')</tt></span> generates
+Poisson noise from the data instead of adding artificial noise to
+the data. If <tt>I</tt> is double precision, then input
+pixel values are interpreted as means of Poisson distributions scaled
+up by <tt>1e12</tt>.  For example, if an input pixel has
+the value <tt>5.5e-12</tt>, then the corresponding output
+pixel will be generated from a Poisson distribution with mean of 5.5
+and then scaled back down by <tt>1e12</tt>. If <tt>I</tt> is
+single precision, the scale factor used is <tt>1e6</tt>.
+If <tt>I</tt> is <tt>uint8</tt> or <tt>uint16</tt>,
+then input pixel values are used directly without scaling. For example,
+if a pixel in a <tt>uint8</tt> input has the value 10, then
+the corresponding output pixel will be generated from a Poisson distribution
+with mean 10.</p><p><span itemprop="syntax"><tt><a name="f5-128201"></a>J = imnoise(I,'salt &amp; pepper',d)</tt></span> adds
+salt and pepper noise to the image I, where <tt>d</tt> is
+the noise density. This affects approximately <tt>d*numel(I)</tt> pixels.
+The default for <tt>d</tt> is 0.05.</p><p><span itemprop="syntax"><tt><a name="f5-128202"></a>J = imnoise(I,'speckle',v)</tt></span> adds
+multiplicative noise to the image <tt>I</tt>, using the
+equation <tt>J = I+n*I</tt>, where <tt>n</tt> is
+uniformly distributed random noise with mean 0 and variance <tt>v</tt>.
+The default for <tt>v</tt> is 0.04.</p><ul><a name="zmw57dd0e41887"></a><table class="note" summary="Note" border="1" cellpadding="5" cellspacing="0"><tbody><tr width="90%"><td><p><b>Note</b>&nbsp;&nbsp;
+
+
+The mean and variance parameters for <tt>'gaussian'</tt>, <tt>'localvar'</tt>,
+and <tt>'speckle'</tt> noise types are always specified
+as if the image were of class <tt>double</tt> in the range
+[0, 1]. If the input image is of class <tt>uint8</tt> or <tt>uint16</tt>,
+the <tt>imnoise</tt> function converts the image to <tt>double</tt>,
+adds noise according to the specified type and parameters, and then
+converts the noisy image back to the same class as the input.</p></td></tr></tbody></table></ul><p><span itemprop="syntax"><tt><a name="bt3d91c-1"></a>gpuarrayJ = imnoise(gpuarrayI,<span class="argument_placeholder">___</span>)</tt></span> adds
+noise to the gpuArray intensity image <tt>gpuarrayI</tt>,
+performing the operation on a GPU. Returns a gpuArray image <tt>J</tt> of
+the same class. This syntax requires the Parallel Computing Toolbox™.</p></div><div itemprop="content"><a name="f5-207448"></a><h2>Class Support</h2><p>For most noise types, the input image <tt>I</tt> can
+be of class <tt>uint8</tt>, <tt>uint16</tt>, <tt>int16</tt>, <tt>single</tt>,
+or <tt>double</tt>. For Poisson noise, <tt>int16</tt> is
+not allowed. The output image <tt>J</tt> is of the same
+class as <tt>I</tt>. If <tt>I</tt> has more than
+two dimensions it is treated as a multidimensional intensity image
+and not as an RGB image.</p><p>An input gpuArray image <tt>I</tt> can be of class <tt>uint8</tt>, <tt>uint16</tt>, <tt>int16</tt>, <tt>single</tt>,
+or <tt>double</tt>. For Poisson noise, <tt>int16</tt> is
+not allowed. The output gpuArray image <tt>J</tt> is of
+the same class as <tt>I</tt>. If <tt>I</tt> has
+more than two dimensions it is treated as a multidimensional intensity
+image and not as an RGB gpuArray image.</p></div><div itemprop="content"><a name="f5-216578"></a><h2>Examples</h2><p>Add noise to an image.</p><pre class="programlisting codeinput">I = imread(<span style="color:#A020F0">'eight.tif'</span>);
+J = imnoise(I,<span style="color:#A020F0">'salt &amp; pepper'</span>,0.02);
+figure, imshow(I)
+figure, imshow(J)</pre><p>
+<img class="scaled-image" src="imnoise_files/referenceipart23.gif" alt="" height="242" width="674"></p><p>Add noise to an image, performing operation on a GPU.</p><pre class="programlisting codeinput">I = gpuArray(imread(<span style="color:#A020F0">'eight.tif'</span>));
+J = imnoise(I,<span style="color:#A020F0">'salt &amp; pepper'</span>, 0.02);
+
+figure, imshow(I);
+figure, imshow(J);</pre></div><h2>See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="http://www.mathworks.com/help/distcomp/gpuarray.html"><span itemprop="name"><tt>gpuArray</tt></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="http://www.mathworks.com/help/matlab/ref/rand.html"><span itemprop="name"><tt>rand</tt></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="http://www.mathworks.com/help/matlab/ref/randn.html"><span itemprop="name"><tt>randn</tt></span></a></span></p>
+</section>
+<div class="feedbackblock">Was this topic helpful?
+<input value="Yes" onclick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-YES-R2013b');" type="button">
+<input value="No" onclick="openFeedbackWindow('http://www.mathworks.com/programs/bounce_hub_help.html?s_cid=Help_Topic_Survey&amp;surveyParams='+document.location.href+'-NO-R2013b');" type="button">
+</div>
+<!--Last updated: Wed Aug 21 17:59:42 EDT 2013-->
+<div class="footer_container execmatlabproduct">
+<div class="footer">
+<ul class="footernav">
+              <li class="footernav_trademarks"><a href="matlab:web%28[docroot%20%27/acknowledgments.html%27]%29">Acknowledgments</a></li>
+              <li class="footernav_trademarks"><a href="matlab:web%28[matlabroot%20%27/trademarks.txt%27]%29">Trademarks</a></li>
+              <li class="footernav_patents"><a href="matlab:web%28[matlabroot%20%27/patents.txt%27]%29">Patents</a></li>
+              <li class="footernav_help"><a href="matlab:web%28[matlabroot%20%27/license.txt%27]%29">Terms of Use</a></li>
+           </ul>
+<div class="copyright">© 1994-2013 The MathWorks, Inc.</div>
+</div>
+</div>
+ </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid_192">
+<div class="fat_footer">
+<div class="callout_container rounded gradient margined_0 "> <div class="callout_content bg_left left_top" style="background-image:url(/images/nextgen/callouts/bg-trial-arrow_02.png);"> <h3>Try MATLAB, Simulink, and Other Products</h3>
+<a href="http://www.mathworks.com/programs/trials/trial_request.html?prodcode=IP&amp;eventid=949575282&amp;s_iid=doc_trial_IP_footer" class="cta ">Get trial now</a>
+</div>
+</div>
+</div>
+</div>
+        <div class="grid_192"> <div class="footer_container">
+<div class="footer">
+<div class="social_media_icon_container">
+<div class="social_media_icons">
+<ul class="footernav">
+<li class="footernav_rss"><a href="http://www.mathworks.com/company/rss/index.html"></a></li>
+<li class="footernav_linkedin"><a href="http://www.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_lkd&amp;url=http://www.linkedin.com/company/the-mathworks_2" target="_blank"></a></li>
+<li class="footernav_google"><a href="http://www.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_glg&amp;url=https://plus.google.com/117177960465154322866?prsrc=3" target="_blank"></a></li>
+<li class="footernav_facebook"><a href="http://www.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_fbk&amp;url=http://www.facebook.com/MATLAB" target="_blank"></a></li>
+<li class="footernav_twitter"><a href="http://www.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_twt&amp;url=http://www.twitter.com/MATLAB" target="_blank"></a></li>
+</ul>
+</div>
+<p><em>Join the conversation</em></p>
+</div>
+<ul class="footernav">
+<li class="footernav_piracy"><a href="http://www.mathworks.com/company/aboutus/policies_statements/piracy.html">Preventing Piracy</a></li>
+<li class="footernav_privacy"><a href="http://www.mathworks.com/company/aboutus/policies_statements/">Privacy Policy</a></li>
+<li class="footernav_trademarks"><a href="http://www.mathworks.com/company/aboutus/policies_statements/trademarks.html">Trademarks</a></li>
+<li class="footernav_patents"><a href="http://www.mathworks.com/company/aboutus/policies_statements/patents.html">Patents</a></li>
+<li class="footernav_help"><a href="http://www.mathworks.com/help.html">Site Help</a></li>
+</ul>
+<div class="copyright">© 1994-2013 The MathWorks, Inc.</div>
+</div>
+</div>
+<!-- SURVEY POPUP CODE - BEGINS -->
+<script type="text/javascript" language="javascript">
+function getCookie(name) {
+var dc = document.cookie;
+var prefix = name + "=";
+var begin = dc.indexOf("; " + prefix);
+if (begin == -1) {
+begin = dc.indexOf(prefix);
+if (begin != 0) return null;
+} else
+{
+begin += 2;
+}
+var end = document.cookie.indexOf(";", begin);
+if (end == -1)
+end = dc.length;
+return unescape(dc.substring(begin + prefix.length, end));
+}
+// Sets the cookie for users who get the invite
+function setCookie(name, value, expires, path, domain, secure) {
+var curCookie = name + "=" + escape(value) +
+((expires) ? "; expires=" + expires.toGMTString() : "") +
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+((secure) ? "; secure" : "");
+document.cookie = curCookie;
+}
+function popup_survey()
+{
+setCookie("survey", "yes", new Date("April 30, 2011"), "/");
+openWindow('/programs/customersat/surveys/invites/invite_support.html', 460, 150, 'scrollbars=no,resizable=no', 'invitewin');
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+//document.getElementById("Cookies").innerHTML = "visitedSupport:" + getCookie("visitedSupport") + "<br/> Survey:" + getCookie("survey");
+if((getCookie("visitedSupport") == "yes") && (getCookie("survey") == null))
+{
+popup_survey();
+}
+</script>
+<!-- SURVEY POPUP CODE - ENDS -->
+<!-- SiteCatalyst code version: H.24.4.
+Copyright 1996-2012 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="imnoise_files/s_code.js"></script>
+<script language="JavaScript" type="text/javascript">
+<!--
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.24.4. --> </div>
+      </div>
+      
+      
+
+</body></html>

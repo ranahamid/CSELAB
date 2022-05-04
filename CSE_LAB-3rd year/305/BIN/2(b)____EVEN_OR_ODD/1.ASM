@@ -1,0 +1,50 @@
+TITLE even_odd
+.MODEL SMALL
+.STACK 100
+.DATA 
+CR EQU 0DH
+LF EQU 0AH
+LINE DB CR,LF,'$'
+MSG1 DB 'ENTER A NUMBER : ','$'
+MSG2 DB 'IT IS EVEN.','$'
+MSG3 DB 'IT IS ODD','$'
+VAL DB ?
+.CODE
+MAIN PROC
+MOV AX,@DATA
+            MOV DS,AX
+
+            LEA DX,MSG1
+            MOV AH,09H
+            INT 21H
+    
+            MOV AH,01H
+            INT 21H
+            ;SUB AL,30H
+            MOV VAL,AL
+			
+            MOV AH,9
+			LEA DX,LINE
+			INT 21H 
+			
+			
+			
+CHECK:
+	MOV AL,VAL
+	TEST AL,01H
+	JE EVEN1
+	JMP ODD1
+EVEN1:
+	MOV AH,9
+	LEA DX,MSG2
+	INT 21H
+	JMP EXIT
+ODD1:
+	MOV AH,9
+	LEA DX,MSG3
+	INT 21H
+EXIT:
+	MOV AH,4CH
+	INT 21H
+MAIN ENDP
+	END MAIN

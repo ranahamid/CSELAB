@@ -1,0 +1,28 @@
+predicates
+    go
+    ran(integer,integer)
+    add(integer,integer,integer)
+	
+		
+clauses
+        go:-
+            write("Enter a number between the range 1 to 100 :"),
+	    readint(X),nl,
+	    ran(X,Y),
+	    write("Random number is: ",Y),nl,
+	    N=Y,
+	    
+		add(0,1,N).
+		
+		ran(X,Y):-
+	            random(Z),
+				Y=(X-1)*Z+1.
+            
+        add(X,N,N):-
+                    R=X+N,
+                    write("The sum of the series is: ",R),nl.
+            
+        add(X,Y,N):-
+                    NX=X+Y,
+                    NY=Y+1,
+                    add(NX,NY,N).       

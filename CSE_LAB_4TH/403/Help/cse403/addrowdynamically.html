@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Add row dynamically to table</title>
+ <script>
+ function addRows(){
+	var TABLE = document.getElementById('tableId');
+	var BODY = TABLE.getElementsByTagName('tbody')[0];
+	var TR = document.createElement('tr');
+	var TD = document.createElement('td');
+	TD.innerHTML = 'This is a new row added';
+	TR.appendChild (TD);
+	BODY.appendChild(TR);
+ }
+ </script>
+</head>
+<body>
+ <div style="background: #cf2255; width:'100%';" align="center">
+  <font color="#ffffcc" size="12pt">
+	<b>Add new row example</b>
+  </font>
+ </div>
+  <center>
+   <div style="background: #ffffcc; width:'100%';" align="center">
+        <table id="tableId" border="1" cellpadding="0" cellspacing="0" width="50%">
+          <tr>
+            <td width="50%">This is the very first row</td>
+          </tr>
+       </table>
+	<input type="button" onclick="addRows();" value="Add Row" />
+   </div>
+  </center>
+</body>
+</html>

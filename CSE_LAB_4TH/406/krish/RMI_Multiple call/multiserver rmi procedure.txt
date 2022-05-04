@@ -1,0 +1,11 @@
+javac SeriesCalInf.java
+javac SeriesCalImpl1.java
+javac SeriesCalImpl2.java
+javac SeriesCalClient.java
+
+
+rmic SeriesCalImpl1
+start rmiregistry
+start java SeriesCalImpl1
+start java SeriesCalImpl2
+java SeriesCalClient

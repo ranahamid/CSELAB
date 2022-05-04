@@ -1,0 +1,10 @@
+javac serverInt.java
+javac serverImp.java
+javac server.java
+javac client.java
+
+rmic serverImp
+
+start rmiregistry
+start java server
+java client

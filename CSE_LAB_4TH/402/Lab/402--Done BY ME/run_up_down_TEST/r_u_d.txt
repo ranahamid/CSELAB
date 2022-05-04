@@ -1,0 +1,16 @@
+Generated random numbers are...
+____________________________________
+953, 35, 101, 330, 38, 854, 660, 29, 
+
+____________________________________
+Run sequence is
+-++-+--
+
+
+____________________________________
+Number of above(+) observations : 3
+Number of above(-) observations : 4
+Number of run sequence          : 5
+z0 is : 0
+____________________________________
+Run up down test is PASSED.

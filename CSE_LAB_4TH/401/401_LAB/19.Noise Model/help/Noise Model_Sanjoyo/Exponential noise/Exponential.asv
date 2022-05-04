@@ -1,0 +1,18 @@
+I = imread('main.bmp');
+main = rgb2gray(I);
+J = im2double(J);
+%default a=1
+a=0;
+[M N]=size(J);
+ %k = -1/a;
+ J= J+k*log(1 - rand(M,N));
+
+figure,
+subplot(1,2,1);
+imshow(main);
+title('main image');
+subplot(1,2,2);
+%imshow(uint8(J)); 
+imshow((J));
+title('Degraded Image');
+%imnoise

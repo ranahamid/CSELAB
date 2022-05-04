@@ -1,0 +1,540 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" lang="en"><head><title>UVa 558 - Algorithmist</title> <meta
+ http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="UVa_558_files/bmi.js" language="javascript"></script><meta
+ name="generator" content="MediaWiki 1.16.2"><link rel="alternate" 
+type="application/x-wiki" title="Edit" 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=edit"><link
+ rel="edit" title="Edit" 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=edit"><link
+ rel="shortcut icon" href="http://www.algorithmist.com/favicon.ico"><link
+ rel="search" type="application/opensearchdescription+xml" 
+href="http://www.algorithmist.com/opensearch_desc.php" 
+title="Algorithmist (en)"><link title="Creative Commons" 
+type="application/rdf+xml" 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=creativecommons"
+ rel="meta"><link rel="copyright" 
+href="http://www.gnu.org/copyleft/fdl.html"><link rel="alternate" 
+type="application/atom+xml" title="Algorithmist Atom feed" 
+href="http://www.algorithmist.com/index.php?title=Special:RecentChanges&amp;feed=atom"><style media="screen" style="display: none;">/**//**/.mw-plusminus-pos{color:#006400;}/**/.mw-plusminus-neg{color:#8b0000;}/**/.mw-plusminus-null{color:#aaa;}/**//**/ span.comment{font-style:italic;}span.changedby{font-size:95%;}/**/.texvc{direction:ltr;unicode-bidi:embed;}img.tex{vertical-align:middle;}span.texhtml{font-family:serif;}/**//**/#wikiPreview.ontop{margin-bottom:1em;}/**/#editform,#toolbar,#wpTextbox1{clear:both;}div#mw-js-message{margin:1em 5%;padding:0.5em 2.5%;border:solid 1px #ddd;background-color:#fcfcfc;}/**/.editsection{float:right;margin-left:5px;}/**/h2#filehistory{clear:both;}table.filehistory th,table.filehistory td{vertical-align:top;}table.filehistory th{text-align:left;}table.filehistory td.mw-imagepage-filesize,table.filehistory th.mw-imagepage-filesize{white-space:nowrap;}table.filehistory td.filehistory-selected{font-weight:bold;}/**/li span.deleted,span.history-deleted{text-decoration:line-through;color:#888;font-style:italic;}/**/.not-patrolled{background-color:#ffa;}.unpatrolled{font-weight:bold;color:red;}div.patrollink{font-size:75%;text-align:right;}/**/body.ltr td.mw-label{text-align:right;}body.ltr td.mw-input{text-align:left;}body.ltr td.mw-submit{text-align:left;}body.rtl td.mw-label{text-align:left;}body.rtl td.mw-input{text-align:right;}body.rtl td.mw-submit{text-align:right;}td.mw-label{vertical-align:top;}.prefsection td.mw-label{width:20%;}.prefsection table{width:100%;}td.mw-submit{white-space:nowrap;}table.mw-htmlform-nolabel td.mw-label{width:0!important;}/**/body.rtl .thumbcaption{text-align:right;}body.rtl .magnify{float:left;}body.ltr .thumbcaption{text-align:left;}body.ltr .magnify{float:right;}/**/.mw-hidden-cats-hidden{display:none;}.catlinks-allhidden{display:none;}/**/p.mw-ipb-conveniencelinks,p.mw-protect-editreasons,p.mw-filedelete-editreasons,p.mw-delete-editreasons,p.mw-revdel-editreasons{font-size:90%;float:right;}/**/.searchresults{}.searchresults p{margin-left:0.4em;margin-top:1em;margin-bottom:1.2em;}div.searchresult{font-size:95%;width:38em;}.mw-search-results{margin-left:0.4em;}.mw-search-results li{padding-bottom:1em;list-style:none;list-style-image:none;}.mw-search-results li a{font-size:108%;}.mw-search-result-data{color:green;font-size:97%;}.mw-search-formheader{background-color:#f3f3f3;margin-top:1em;border:1px solid silver;}.mw-search-formheader div.search-types{float:left;padding-left:0.25em;}.rtl .mw-search-formheader div.search-types{float:right;}.mw-search-formheader div.search-types ul{margin:0!important;padding:0!important;list-style:none!important;}.mw-search-formheader div.search-types ul li{float:left;margin:0;padding:0;}.mw-search-formheader div.search-types ul li a{display:block;padding:0.5em;}.mw-search-formheader div.search-types ul li.current a{color:#333333;cursor:default;}.mw-search-formheader div.search-types ul li.current a:hover{text-decoration:none;}.mw-search-formheader div.results-info{float:right;padding:0.5em;padding-right:0.75em;}.mw-search-formheader div.results-info ul{margin:0!important;padding:0!important;list-style:none!important;}.mw-search-formheader div.results-info ul li{float:right;margin:0;padding:0;}fieldset#mw-searchoptions{margin:0;padding-left:0.75em!important;padding-right:0.75em!important;padding-bottom:0.5em!important;padding-top:0.5em!important;border:none;background-color:#f9f9f9;border:1px solid silver!important;border-top-width:0!important;}fieldset#mw-searchoptions legend{display:none;}fieldset#mw-searchoptions h4{padding:0;margin:0;float:left;}.rtl fieldset#mw-searchoptions h4{float:right;}fieldset#mw-searchoptions div#mw-search-togglebox{float:right;}.rtl fieldset#mw-searchoptions div#mw-search-togglebox{float:left;}fieldset#mw-searchoptions div#mw-search-togglebox label{margin-right:0.25em;}fieldset#mw-searchoptions div#mw-search-togglebox input{margin-left:0.25em;}fieldset#mw-searchoptions table{float:left;margin-right:3em;}fieldset#mw-searchoptions table td{padding-right:1em;}.rtl fieldset#mw-searchoptions table td{padding-left:1em;padding-right:0;}body.rtl fieldset#mw-searchoptions table{margin-right:0;margin-left:3em;float:right;}fieldset#mw-searchoptions div.divider{clear:both;border-bottom:1px solid #DDDDDD;padding-top:0.5em;margin-bottom:0.5em;}td#mw-search-menu{padding-left:6em;font-size:85%;}div#mw-search-interwiki{float:right;width:18em;border-style:solid;border-color:#AAAAAA;border-width:1px;margin-top:2ex;}.rtl div#mw-search-interwiki{float:left;}div#mw-search-interwiki li{font-size:95%;}.mw-search-interwiki-more{float:right;font-size:90%;}.rtl .mw-search-interwiki-more{float:left;}div#mw-search-interwiki-caption{text-align:center;font-weight:bold;font-size:95%;}.mw-search-interwiki-project{font-size:97%;text-align:left;padding-left:0.2em;padding-right:0.15em;padding-bottom:0.2em;padding-top:0.15em;background-color:#ececec;border-top:1px solid #BBBBBB;}.rtl .mw-search-interwiki-project{text-align:right;}span.searchalttitle{font-size:95%;}div.searchdidyoumean{font-size:127%;margin-top:0.8em;/**/color:#c00;}div.searchdidyoumean em{font-weight:bold;}.searchmatch{font-weight:bold;}table#mw-search-top-table{background-color:transparent;}/**/td#mw-search-togglebox{text-align:right;}table#mw-search-powertable{width:100%;}form#powersearch{clear:both;}/**/.mw-userrights-disabled{color:#888;}table.mw-userrights-groups * td,table.mw-userrights-groups * th{padding-right:1.5em;}/**/.os-suggest{overflow:auto;overflow-x:hidden;position:absolute;top:0px;left:0px;width:0px;background-color:white;background-color:Window;border-style:solid;border-color:#AAAAAA;border-width:1px;z-index:99;font-size:95%;}table.os-suggest-results{font-size:95%;cursor:pointer;border:0;border-collapse:collapse;width:100%;}.os-suggest-result,.os-suggest-result-hl{white-space:nowrap;background-color:white;background-color:Window;color:black;color:WindowText;padding:2px;}.os-suggest-result-hl,.os-suggest-result-hl-webkit{background-color:#4C59A6;color:white;}.os-suggest-result-hl{/**/background-color:Highlight;color:HighlightText;}.os-suggest-toggle{position:relative;left:1ex;font-size:65%;}.os-suggest-toggle-def{position:absolute;top:0px;left:0px;font-size:65%;visibility:hidden;}/**//**/.autocomment{color:gray;}#pagehistory .history-user{margin-left:0.4em;margin-right:0.2em;}#pagehistory span.minor{font-weight:bold;}#pagehistory li{border:1px solid white;}#pagehistory li.selected{background-color:#f9f9f9;border:1px dashed #aaa;}/**/.newpage,.minor,.bot{font-weight:bold;}/**/.mw-uctop{font-weight:bold;}/**/table.mw-listgrouprights-table tr{vertical-align:top;}.listgrouprights-revoked{text-decoration:line-through;}/**/td.mw-statistics-numbers{text-align:right;}/**/h4.mw-specialpagesgroup{background-color:#dcdcdc;padding:2px;margin:.3em 0em 0em 0em;}.mw-specialpagerestricted{font-weight:bold;}#shared-image-dup,#shared-image-conflict{font-style:italic;}/**/table.mw-emailuser-table{width:98%;}td#mw-emailuser-sender,td#mw-emailuser-recipient{font-weight:bold;}/**/table.allpageslist{background-color:transparent;}table.mw-allpages-table-form,table.mw-allpages-table-chunk{background-color:transparent;width:100%;}td.mw-allpages-alphaindexline{text-align:right;}td.mw-allpages-nav,p.mw-allpages-nav{text-align:right;font-size:smaller;margin-bottom:1em;}table.mw-allpages-table-form tr{vertical-align:top;}/**/table#mw-prefixindex-list-table,table#mw-prefixindex-nav-table{width:98%;background-color:transparent;}td#mw-prefixindex-nav-form{font-size:smaller;margin-bottom:1em;text-align:right;vertical-align:top;}/**/div.mw-warning-with-logexcerpt{padding:3px;margin-bottom:3px;border:2px solid #2F6FAB;clear:both;}div.mw-warning-with-logexcerpt ul li{font-size:90%;}/**/ span.mw-revdelundel-link,strong.mw-revdelundel-link{font-size:90%;}span.mw-revdelundel-hidden,input.mw-revdelundel-hidden{visibility:hidden;}td.mw-revdel-checkbox,th.mw-revdel-checkbox{padding-right:10px;text-align:center;}/**/a.feedlink{background:url("http://www.algorithmist.com/skins/common/images/feed-icon.png") center left no-repeat;padding-left:16px;}/**/.plainlinks a{background:none!important;padding:0!important;}/**/table.wikitable{margin:1em 1em 1em 0;background:#f9f9f9;border:1px #aaa solid;border-collapse:collapse;}.wikitable th,.wikitable td{border:1px #aaa solid;padding:0.2em;}.wikitable th{background:#f2f2f2;text-align:center;}.wikitable caption{font-weight:bold;}/**/table.collapsed tr.collapsable{display:none;}/**/.success{color:green;font-size:larger;}.error{color:red;font-size:larger;}.errorbox,.successbox{font-size:larger;border:2px solid;padding:.5em 1em;float:left;margin-bottom:2em;color:#000;}.errorbox{border-color:red;background-color:#fff2f2;}.successbox{border-color:green;background-color:#dfd;}.errorbox h2,.successbox h2{font-size:1em;font-weight:bold;display:inline;margin:0 .5em 0 0;border:none;}.visualClear{clear:both;}#mw_trackbacks{border:solid 1px #bbbbff;background-color:#eeeeff;padding:0.2em;}/**/.TablePager{min-width:80%;}.TablePager_nav a{text-decoration:none;}.TablePager{border-collapse:collapse;}.TablePager,.TablePager td,.TablePager th{border:1px solid #aaaaaa;padding:0 0.15em 0 0.15em;}.TablePager th{background-color:#eeeeff}.TablePager td{background-color:#ffffff}.TablePager tr:hover td{background-color:#eeeeff}.imagelist td,.imagelist th{white-space:nowrap}.imagelist .TablePager_col_links{background-color:#eeeeff}.imagelist .TablePager_col_img_description{white-space:normal}.imagelist th.TablePager_sort{background-color:#ccccff}/**/#mw-allmessagestable .allmessages-customised td.am_default{background-color:#fcffc4;}#mw-allmessagestable tr.allmessages-customised:hover td.am_default{background-color:#faff90;}#mw-allmessagestable td.am_actual{background-color:#e2ffe2;}#mw-allmessagestable tr.allmessages-customised:hover + tr.allmessages-customised td.am_actual{background-color:#b1ffb1;}/**/ul#filetoc{text-align:center;border:1px solid #aaaaaa;background-color:#f9f9f9;padding:5px;font-size:95%;margin-bottom:0.5em;margin-left:0;margin-right:0;}#filetoc li{display:inline;list-style-type:none;padding-right:2em;}/**/table.mw_metadata{font-size:0.8em;margin-left:0.5em;margin-bottom:0.5em;width:300px;}table.mw_metadata caption{font-weight:bold;}table.mw_metadata th{font-weight:normal;}table.mw_metadata td{padding:0.1em;}table.mw_metadata{border:none;border-collapse:collapse;}table.mw_metadata td,table.mw_metadata th{text-align:center;border:1px solid #aaaaaa;padding-left:0.1em;padding-right:0.1em;}table.mw_metadata th{background-color:#f9f9f9;}table.mw_metadata td{background-color:#fcfcfc;}/**/table.gallery{border:1px solid #ccc;margin:2px;padding:2px;background-color:white;}table.gallery tr{vertical-align:top;}table.gallery td{vertical-align:top;background-color:#f9f9f9;border:solid 2px white;}table.gallery caption{font-weight:bold;}div.gallerybox{margin:2px;}div.gallerybox div.thumb{text-align:center;border:1px solid #ccc;margin:2px;}div.gallerytext{overflow:hidden;font-size:94%;padding:2px 4px;}table.mw-enhanced-rc{background:none;border:0;border-spacing:0;}td.mw-enhanced-rc{white-space:nowrap;padding:0;vertical-align:top;font-family:monospace}#mw-addcategory-prompt{display:inline;margin-left:1em;}#mw-addcategory-prompt input{margin-left:0.5em;margin-right:0.5em;}.mw-remove-category{padding:8px;background-image:url(http://www.algorithmist.com/skins/common/images/remove.png);background-position:center center;background-repeat:no-repeat;}.mw-ajax-addcategory{padding-left:20px;background-image:url(http://www.algorithmist.com/skins/common/images/add.png);background-position:left center;background-repeat:no-repeat;}.mw-ajax-loader{background-image:url(http://www.algorithmist.com/skins/common/images/ajax-loader.gif);background-position:center center;background-repeat:no-repeat;padding:16px;position:relative;top:-16px;}.mw-small-spinner{padding:10px!important;margin-right:0.6em;background-image:url(http://www.algorithmist.com/skins/common/images/spinner.gif);background-position:center center;background-repeat:no-repeat;}/**/a.sortheader{margin:0 0.3em;}
+</style>
+<link rel="stylesheet" href="UVa_558_files/commonPrint.css" 
+media="print"><style media="screen" style="display: none;">/**/#column-content{width:100%;float:right;margin:0 0 .6em -12.2em;padding:0;}#content{margin:2.8em 0 0 12.2em;padding:0 1em 1em 1em;position:relative;z-index:2;}#column-one{padding-top:160px;}#content{background:white;color:black;border:1px solid #aaa;border-right:none;line-height:1.5em;}/**//**/body{font:x-small sans-serif;background:#f9f9f9 url(http://www.algorithmist.com/skins/monobook/headbg.jpg) 0 0 no-repeat;color:black;margin:0;padding:0;}/**/#globalWrapper{font-size:127%;width:100%;margin:0;padding:0;}/**/table{font-size:100%;color:black;/**/background-color:white;}fieldset table{/**/background:none;}a{text-decoration:none;color:#002bb8;background:none;}a:visited{color:#5a3696;}a:active{color:#faa700;}a:hover{text-decoration:underline;}a.stub{color:#772233;}a.new,#p-personal a.new{color:#ba0000;}a.new:visited,#p-personal a.new:visited{color:#a55858;}img{border:none;vertical-align:middle;}p{margin:.4em 0 .5em 0;line-height:1.5em;}p img{margin:0;}hr{height:1px;color:#aaa;background-color:#aaa;border:0;margin:.2em 0 .2em 0;}h1,h2,h3,h4,h5,h6{color:black;background:none;font-weight:normal;margin:0;padding-top:.5em;padding-bottom:.17em;border-bottom:1px solid #aaa;}h1{font-size:188%;}h1 .editsection{font-size:53%;}h2{font-size:150%;}h2 .editsection{font-size:67%;}h3,h4,h5,h6{border-bottom:none;font-weight:bold;}h3{font-size:132%;}h3 .editsection{font-size:76%;font-weight:normal;}h4{font-size:116%;}h4 .editsection{font-size:86%;font-weight:normal;}h5{font-size:100%;}h5 .editsection{font-weight:normal;}h6{font-size:80%;}h6 .editsection{font-size:125%;font-weight:normal;}ul{line-height:1.5em;list-style-type:square;margin:.3em 0 0 1.5em;padding:0;list-style-image:url(http://www.algorithmist.com/skins/monobook/bullet.gif);}ol{line-height:1.5em;margin:.3em 0 0 3.2em;padding:0;list-style-image:none;}li{margin-bottom:.1em;}dt{font-weight:bold;margin-bottom:.1em;}dl{margin-top:.2em;margin-bottom:.5em;}dd{line-height:1.5em;margin-left:2em;margin-bottom:.1em;}fieldset{border:1px solid #2f6fab;margin:1em 0 1em 0;padding:0 1em 1em;line-height:1.5em;}fieldset.nested{margin:0 0 0.5em 0;padding:0 0.5em 0.5em;}legend{padding:.5em;font-size:95%;}form{border:none;margin:0;}textarea{width:100%;padding:.1em;}input.historysubmit{padding:0 .3em .3em .3em!important;font-size:94%;cursor:pointer;height:1.7em!important;margin-left:1.6em;}select{vertical-align:top;}abbr,acronym,.explain{border-bottom:1px dotted black;color:black;background:none;cursor:help;}q{font-family:Times,"Times New Roman",serif;font-style:italic;}/**/code{background-color:#f9f9f9;}pre{padding:1em;border:1px dashed #2f6fab;color:black;background-color:#f9f9f9;line-height:1.1em;}/**/#siteSub{display:none;}#jump-to-nav{display:none;}#contentSub,#contentSub2{font-size:84%;line-height:1.2em;margin:0 0 1.4em 1em;color:#7d7d7d;width:auto;}span.subpages{display:block;}/**/#bodyContent h1,#bodyContent h2{margin-bottom:.6em;}#bodyContent h3,#bodyContent h4,#bodyContent h5{margin-bottom:.3em;}#firstHeading{margin-bottom:.1em;/**/line-height:1.2em;padding-bottom:0;}/**/.usermessage{background-color:#ffce7b;border:1px solid #ffa500;color:black;font-weight:bold;margin:2em 0 1em;padding:.5em 1em;vertical-align:middle;}#siteNotice{text-align:center;font-size:95%;padding:0 0.9em;}#siteNotice p{margin:0;padding:0;}.catlinks{border:1px solid #aaa;background-color:#f9f9f9;padding:5px;margin-top:1em;clear:both;}/**/.documentDescription{/**/font-weight:bold;display:block;margin:1em 0;line-height:1.5em;}.documentByLine{text-align:right;font-size:90%;clear:both;font-weight:normal;color:#76797c;}/**/.center{width:100%;text-align:center;}*.center *{margin-left:auto;margin-right:auto;}/**/.small,.small *{font-size:94%;}table.small{font-size:100%;}/**/#toc,.toc,.mw-warning{border:1px solid #aaa;background-color:#f9f9f9;padding:5px;font-size:95%;}#toc h2,.toc h2{display:inline;border:none;padding:0;font-size:100%;font-weight:bold;}#toc #toctitle,.toc #toctitle,#toc .toctitle,.toc .toctitle{text-align:center;}#toc ul,.toc ul{list-style-type:none;list-style-image:none;margin-left:0;padding-left:0;text-align:left;}#toc ul ul,.toc ul ul{margin:0 0 0 2em;}#toc .toctoggle,.toc .toctoggle{font-size:94%;}.mw-warning{margin-left:50px;margin-right:50px;text-align:center;}/**/div.floatright,table.floatright{clear:right;float:right;position:relative;margin:0 0 .5em .5em;border:0;/**/}div.floatright p{font-style:italic;}div.floatleft,table.floatleft{float:left;clear:left;position:relative;margin:0 .5em .5em 0;border:0;/**/}div.floatleft p{font-style:italic;}/**/div.thumb{margin-bottom:.5em;border-style:solid;border-color:white;width:auto;}div.thumbinner{border:1px solid #ccc;padding:3px!important;background-color:#f9f9f9;font-size:94%;text-align:center;overflow:hidden;}html .thumbimage{border:1px solid #ccc;}html .thumbcaption{border:none;text-align:left;line-height:1.4em;padding:3px!important;font-size:94%;}div.magnify{float:right;border:none!important;background:none!important;}div.magnify a,div.magnify img{display:block;border:none!important;background:none!important;}div.tright{clear:right;float:right;border-width:.5em 0 .8em 1.4em;}div.tleft{float:left;clear:left;margin-right:.5em;border-width:.5em 1.4em .8em 0;}img.thumbborder{border:1px solid #dddddd;}.hiddenStructure{display:none;}/**//**//**/table.rimage{float:right;position:relative;margin-left:1em;margin-bottom:1em;text-align:center;}.toccolours{border:1px solid #aaa;background-color:#f9f9f9;padding:5px;font-size:95%;}/**/.special li{line-height:1.4em;margin:0;padding:0;}/**/#bodyContent a.external,#bodyContent a.external[href ^="gopher://"]{background:url(http://www.algorithmist.com/skins/monobook/external.png) center right no-repeat;padding:0 13px;}.rtl #bodyContent a.external,.rtl #bodyContent a.external[href ^="gopher://"]{background-image:url(http://www.algorithmist.com/skins/monobook/external-rtl.png);}#bodyContent a.external[href ^="https://"],.link-https{background:url(http://www.algorithmist.com/skins/monobook/lock_icon.gif) center right no-repeat;padding:0 16px;}#bodyContent a.external[href ^="mailto:"],.link-mailto{background:url(http://www.algorithmist.com/skins/monobook/mail_icon.gif) center right no-repeat;padding:0 18px;}#bodyContent a.external[href ^="news://"]{background:url(http://www.algorithmist.com/skins/monobook/news_icon.png) center right no-repeat;padding:0 18px;}#bodyContent a.external[href ^="ftp://"],.link-ftp{background:url(http://www.algorithmist.com/skins/monobook/file_icon.gif) center right no-repeat;padding:0 18px;}#bodyContent a.external[href ^="irc://"],.link-irc{background:url(http://www.algorithmist.com/skins/monobook/discussionitem_icon.gif) center right no-repeat;padding:0 18px;}#bodyContent a.external[href $=".ogg"],#bodyContent a.external[href $=".OGG"],#bodyContent a.external[href $=".mid"],#bodyContent a.external[href $=".MID"],#bodyContent a.external[href $=".midi"],#bodyContent a.external[href $=".MIDI"],#bodyContent a.external[href $=".mp3"],#bodyContent a.external[href $=".MP3"],#bodyContent a.external[href $=".wav"],#bodyContent a.external[href $=".WAV"],#bodyContent a.external[href $=".wma"],#bodyContent a.external[href $=".WMA"],.link-audio{background:url("http://www.algorithmist.com/skins/monobook/audio.png") center right no-repeat;padding:0 13px;}#bodyContent a.external[href $=".ogm"],#bodyContent a.external[href $=".OGM"],#bodyContent a.external[href $=".avi"],#bodyContent a.external[href $=".AVI"],#bodyContent a.external[href $=".mpeg"],#bodyContent a.external[href $=".MPEG"],#bodyContent a.external[href $=".mpg"],#bodyContent a.external[href $=".MPG"],.link-video{background:url("http://www.algorithmist.com/skins/monobook/video.png") center right no-repeat;padding:0 13px;}#bodyContent a.external[href $=".pdf"],#bodyContent a.external[href $=".PDF"],#bodyContent a.external[href *=".pdf#"],#bodyContent a.external[href *=".PDF#"],#bodyContent a.external[href *=".pdf?"],#bodyContent a.external[href *=".PDF?"],.link-document{background:url("http://www.algorithmist.com/skins/monobook/document.png") center right no-repeat;padding:0 12px;}/**/.rtl #bodyContent a.external{background-position:left;padding-right:0;}.rtl a.feedlink{background-position:right;padding-right:16px;padding-left:0;}/**/.ltr #bodyContent a.external{padding-left:0;}/**/#bodyContent a.extiw,#bodyContent a.extiw:active{color:#36b;}#bodyContent a.external{color:#36b;}/**//**/.portlet{border:none;margin:0 0 .5em;padding:0;float:none;width:11.6em;overflow:hidden;}.portlet h4{font-size:95%;font-weight:normal;white-space:nowrap;}.portlet h5{background:transparent;padding:0 1em 0 .5em;display:inline;height:1em;text-transform:lowercase;font-size:91%;font-weight:normal;white-space:nowrap;}.portlet h6{background:#ffae2e;border:1px solid #2f6fab;border-style:solid solid none solid;padding:0 1em 0 1em;text-transform:lowercase;display:block;font-size:1em;height:1.2em;font-weight:normal;white-space:nowrap;}.pBody{font-size:95%;background-color:white;color:black;border-collapse:collapse;border:1px solid #aaa;padding:0 .8em .3em .5em;}.portlet h1,.portlet h2,.portlet h3,.portlet h4{margin:0;padding:0;}.portlet ul{line-height:1.5em;list-style-type:square;list-style-image:url(http://www.algorithmist.com/skins/monobook/bullet.gif);font-size:95%;}.portlet li{padding:0;margin:0;}/**/#p-logo{top:0;left:0;position:absolute;/**/z-index:3;height:155px;width:12em;overflow:visible;}#p-logo h5{display:none;}#p-logo a,#p-logo a:hover{display:block;height:155px;width:12.2em;background-repeat:no-repeat;background-position:35% 50%!important;text-decoration:none;}/**/#p-search{position:relative;z-index:3;}input.searchButton{margin-top:1px;font-size:95%;}#searchGoButton{padding-left:.5em;padding-right:.5em;font-weight:bold;}#searchInput{width:10.9em;margin:0;font-size:95%;}#p-search .pBody{padding:.5em .4em .4em .4em;text-align:center;}#p-search #searchform div div{margin-top:.4em;font-size:95%;}/**/#p-personal{position:absolute;left:0;top:0;z-index:0;}#p-personal{width:100%;white-space:nowrap;padding:0;margin:0;border:none;background:none;overflow:visible;line-height:1.2em;}#p-personal h5{display:none;}#p-personal .portlet,#p-personal .pBody{z-index:0;padding:0;margin:0;border:none;overflow:visible;background:none;}/**/#p-personal ul{border:none;line-height:1.4em;color:#2f6fab;padding:0 2em 0 3em;margin:0;text-align:right;list-style:none;z-index:0;background:none;cursor:default;}#p-personal li{z-index:0;border:none;padding:0;display:inline;color:#2f6fab;margin-left:1em;line-height:1.2em;background:none;}#p-personal li a{text-decoration:none;color:#005896;padding-bottom:.2em;background:none;}#p-personal li a:hover{background-color:white;padding-bottom:.2em;text-decoration:none;}#p-personal li.active a:hover{background-color:transparent;}/**/li#pt-userpage,li#pt-anonuserpage,li#pt-login{background:url(http://www.algorithmist.com/skins/monobook/user.gif) top left no-repeat;padding-left:20px;text-transform:none;}#p-personal ul{text-transform:lowercase;}#p-personal li.active{font-weight:bold;}/**/#p-cactions{position:absolute;top:1.3em;left:11.5em;margin:0;white-space:nowrap;width:76%;line-height:1.1em;overflow:visible;background:none;border-collapse:collapse;padding-left:1em;list-style:none;font-size:95%;}#p-cactions ul{list-style:none;}#p-cactions li{display:inline;border:1px solid #aaa;border-bottom:none;padding:0 0 .1em 0;margin:0 .3em 0 0;overflow:visible;background:white;}#p-cactions li.selected{border-color:#fabd23;padding:0 0 .2em 0;font-weight:bold;}#p-cactions li a{background-color:#fbfbfb;color:#002bb8;border:none;padding:0 .8em .3em;position:relative;z-index:0;margin:0;text-decoration:none;}#p-cactions li.selected a{z-index:3;padding:0 1em .2em!important;background-color:white;}#p-cactions .new a{color:#ba0000;}#p-cactions li a:hover{z-index:3;text-decoration:none;background-color:white;}#p-cactions h5{display:none;}#p-cactions li.istalk{margin-right:0;}#p-cactions li.istalk a{padding-right:.5em;}#p-cactions #ca-addsection a{padding-left:.4em;padding-right:.4em;}/**/li#ca-talk{margin-right:1.6em;}li#ca-watch,li#ca-unwatch,li#ca-varlang-0,li#ca-print{margin-left:1.6em;}#p-cactions .pBody{font-size:1em;background-color:transparent;color:inherit;border-collapse:inherit;border:0;padding:0;}#p-cactions .hiddenStructure{display:none;}#p-cactions li a{text-transform:lowercase;}#p-lang{position:relative;z-index:3;}/**/.capitalize-all-nouns .portlet h5,.capitalize-all-nouns .portlet h6,.capitalize-all-nouns #p-personal ul,.capitalize-all-nouns #p-cactions ul li a{text-transform:none;}/**/#t-ispermalink,#t-iscite{color:#999;}/**/#footer{background-color:white;border-top:1px solid #fabd23;border-bottom:1px solid #fabd23;margin:.6em 0 1em 0;padding:.4em 0 1.2em 0;text-align:center;font-size:90%;}#footer li{display:inline;margin:0 1.3em;}#f-poweredbyico,#f-copyrightico{margin:0 8px;position:relative;top:-2px;/**/}#f-poweredbyico{float:right;height:1%;}#f-copyrightico{float:left;height:1%;}.mw-htmlform-submit{font-weight:bold;padding-left:.3em;padding-right:.3em;margin-right:2em;}/**/#preftoc{margin:0;padding:0;width:100%;clear:both;}#preftoc li{background-color:#f0f0f0;color:#000;}#preftoc li{margin:1px -2px 1px 2px;float:left;padding:2px 0 3px 0;border:1px solid #fff;border-right-color:#716f64;border-bottom:0;position:relative;white-space:nowrap;list-style-type:none;list-style-image:none;z-index:3;}#preftoc li.selected{font-weight:bold;background-color:#f9f9f9;border:1px solid #aaa;border-bottom:none;cursor:default;top:1px;padding-top:2px;margin-right:-3px;}#preftoc>li.selected{top:2px;}#preftoc a,#preftoc a:active{display:block;color:#000;padding:0 .7em;position:relative;text-decoration:none;}#preftoc li.selected a{cursor:default;text-decoration:none;}#preferences{margin:0;border:1px solid #aaa;clear:both;padding:1.5em;background-color:#F9F9F9;}.prefsection{border:none;padding:0;margin:0;}.prefsection legend{font-weight:bold;}.prefsection table,.prefsection legend{background-color:#F9F9F9;}.mainLegend{display:none;}td.htmlform-tip{font-size:x-small;padding:.2em 2em;color:#666;}.preferences-login{clear:both;margin-bottom:1.5em;}.prefcache{font-size:90%;margin-top:2em;}div#userloginForm form,div#userlogin form#userlogin2{margin:0 3em 1em 0;border:1px solid #aaa;clear:both;padding:1.5em 2em;background-color:#f9f9f9;float:left;}.rtl div#userloginForm form,.rtl div#userlogin form#userlogin2{float:right;}div#userloginForm table,div#userlogin form#userlogin2 table{background-color:#f9f9f9;}div#userloginForm h2,div#userlogin form#userlogin2 h2{padding-top:0;}div#userlogin .captcha,div#userloginForm .captcha{border:1px solid #bbb;padding:1.5em 2em;background-color:white;}#loginend,#signupend{clear:both;}#userloginprompt,#languagelinks{font-size:85%;}#login-sectiontip{font-size:85%;line-height:1.2;padding-top:2em;}#userlogin .loginText,#userlogin .loginPassword{width:12em;}#userloginlink a,#wpLoginattempt,#wpCreateaccount{font-weight:bold;}/**//**/ *>html #p-cactions li{border:none;}*>html #p-cactions li a{border:1px solid #aaa;border-bottom:none;}*>html #p-cactions li.selected a{border-color:#fabd23;}/**/ *>html #f-poweredbyico,*>html #f-copyrightico{width:88px;}*>html #bodyContent,*>html #bodyContent pre{overflow-x:auto;width:100%;padding-bottom:25px;}/**//**/ * html #footer{margin-top:0;}* html #column-content{display:inline;margin-bottom:0;}* html div.editsection{font-size:smaller;}#pagehistory li.selected{position:relative;}/**/ *>html #column-content{float:none;}*>html #column-one{position:absolute;left:0;top:0;}*>html #footer{margin-left:13.2em;}.redirectText{font-size:150%;margin:5px;}.printfooter{display:none;}div.patrollink{clear:both;}.sharedUploadNotice{font-style:italic;}span.updatedmarker{color:black;background-color:#0f0;}.previewnote{color:#c00;margin-bottom:1em;}.previewnote p{text-indent:3em;margin:0.8em 0;}.editExternally{border:1px solid gray;background-color:#ffffff;padding:3px;margin-top:0.5em;float:left;font-size:small;text-align:center;}.editExternallyHelp{font-style:italic;color:gray;}.toggle{margin-left:2em;text-indent:-2em;}input#wpSummary{width:80%;}/**/input#wpSave,input#wpDiff{margin-right:0.33em;}#wpSave{font-weight:bold;}/**/table.revisionform_default{border:1px solid #000000;}table.revisionform_focus{border:1px solid #000000;background-color:#00BBFF;}tr.revision_tr_default{background-color:#EEEEEE;}tr.revision_tr_first{background-color:#DDDDDD;}p.revision_saved{color:green;font-weight:bold;}/**/div.noarticletext{border:1px solid #ccc;background:#fff;padding:.2em 1em;color:#000;}div#searchTargetContainer{left:10px;top:10px;width:90%;background:white;}div#searchTarget{padding:3px;margin:5px;background:#F0F0F0;border:solid 1px blue;}div#searchTarget ul li{list-style:none;}div#searchTarget ul li:before{color:orange;content:"\00BB \0020";}div#searchTargetHide{float:right;border:solid 1px black;background:#DCDCDC;padding:2px;}#powersearch p{margin-top:0px;}div.multipageimagenavbox{border:solid 1px silver;padding:4px;margin:1em;background:#f0f0f0;}div.multipageimagenavbox div.thumb{border:none;margin-left:2em;margin-right:2em;}div.multipageimagenavbox hr{margin:6px;}table.multipageimage td{text-align:center;}.templatesUsed{margin-top:1.5em;}.mw-summary-preview{margin:0.1em 0;}/**/div.mw-lag-warn-normal,div.mw-lag-warn-high{padding:3px;text-align:center;margin:3px auto;}div.mw-lag-warn-normal{border:1px solid #FFCC66;background-color:#FFFFCC;}div.mw-lag-warn-high{font-weight:bold;border:2px solid #FF0033;background-color:#FFCCCC;}.MediaTransformError{background-color:#ccc;padding:0.1em;}.MediaTransformError td{text-align:center;vertical-align:middle;font-size:90%;}/**/.os-suggest{font-size:127%;}/**/.no-text-transform{text-transform:none;}
+</style>
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?270" media="screen" /><![endif]--><!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?270" media="screen" /><![endif]--><!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?270" media="screen" /><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?270" media="screen" /><![endif]--><style style="display: none;">/* CSS placed here will be applied to all skins */
+</style>
+<link rel="stylesheet" href="UVa_558_files/index.css" media="print"><style style="display: none;">/* CSS placed here will affect users of the Monobook skin */
+</style>
+<style style="display: none;">/* generated user stylesheet */
+a.new, #quickbar a.new { color: #CC2200; }
+
+</style>
+<script>
+var skin="monobook",
+stylepath="/skins",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgScript="/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://www.algorithmist.com",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="UVa_558",
+wgTitle="UVa 558",
+wgAction="view",
+wgArticleId=1343,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=9400,
+wgVersion="1.16.2",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Algorithmist", "5": "Algorithmist talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "algorithmist": 4, "algorithmist_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "image": 6, "image_talk": 7},
+wgSiteName="Algorithmist",
+wgCategories=["UVa Online Judge", "Graph Theory"],
+wgMWSuggestTemplate="http://www.algorithmist.com/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
+wgDBname="wikidb",
+wgSearchNamespaces=[0],
+wgMWSuggestMessages=["with suggestions", "no suggestions"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script><script style="display: none;">var clientPC=navigator.userAgent.toLowerCase();var is_gecko=/gecko/.test(clientPC)&&!/khtml|spoofer|netscape\/7\.0/.test(clientPC);var webkit_match=clientPC.match(/applewebkit\/(\d+)/);if(webkit_match){var is_safari=clientPC.indexOf('applewebkit')!=-1&&clientPC.indexOf('spoofer')==-1;var is_safari_win=is_safari&&clientPC.indexOf('windows')!=-1;var webkit_version=parseInt(webkit_match[1]);}
+var is_ff2=/firefox\/[2-9]|minefield\/3/.test(clientPC);var ff2_bugs=/firefox\/2/.test(clientPC);var is_ff2_win=is_ff2&&clientPC.indexOf('windows')!=-1;var is_ff2_x11=is_ff2&&clientPC.indexOf('x11')!=-1;if(clientPC.indexOf('opera')!=-1){var is_opera=true;var is_opera_preseven=window.opera&&!document.childNodes;var is_opera_seven=window.opera&&document.childNodes;var is_opera_95=/opera\/(9\.[5-9]|[1-9][0-9])/.test(clientPC);var opera6_bugs=is_opera_preseven;var opera7_bugs=is_opera_seven&&!is_opera_95;var opera95_bugs=/opera\/(9\.5)/.test(clientPC);}
+var ie6_bugs=false;if(/msie ([0-9]{1,}[\.0-9]{0,})/.exec(clientPC)!=null&&parseFloat(RegExp.$1)<=6.0){ie6_bugs=true;}
+var doneOnloadHook;if(!window.onloadFuncts){var onloadFuncts=[];}
+function addOnloadHook(hookFunct){if(!doneOnloadHook){onloadFuncts[onloadFuncts.length]=hookFunct;}else{hookFunct();}}
+function hookEvent(hookName,hookFunct){addHandler(window,hookName,hookFunct);}
+function importScript(page){var uri=wgScript+'?title='+
+encodeURIComponent(page.replace(/ /g,'_')).replace(/%2F/ig,'/').replace(/%3A/ig,':')+
+'&action=raw&ctype=text/javascript';return importScriptURI(uri);}
+var loadedScripts={};function importScriptURI(url){if(loadedScripts[url]){return null;}
+loadedScripts[url]=true;var s=document.createElement('script');s.setAttribute('src',url);s.setAttribute('type','text/javascript');document.getElementsByTagName('head')[0].appendChild(s);return s;}
+function importStylesheet(page){return importStylesheetURI(wgScript+'?action=raw&ctype=text/css&title='+encodeURIComponent(page.replace(/ /g,'_')));}
+function importStylesheetURI(url,media){var l=document.createElement('link');l.type='text/css';l.rel='stylesheet';l.href=url;if(media){l.media=media;}
+document.getElementsByTagName('head')[0].appendChild(l);return l;}
+function appendCSS(text){var s=document.createElement('style');s.type='text/css';s.rel='stylesheet';if(s.styleSheet){s.styleSheet.cssText=text;}else{s.appendChild(document.createTextNode(text+''));}
+document.getElementsByTagName('head')[0].appendChild(s);return s;}
+if(typeof stylepath!='undefined'&&skin=='monobook'){if(opera6_bugs){importStylesheetURI(stylepath+'/'+skin+'/Opera6Fixes.css');}else if(opera7_bugs){importStylesheetURI(stylepath+'/'+skin+'/Opera7Fixes.css');}else if(opera95_bugs){importStylesheetURI(stylepath+'/'+skin+'/Opera9Fixes.css');}else if(ff2_bugs){importStylesheetURI(stylepath+'/'+skin+'/FF2Fixes.css');}}
+if(wgBreakFrames){if(window.top!=window){window.top.location=window.location;}}
+function showTocToggle(){if(document.createTextNode){var linkHolder=document.getElementById('toctitle');var existingLink=document.getElementById('togglelink');if(!linkHolder||existingLink){return;}
+var outerSpan=document.createElement('span');outerSpan.className='toctoggle';var toggleLink=document.createElement('a');toggleLink.id='togglelink';toggleLink.className='internal';toggleLink.href='javascript:toggleToc()';toggleLink.appendChild(document.createTextNode(tocHideText));outerSpan.appendChild(document.createTextNode('['));outerSpan.appendChild(toggleLink);outerSpan.appendChild(document.createTextNode(']'));linkHolder.appendChild(document.createTextNode(' '));linkHolder.appendChild(outerSpan);var cookiePos=document.cookie.indexOf("hidetoc=");if(cookiePos>-1&&document.cookie.charAt(cookiePos+8)==1){toggleToc();}}}
+function changeText(el,newText){if(el.innerText){el.innerText=newText;}else if(el.firstChild&&el.firstChild.nodeValue){el.firstChild.nodeValue=newText;}}
+function toggleToc(){var tocmain=document.getElementById('toc');var toc=document.getElementById('toc').getElementsByTagName('ul')[0];var toggleLink=document.getElementById('togglelink');if(toc&&toggleLink&&toc.style.display=='none'){changeText(toggleLink,tocHideText);toc.style.display='block';document.cookie="hidetoc=0";tocmain.className='toc';}else{changeText(toggleLink,tocShowText);toc.style.display='none';document.cookie="hidetoc=1";tocmain.className='toc tochidden';}}
+var mwEditButtons=[];var mwCustomEditButtons=[];function escapeQuotes(text){var re=new RegExp("'","g");text=text.replace(re,"\\'");re=new RegExp("\\n","g");text=text.replace(re,"\\n");return escapeQuotesHTML(text);}
+function escapeQuotesHTML(text){var re=new RegExp('&',"g");text=text.replace(re,"&amp;");re=new RegExp('"',"g");text=text.replace(re,"&quot;");re=new RegExp('<',"g");text=text.replace(re,"&lt;");re=new RegExp('>',"g");text=text.replace(re,"&gt;");return text;}
+var tooltipAccessKeyPrefix='alt-';if(is_opera){tooltipAccessKeyPrefix='shift-esc-';}else if(!is_safari_win&&is_safari&&webkit_version>526){tooltipAccessKeyPrefix='ctrl-alt-';}else if(!is_safari_win&&(is_safari||clientPC.indexOf('mac')!=-1||clientPC.indexOf('konqueror')!=-1)){tooltipAccessKeyPrefix='ctrl-';}else if(is_ff2){tooltipAccessKeyPrefix='alt-shift-';}
+var tooltipAccessKeyRegexp=/\[(ctrl-)?(alt-)?(shift-)?(esc-)?(.)\]$/;/***/
+function updateTooltipAccessKeys(nodeList){if(!nodeList){var linkContainers=['column-one','mw-head','mw-panel','p-logo'];for(var i in linkContainers){var linkContainer=document.getElementById(linkContainers[i]);if(linkContainer){updateTooltipAccessKeys(linkContainer.getElementsByTagName('a'));}}
+updateTooltipAccessKeys(document.getElementsByTagName('input'));updateTooltipAccessKeys(document.getElementsByTagName('label'));return;}
+for(var i=0;i<nodeList.length;i++){var element=nodeList[i];var tip=element.getAttribute('title');if(tip&&tooltipAccessKeyRegexp.exec(tip)){tip=tip.replace(tooltipAccessKeyRegexp,'['+tooltipAccessKeyPrefix+"$5]");element.setAttribute('title',tip);}}}
+/**/
+function addPortletLink(portlet,href,text,id,tooltip,accesskey,nextnode){var root=document.getElementById(portlet);if(!root){return null;}
+var node=root.getElementsByTagName('ul')[0];if(!node){return null;}
+root.className=root.className.replace(/(^| )emptyPortlet( |$)/,"$2");var span=document.createElement('span');span.appendChild(document.createTextNode(text));var link=document.createElement('a');link.appendChild(span);link.href=href;var item=document.createElement('li');item.appendChild(link);if(id){item.id=id;}
+if(accesskey){link.setAttribute('accesskey',accesskey);tooltip+=' ['+accesskey+']';}
+if(tooltip){link.setAttribute('title',tooltip);}
+if(accesskey&&tooltip){updateTooltipAccessKeys(new Array(link));}
+if(nextnode&&nextnode.parentNode==node){node.insertBefore(item,nextnode);}else{node.appendChild(item);}
+return item;}
+function getInnerText(el){if(typeof el=='string'){return el;}
+if(typeof el=='undefined'){return el;}
+if(el.textContent){return el.textContent;}
+if(el.innerText){return el.innerText;}
+var str='';var cs=el.childNodes;var l=cs.length;for(var i=0;i<l;i++){switch(cs[i].nodeType){case 1:str+=ts_getInnerText(cs[i]);break;case 3:str+=cs[i].nodeValue;break;}}
+return str;}
+window.ta=[];function akeytt(doId){}
+var checkboxes;var lastCheckbox;function setupCheckboxShiftClick(){checkboxes=[];lastCheckbox=null;var inputs=document.getElementsByTagName('input');addCheckboxClickHandlers(inputs);}
+function addCheckboxClickHandlers(inputs,start){if(!start){start=0;}
+var finish=start+250;if(finish>inputs.length){finish=inputs.length;}
+for(var i=start;i<finish;i++){var cb=inputs[i];if(!cb.type||cb.type.toLowerCase()!='checkbox'){continue;}
+var end=checkboxes.length;checkboxes[end]=cb;cb.index=end;cb.onclick=checkboxClickHandler;}
+if(finish<inputs.length){setTimeout(function(){addCheckboxClickHandlers(inputs,finish);},200);}}
+function checkboxClickHandler(e){if(typeof e=='undefined'){e=window.event;}
+if(!e.shiftKey||lastCheckbox===null){lastCheckbox=this.index;return true;}
+var endState=this.checked;var start,finish;if(this.index<lastCheckbox){start=this.index+1;finish=lastCheckbox;}else{start=lastCheckbox;finish=this.index-1;}
+for(var i=start;i<=finish;++i){checkboxes[i].checked=endState;if(i>start&&typeof checkboxes[i].onchange=='function'){checkboxes[i].onchange();}}
+lastCheckbox=this.index;return true;}
+function getElementsByClassName(oElm,strTagName,oClassNames){var arrReturnElements=new Array();if(typeof(oElm.getElementsByClassName)=='function'){var arrNativeReturn=oElm.getElementsByClassName(oClassNames);if(strTagName=='*'){return arrNativeReturn;}
+for(var h=0;h<arrNativeReturn.length;h++){if(arrNativeReturn[h].tagName.toLowerCase()==strTagName.toLowerCase()){arrReturnElements[arrReturnElements.length]=arrNativeReturn[h];}}
+return arrReturnElements;}
+var arrElements=(strTagName=='*'&&oElm.all)?oElm.all:oElm.getElementsByTagName(strTagName);var arrRegExpClassNames=new Array();if(typeof oClassNames=='object'){for(var i=0;i<oClassNames.length;i++){arrRegExpClassNames[arrRegExpClassNames.length]=new RegExp("(^|\\s)"+oClassNames[i].replace(/\-/g,"\\-")+"(\\s|$)");}}else{arrRegExpClassNames[arrRegExpClassNames.length]=new RegExp("(^|\\s)"+oClassNames.replace(/\-/g,"\\-")+"(\\s|$)");}
+var oElement;var bMatchesAll;for(var j=0;j<arrElements.length;j++){oElement=arrElements[j];bMatchesAll=true;for(var k=0;k<arrRegExpClassNames.length;k++){if(!arrRegExpClassNames[k].test(oElement.className)){bMatchesAll=false;break;}}
+if(bMatchesAll){arrReturnElements[arrReturnElements.length]=oElement;}}
+return(arrReturnElements);}
+function redirectToFragment(fragment){var match=navigator.userAgent.match(/AppleWebKit\/(\d+)/);if(match){var webKitVersion=parseInt(match[1]);if(webKitVersion<420){return;}}
+if(is_gecko){addOnloadHook(function(){if(window.location.hash==''){window.location.hash=fragment;}});}else{if(window.location.hash==''){window.location.hash=fragment;}}}
+var ts_image_path=stylepath+'/common/images/';var ts_image_up='sort_up.gif';var ts_image_down='sort_down.gif';var ts_image_none='sort_none.gif';var ts_europeandate=wgContentLanguage!='en';var ts_alternate_row_colors=false;var ts_number_transform_table=null;var ts_number_regex=null;function sortables_init(){var idnum=0;var tables=getElementsByClassName(document,'table','sortable');for(var ti=0;ti<tables.length;ti++){if(!tables[ti].id){tables[ti].setAttribute('id','sortable_table_id_'+idnum);++idnum;}
+ts_makeSortable(tables[ti]);}}
+function ts_makeSortable(table){var firstRow;if(table.rows&&table.rows.length>0){if(table.tHead&&table.tHead.rows.length>0){firstRow=table.tHead.rows[table.tHead.rows.length-1];}else{firstRow=table.rows[0];}}
+if(!firstRow){return;}
+for(var i=0;i<firstRow.cells.length;i++){var cell=firstRow.cells[i];if((' '+cell.className+' ').indexOf(' unsortable ')==-1){cell.innerHTML+='<a href="#" class="sortheader" '
++'onclick="ts_resortTable(this);return false;">'
++'<span class="sortarrow">'
++'<img src="'
++ts_image_path
++ts_image_none
++'" alt="&darr;"/></span></a>';}}
+if(ts_alternate_row_colors){ts_alternate(table);}}
+function ts_getInnerText(el){return getInnerText(el);}
+function ts_resortTable(lnk){var span=lnk.getElementsByTagName('span')[0];var td=lnk.parentNode;var tr=td.parentNode;var column=td.cellIndex;var table=tr.parentNode;while(table&&!(table.tagName&&table.tagName.toLowerCase()=='table')){table=table.parentNode;}
+if(!table){return;}
+if(table.rows.length<=1){return;}
+if(ts_number_transform_table===null){ts_initTransformTable();}
+var rowStart=(table.tHead&&table.tHead.rows.length>0?0:1);var itm='';for(var i=rowStart;i<table.rows.length;i++){if(table.rows[i].cells.length>column){itm=ts_getInnerText(table.rows[i].cells[column]);itm=itm.replace(/^[\s\xa0]+/,'').replace(/[\s\xa0]+$/,'');if(itm!=''){break;}}}
+var sortfn=ts_sort_generic;var preprocessor=ts_toLowerCase;if(/^\d\d[\/. -][a-zA-Z]{3}[\/. -]\d\d\d\d$/.test(itm)){preprocessor=ts_dateToSortKey;}else if(/^\d\d[\/.-]\d\d[\/.-]\d\d\d\d$/.test(itm)){preprocessor=ts_dateToSortKey;}else if(/^\d\d[\/.-]\d\d[\/.-]\d\d$/.test(itm)){preprocessor=ts_dateToSortKey;}else if(/(^([-\u2212] *)?[\u00a3$\u20ac\u00a4\u00a5]|\u00a2$)/.test(itm)){preprocessor=ts_currencyToSortKey;}else if(ts_number_regex.test(itm)){preprocessor=ts_parseFloat;}
+var reverse=(span.getAttribute('sortdir')=='down');var newRows=new Array();var staticRows=new Array();for(var j=rowStart;j<table.rows.length;j++){var row=table.rows[j];if((' '+row.className+' ').indexOf(' unsortable ')<0){var keyText=ts_getInnerText(row.cells[column]);if(keyText===undefined){keyText='';}
+var oldIndex=(reverse?-j:j);var preprocessed=preprocessor(keyText.replace(/^[\s\xa0]+/,'').replace(/[\s\xa0]+$/,''));newRows[newRows.length]=new Array(row,preprocessed,oldIndex);}else{staticRows[staticRows.length]=new Array(row,false,j-rowStart);}}
+newRows.sort(sortfn);var arrowHTML;if(reverse){arrowHTML='<img src="'+ts_image_path+ts_image_down+'" alt="&darr;"/>';newRows.reverse();span.setAttribute('sortdir','up');}else{arrowHTML='<img src="'+ts_image_path+ts_image_up+'" alt="&uarr;"/>';span.setAttribute('sortdir','down');}
+for(var i=0;i<staticRows.length;i++){var row=staticRows[i];newRows.splice(row[2],0,row);}
+for(var i=0;i<newRows.length;i++){if((' '+newRows[i][0].className+' ').indexOf(' sortbottom ')==-1){table.tBodies[0].appendChild(newRows[i][0]);}}
+for(var i=0;i<newRows.length;i++){if((' '+newRows[i][0].className+' ').indexOf(' sortbottom ')!=-1){table.tBodies[0].appendChild(newRows[i][0]);}}
+var spans=getElementsByClassName(tr,'span','sortarrow');for(var i=0;i<spans.length;i++){spans[i].innerHTML='<img src="'+ts_image_path+ts_image_none+'" alt="&darr;"/>';}
+span.innerHTML=arrowHTML;if( ts_alternate_row_colors){ts_alternate(table);}}
+function ts_initTransformTable(){if(typeof wgSeparatorTransformTable=='undefined'||(wgSeparatorTransformTable[0]==''&&wgDigitTransformTable[2]==''))
+{digitClass="[0-9,.]";ts_number_transform_table=false;}else{ts_number_transform_table={};ascii=wgSeparatorTransformTable[0].split("\t");localised=wgSeparatorTransformTable[1].split("\t");for(var i=0;i<ascii.length;i++){ts_number_transform_table[localised[i]]=ascii[i];}
+ascii=wgDigitTransformTable[0].split("\t");localised=wgDigitTransformTable[1].split("\t");for(var i=0;i<ascii.length;i++){ts_number_transform_table[localised[i]]=ascii[i];}
+digits=['0','1','2','3','4','5','6','7','8','9',',','\\.'];maxDigitLength=1;for(var digit in ts_number_transform_table){digits.push(digit.replace(/[\\\\$\*\+\?\.\(\)\|\{\}\[\]\-]/,function(s){return '\\'+s;}));if(digit.length>maxDigitLength){maxDigitLength=digit.length;}}
+if(maxDigitLength>1){digitClass='['+digits.join('',digits)+']';}else{digitClass='('+digits.join('|',digits)+')';}}
+ts_number_regex=new RegExp("^("+
+"[-+\u2212]?[0-9][0-9,]*(\\.[0-9,]*)?(E[-+\u2212]?[0-9][0-9,]*)?"+
+"|"+
+"[-+\u2212]?"+digitClass+"+%?"+
+")$","i");}
+function ts_toLowerCase(s){return s.toLowerCase();}
+function ts_dateToSortKey(date){if(date.length==11){switch(date.substr(3,3).toLowerCase()){case 'jan':var month='01';break;case 'feb':var month='02';break;case 'mar':var month='03';break;case 'apr':var month='04';break;case 'may':var month='05';break;case 'jun':var month='06';break;case 'jul':var month='07';break;case 'aug':var month='08';break;case 'sep':var month='09';break;case 'oct':var month='10';break;case 'nov':var month='11';break;case 'dec':var month='12';break;}
+return date.substr(7,4)+month+date.substr(0,2);}else if(date.length==10){if(ts_europeandate==false){return date.substr(6,4)+date.substr(0,2)+date.substr(3,2);}else{return date.substr(6,4)+date.substr(3,2)+date.substr(0,2);}}else if(date.length==8){yr=date.substr(6,2);if(parseInt(yr)<50){yr='20'+yr;}else{yr='19'+yr;}
+if(ts_europeandate==true){return yr+date.substr(3,2)+date.substr(0,2);}else{return yr+date.substr(0,2)+date.substr(3,2);}}
+return '00000000';}
+function ts_parseFloat(s){if(!s){return 0;}
+if(ts_number_transform_table!=false){var newNum='',c;for(var p=0;p<s.length;p++){c=s.charAt(p);if(c in ts_number_transform_table){newNum+=ts_number_transform_table[c];}else{newNum+=c;}}
+s=newNum;}
+num=parseFloat(s.replace(/[, ]/g,'').replace("\u2212",'-'));return(isNaN(num)?-Infinity:num);}
+function ts_currencyToSortKey(s){return ts_parseFloat(s.replace(/[^-\u22120-9.,]/g,''));}
+function ts_sort_generic(a,b){return a[1]<b[1]?-1:a[1]>b[1]?1:a[2]-b[2];}
+function ts_alternate(table){var tableBodies=table.getElementsByTagName('tbody');for(var i=0;i<tableBodies.length;i++){var tableRows=tableBodies[i].getElementsByTagName('tr');for(var j=0;j<tableRows.length;j++){var oldClasses=tableRows[j].className.split(' ');var newClassName='';for(var k=0;k<oldClasses.length;k++){if(oldClasses[k]!=''&&oldClasses[k]!='even'&&oldClasses[k]!='odd'){newClassName+=oldClasses[k]+' ';}}
+tableRows[j].className=newClassName+(j%2==0?'even':'odd');}}}
+function jsMsg(message,className){if(!document.getElementById){return false;}
+var messageDiv=document.getElementById('mw-js-message');if(!messageDiv){messageDiv=document.createElement('div');if(document.getElementById('column-content')&&document.getElementById('content')){document.getElementById('content').insertBefore(messageDiv,document.getElementById('content').firstChild);}else if(document.getElementById('content')&&document.getElementById('article')){document.getElementById('article').insertBefore(messageDiv,document.getElementById('article').firstChild);}else{return false;}}
+messageDiv.setAttribute('id','mw-js-message');messageDiv.style.display='block';if(className){messageDiv.setAttribute('class','mw-js-message-'+className);}
+if(typeof message==='object'){while(messageDiv.hasChildNodes()){messageDiv.removeChild(messageDiv.firstChild);}
+messageDiv.appendChild(message);}else{messageDiv.innerHTML=message;}
+return true;}
+function injectSpinner(element,id){var spinner=document.createElement('img');spinner.id='mw-spinner-'+id;spinner.src=stylepath+'/common/images/spinner.gif';spinner.alt=spinner.title='...';if(element.nextSibling){element.parentNode.insertBefore(spinner,element.nextSibling);}else{element.parentNode.appendChild(spinner);}}
+function removeSpinner(id){var spinner=document.getElementById('mw-spinner-'+id);if(spinner){spinner.parentNode.removeChild(spinner);}}
+function runOnloadHook(){if(doneOnloadHook||!(document.getElementById&&document.getElementsByTagName)){return;}
+doneOnloadHook=true;updateTooltipAccessKeys(null);setupCheckboxShiftClick();sortables_init();for(var i=0;i<onloadFuncts.length;i++){onloadFuncts[i]();}}
+function addHandler(element,attach,handler){if(window.addEventListener){element.addEventListener(attach,handler,false);}else if(window.attachEvent){element.attachEvent('on'+attach,handler);}}
+function addClickHandler(element,handler){addHandler(element,'click',handler);}
+function removeHandler(element,remove,handler){if(window.removeEventListener){element.removeEventListener(remove,handler,false);}else if(window.detachEvent){element.detachEvent('on'+remove,handler);}}
+hookEvent('load',runOnloadHook);if(ie6_bugs){importScriptURI(stylepath+'/common/IEFixes.js');}
+mw={};</script> <script style="display: none;">var sajax_debug_mode=false;var sajax_request_type="GET";function sajax_debug(text){if(!sajax_debug_mode)return false;var e=document.getElementById('sajax_debug');if(!e){e=document.createElement("p");e.className='sajax_debug';e.id='sajax_debug';var b=document.getElementsByTagName("body")[0];if(b.firstChild)b.insertBefore(e,b.firstChild);else b.appendChild(e);}
+var m=document.createElement("div");m.appendChild(document.createTextNode(text));e.appendChild(m);return true;}
+function sajax_init_object(){sajax_debug("sajax_init_object() called..")
+var A;try{A=new XMLHttpRequest();}catch(e){try{A=new ActiveXObject("Msxml2.XMLHTTP");}catch(e){try{A=new ActiveXObject("Microsoft.XMLHTTP");}catch(oc){A=null;}}}
+if(!A)
+sajax_debug("Could not create connection object.");return A;}
+/**/
+function sajax_do_call(func_name,args,target){var i,x,n;var uri;var post_data;uri=wgServer+((wgScript==null)?(wgScriptPath+"/index.php"):wgScript)+
+"?action=ajax";if(sajax_request_type=="GET"){if(uri.indexOf("?")==-1)
+uri=uri+"?rs="+encodeURIComponent(func_name);else
+uri=uri+"&rs="+encodeURIComponent(func_name);for(i=0;i<args.length;i++)
+uri=uri+"&rsargs[]="+encodeURIComponent(args[i]);post_data=null;}else{post_data="rs="+encodeURIComponent(func_name);for(i=0;i<args.length;i++)
+post_data=post_data+"&rsargs[]="+encodeURIComponent(args[i]);}
+x=sajax_init_object();if(!x){alert("AJAX not supported");return false;}
+try{x.open(sajax_request_type,uri,true);}catch(e){if(window.location.hostname=="localhost"){alert("Your browser blocks XMLHttpRequest to 'localhost', try using a real hostname for development/testing.");}
+throw e;}
+if(sajax_request_type=="POST"){x.setRequestHeader("Method","POST "+uri+" HTTP/1.1");x.setRequestHeader("Content-Type","application/x-www-form-urlencoded");}
+x.setRequestHeader("Pragma","cache=yes");x.setRequestHeader("Cache-Control","no-transform");x.onreadystatechange=function(){if(x.readyState!=4)
+return;sajax_debug("received ("+x.status+" "+x.statusText+") "+x.responseText);if(typeof(target)=='function'){target(x);}
+else if(typeof(target)=='object'){if(target.tagName=='INPUT'){if(x.status==200)target.value=x.responseText;}
+else{ if(x.status==200)target.innerHTML=x.responseText;else target.innerHTML="<div class='error'>Error: "+x.status+" "+x.statusText+" ("+x.responseText+")</div>";}}
+else{alert("bad target for sajax_do_call: not a function or object: "+target);}
+return;}
+sajax_debug(func_name+" uri = "+uri+" / post = "+post_data);x.send(post_data);sajax_debug(func_name+" waiting..");delete x;return true;}
+function wfSupportsAjax(){var request=sajax_init_object();var supportsAjax=request?true:false;delete request;return supportsAjax;}
+</script> <script style="display: none;">var os_map={};var os_cache={};var os_cur_keypressed=0;var os_keypressed_count=0;var os_timer=null;var os_mouse_pressed=false;var os_mouse_num=-1;var os_mouse_moved=false;var os_search_timeout=250;var os_autoload_inputs=new Array('searchInput','searchInput2','powerSearchText','searchText');var os_autoload_forms=new Array('searchform','searchform2','powersearch','search');var os_is_stopped=false;var os_max_lines_per_suggest=7;var os_animation_steps=6;var os_animation_min_step=2;var os_animation_delay=30;var os_container_max_width=2;var os_animation_timer=null;//
+var os_use_datalist=false;function os_Timer(id,r,query){this.id=id;this.r=r;this.query=query;}
+function os_Results(name,formname){this.searchform=formname;this.searchbox=name;this.container=name+'Suggest';this.resultTable=name+'Result';this.resultText=name+'ResultText';this.toggle=name+'Toggle';this.query=null;this.results=null;this.resultCount=0;this.original=null;this.selected=-1;this.containerCount=0;this.containerRow=0;this.containerTotal=0;this.visible=false;this.stayHidden=false;}
+function os_AnimationTimer(r,target){this.r=r;var current=document.getElementById(r.container).offsetWidth;this.inc=Math.round((target-current)/os_animation_steps);if(this.inc<os_animation_min_step&&this.inc>=0){this.inc=os_animation_min_step;}
+if(this.inc>-os_animation_min_step&&this.inc<0){this.inc=-os_animation_min_step;}
+this.target=target;}
+function os_MWSuggestInit(){for(i=0;i<os_autoload_inputs.length;i++){var id=os_autoload_inputs[i];var form=os_autoload_forms[i];element=document.getElementById(id);if(element!=null){os_initHandlers(id,form,element);}}}
+function os_initHandlers(name,formname,element){var r=new os_Results(name,formname);os_hookEvent(element,'keyup',function(event){os_eventKeyup(event);});os_hookEvent(element,'keydown',function(event){os_eventKeydown(event);});os_hookEvent(element,'keypress',function(event){os_eventKeypress(event);});if(!os_use_datalist){os_hookEvent(element,'blur',function(event){os_eventBlur(event);});os_hookEvent(element,'focus',function(event){os_eventFocus(event);});//
+element.setAttribute('autocomplete','off');}
+os_hookEvent(document.getElementById(formname),'submit',function(event){return os_eventOnsubmit(event);});os_map[name]=r;if(document.getElementById(r.toggle)==null){}}
+function os_hookEvent(element,hookName,hookFunct){if(element.addEventListener){element.addEventListener(hookName,hookFunct,false);}else if(window.attachEvent){element.attachEvent('on'+hookName,hookFunct);}}
+function os_eventKeyup(e){var targ=os_getTarget(e);var r=os_map[targ.id];if(r==null){return;}
+if(os_keypressed_count==0){os_processKey(r,os_cur_keypressed,targ);}
+var query=targ.value;os_fetchResults(r,query,os_search_timeout);}
+function os_processKey(r,keypressed,targ){if(keypressed==40&&!r.visible&&os_timer==null){r.query='';os_fetchResults(r,targ.value,0);}
+if(os_use_datalist){return;}
+if(keypressed==40){if(r.visible){os_changeHighlight(r,r.selected,r.selected+1,true);}}else if(keypressed==38){if(r.visible){os_changeHighlight(r,r.selected,r.selected-1,true);}}else if(keypressed==27){document.getElementById(r.searchbox).value=r.original;r.query=r.original;os_hideResults(r);}else if(r.query!=document.getElementById(r.searchbox).value){}}
+function os_eventKeypress(e){var targ=os_getTarget(e);var r=os_map[targ.id];if(r==null){return;}
+var keypressed=os_cur_keypressed;os_keypressed_count++;os_processKey(r,keypressed,targ);}
+function os_eventKeydown(e){if(!e){e=window.event;}
+var targ=os_getTarget(e);var r=os_map[targ.id];if(r==null){return;}
+os_mouse_moved=false;os_cur_keypressed=(e.keyCode==undefined)?e.which:e.keyCode;os_keypressed_count=0;}
+function os_eventOnsubmit(e){var targ=os_getTarget(e);os_is_stopped=true;if(os_timer!=null&&os_timer.id!=null){clearTimeout(os_timer.id);os_timer=null;}
+for(i=0;i<os_autoload_inputs.length;i++){var r=os_map[os_autoload_inputs[i]];if(r!=null){var b=document.getElementById(r.searchform);if(b!=null&&b==targ){
+r.query=document.getElementById(r.searchbox).value;}
+os_hideResults(r);}}
+return true;}
+function os_hideResults(r){if(os_use_datalist){document.getElementById(r.searchbox).setAttribute('list','');}else{var c=document.getElementById(r.container);if(c!=null){c.style.visibility='hidden';}}
+r.visible=false;r.selected=-1;}
+function os_decodeValue(value){if(decodeURIComponent){return decodeURIComponent(value);}
+if(unescape){return unescape(value);}
+return null;}
+function os_encodeQuery(value){if(encodeURIComponent){return encodeURIComponent(value);}
+if(escape){return escape(value);}
+return null;}
+function os_updateResults(r,query,text,cacheKey){os_cache[cacheKey]=text;r.query=query;r.original=query;if(text==''){r.results=null;r.resultCount=0;os_hideResults(r);}else{try{var p=eval('('+text+')');if(p.length<2||p[1].length==0){r.results=null;r.resultCount=0;os_hideResults(r);return;}
+if(os_use_datalist){os_setupDatalist(r,p[1]);}else{os_setupDiv(r,p[1]);}}catch(e){os_hideResults(r);os_cache[cacheKey]=null;}}}
+function os_setupDatalist(r,results){var s=document.getElementById(r.searchbox);var c=document.getElementById(r.container);if(c==null){c=document.createElement('datalist');c.setAttribute('id',r.container);document.body.appendChild(c);}else{c.innerHTML='';}
+s.setAttribute('list',r.container);r.results=new Array();r.resultCount=results.length;r.visible=true;for(i=0;i<results.length;i++){var title=os_decodeValue(results[i]);var opt=document.createElement('option');opt.value=title;r.results[i]=title;c.appendChild(opt);}}
+function os_getNamespaces(r){var namespaces='';var elements=document.forms[r.searchform].elements;for(i=0;i<elements.length;i++){var name=elements[i].name;if(typeof name!='undefined'&&name.length>2&&name[0]=='n'&&name[1]=='s'&&((elements[i].type=='checkbox'&&elements[i].checked)||(elements[i].type=='hidden'&&elements[i].value=='1'))){if(namespaces!=''){namespaces+='|';}
+namespaces+=name.substring(2);}}
+if(namespaces==''){namespaces=wgSearchNamespaces.join('|');}
+return namespaces;}
+function os_updateIfRelevant(r,query,text,cacheKey){var t=document.getElementById(r.searchbox);if(t!=null&&t.value==query){os_updateResults(r,query,text,cacheKey);}
+r.query=query;}
+function os_delayedFetch(){if(os_timer==null){return;}
+var r=os_timer.r;var query=os_timer.query;os_timer=null;var path=wgMWSuggestTemplate.replace("{namespaces}",os_getNamespaces(r))
+.replace("{dbname}",wgDBname)
+.replace("{searchTerms}",os_encodeQuery(query));var cached=os_cache[path];if(cached!=null&&cached!=undefined){os_updateIfRelevant(r,query,cached,path);}else{var xmlhttp=sajax_init_object();if(xmlhttp){try{xmlhttp.open('GET',path,true);xmlhttp.onreadystatechange=function(){if(xmlhttp.readyState==4&&typeof os_updateIfRelevant=='function'){os_updateIfRelevant(r,query,xmlhttp.responseText,path);}};xmlhttp.send(null);}catch(e){if(window.location.hostname=='localhost'){alert("Your browser blocks XMLHttpRequest to 'localhost', try using a real hostname for development/testing.");}
+throw e;}}}}
+function os_fetchResults(r,query,timeout){if(query==''){r.query='';os_hideResults(r);return;}else if(query==r.query){return;}
+os_is_stopped=false;if(os_timer!=null&&os_timer.id!=null){clearTimeout(os_timer.id);}
+if(timeout!=0){os_timer=new os_Timer(setTimeout("os_delayedFetch()",timeout),r,query);}else{os_timer=new os_Timer(null,r,query);os_delayedFetch();}}
+function os_getTarget(e){if(!e){e=window.event;}
+if(e.target){return e.target;}else if(e.srcElement){return e.srcElement;}else{return null;}}
+function os_isNumber(x){if(x==''||isNaN(x)){return false;}
+for(var i=0;i<x.length;i++){var c=x.charAt(i);if(!(c>='0'&&c<='9')){return false;}}
+return true;}
+function os_enableSuggestionsOn(inputId,formName){os_initHandlers(inputId,formName,document.getElementById(inputId));}
+function os_disableSuggestionsOn(inputId){r=os_map[inputId];if(r!=null){os_timer=null;os_hideResults(r);document.getElementById(inputId).setAttribute('autocomplete','on');os_map[inputId]=null;}
+var index=os_autoload_inputs.indexOf(inputId);if(index>=0){os_autoload_inputs[index]=os_autoload_forms[index]='';}}
+function os_eventBlur(e){var targ=os_getTarget(e);var r=os_map[targ.id];if(r==null){return;}
+if(!os_mouse_pressed){os_hideResults(r);r.stayHidden=true;if(os_timer!= null&&os_timer.id!=null){clearTimeout(os_timer.id);}
+os_timer=null;}}
+function os_eventFocus(e){var targ=os_getTarget(e);var r=os_map[targ.id];if(r==null){return;}
+r.stayHidden=false;}
+function os_setupDiv(r,results){var c=document.getElementById(r.container);if(c==null){c=os_createContainer(r);}
+c.innerHTML=os_createResultTable(r,results);var t=document.getElementById(r.resultTable);r.containerTotal=t.offsetHeight;r.containerRow=t.offsetHeight/r.resultCount;os_fitContainer(r);os_trimResultText(r);os_showResults(r);}
+function os_createResultTable(r,results){var c=document.getElementById(r.container);var width=c.offsetWidth-os_operaWidthFix(c.offsetWidth);var html='<table class="os-suggest-results" id="'+r.resultTable+'" style="width: '+width+'px;">';r.results=new Array();r.resultCount=results.length;for(i=0;i<results.length;i++){var title=os_decodeValue(results[i]);r.results[i]=title;html+='<tr><td class="os-suggest-result" id="'+r.resultTable+i+'"><span id="'+r.resultText+i+'">'+title+'</span></td></tr>';}
+html+='</table>';return html;}
+function os_showResults(r){if(os_is_stopped){return;}
+if(r.stayHidden){return;}
+os_fitContainer(r);var c=document.getElementById(r.container);r.selected=-1;if(c!=null){c.scrollTop=0;c.style.visibility='visible';r.visible=true;}}
+function os_operaWidthFix(x){if(typeof document.body.style.overflowX!='string'){return 30;}
+return 0;}
+function f_clientWidth(){return f_filterResults(window.innerWidth?window.innerWidth:0,document.documentElement?document.documentElement.clientWidth:0,document.body?document.body.clientWidth:0);}
+function f_clientHeight(){return f_filterResults(window.innerHeight?window.innerHeight:0,document.documentElement?document.documentElement.clientHeight:0,document.body?document.body.clientHeight:0);}
+function f_scrollLeft(){return f_filterResults(window.pageXOffset?window.pageXOffset:0,document.documentElement?document.documentElement.scrollLeft:0,document.body?document.body.scrollLeft:0);}
+function f_scrollTop(){return f_filterResults(window.pageYOffset?window.pageYOffset:0,document.documentElement?document.documentElement.scrollTop:0,document.body?document.body.scrollTop:0);}
+function f_filterResults(n_win,n_docel,n_body){var n_result=n_win?n_win:0;if(n_docel&&(!n_result||(n_result>n_docel))){n_result=n_docel;}
+return n_body&&(!n_result||(n_result>n_body))?n_body:n_result;}
+function os_availableHeight(r){var absTop=document.getElementById(r.container).style.top;var px=absTop.lastIndexOf('px');if(px>0){absTop=absTop.substring(0,px);}
+return f_clientHeight()-(absTop-f_scrollTop());}
+function os_getElementPosition(elemID){var offsetTrail=document.getElementById(elemID);var offsetLeft=0;var offsetTop=0;while(offsetTrail){offsetLeft+=offsetTrail.offsetLeft;offsetTop+=offsetTrail.offsetTop;offsetTrail=offsetTrail.offsetParent;}
+if(navigator.userAgent.indexOf('Mac')!=-1&&typeof document.body.leftMargin!='undefined' ){offsetLeft+=document.body.leftMargin;offsetTop+=document.body.topMargin;}
+return{left:offsetLeft,top:offsetTop};}
+function os_createContainer(r){var c=document.createElement('div');var s=document.getElementById(r.searchbox);var pos=os_getElementPosition(r.searchbox);var left=pos.left;var top=pos.top+s.offsetHeight;c.className='os-suggest';c.setAttribute('id',r.container);document.body.appendChild(c);c=document.getElementById(r.container);c.style.top=top+'px';c.style.left=left+'px';c.style.width=s.offsetWidth+'px';c.onmouseover=function(event){os_eventMouseover(r.searchbox,event);};c.onmousemove=function(event){os_eventMousemove(r.searchbox,event);};c.onmousedown=function(event){return os_eventMousedown(r.searchbox,event);};c.onmouseup=function(event){os_eventMouseup(r.searchbox,event);};return c;}
+function os_fitContainer(r){var c=document.getElementById(r.container);var h=os_availableHeight(r)-20;var inc=r.containerRow;h=parseInt(h/inc)*inc;if(h<(2*inc)&&r.resultCount>1){h=2*inc;}
+if((h/inc)>os_max_lines_per_suggest){h=inc*os_max_lines_per_suggest;}
+if(h<r.containerTotal){c.style.height=h+'px';r.containerCount=parseInt(Math.round(h/inc));}else{c.style.height=r.containerTotal+'px';r.containerCount=r.resultCount;}}
+function os_trimResultText(r){var maxW=0;for(var i=0;i<r.resultCount;i++){var e=document.getElementById(r.resultText+i);
+if(e.offsetWidth>maxW){maxW=e.offsetWidth;}}
+var w=document.getElementById(r.container).offsetWidth;var fix=0;if(r.containerCount<r.resultCount){fix=20;}else{fix=os_operaWidthFix(w);}
+if(fix<4){fix=4;}
+maxW+=fix;var normW=document.getElementById(r.searchbox).offsetWidth;var prop=maxW/normW;if(prop>os_container_max_width){prop=os_container_max_width;}else if(prop<1){prop=1;}
+var newW=Math.round(normW*prop);if(w!=newW){w=newW;if(os_animation_timer!=null){clearInterval(os_animation_timer.id);}
+os_animation_timer=new os_AnimationTimer(r,w);os_animation_timer.id=setInterval("os_animateChangeWidth()",os_animation_delay);w-=fix;}
+if(w<10){return;}
+for(var i=0;i<r.resultCount;i++){var e=document.getElementById(r.resultText+i);var replace=1;var lastW=e.offsetWidth+1;var iteration=0;var changedText=false;while(e.offsetWidth>w&&(e.offsetWidth<lastW||iteration<2)){changedText=true;lastW=e.offsetWidth;var l=e.innerHTML;e.innerHTML=l.substring(0,l.length-replace)+'...';iteration++;replace=4;}
+if(changedText){document.getElementById(r.resultTable+i).setAttribute('title',r.results[i]);}}}
+function os_animateChangeWidth(){var r=os_animation_timer.r;var c=document.getElementById(r.container);var w=c.offsetWidth;var normW=document.getElementById(r.searchbox).offsetWidth;var normL=os_getElementPosition(r.searchbox).left;var inc=os_animation_timer.inc;var target=os_animation_timer.target;var nw=w+inc;if((inc>0&&nw>=target)||(inc<=0&&nw<=target)){c.style.width=target+'px';clearInterval(os_animation_timer.id);os_animation_timer=null;}else{c.style.width=nw+'px';if(document.documentElement.dir=='rtl'){c.style.left=(normL+normW+(target-nw)-os_animation_timer.target-1)+'px';}}}
+function os_changeHighlight(r,cur,next,updateSearchBox){if(next>=r.resultCount){next=r.resultCount-1;}
+if(next<-1){next=-1;}
+r.selected=next;if(cur==next){return;}
+if(cur>=0){var curRow=document.getElementById(r.resultTable+cur);if(curRow!=null){curRow.className='os-suggest-result';}}
+var newText;if(next>=0){var nextRow=document.getElementById(r.resultTable+next);if(nextRow!=null){nextRow.className=os_HighlightClass();}
+newText=r.results[next];}else{newText=r.original;}
+if(r.containerCount<r.resultCount){var c=document.getElementById(r.container);var vStart=c.scrollTop/r.containerRow;var vEnd=vStart+r.containerCount;if(next<vStart){c.scrollTop=next*r.containerRow;}else if(next>=vEnd){c.scrollTop=(next-r.containerCount+1)*r.containerRow;}}
+if(updateSearchBox){os_updateSearchQuery(r,newText);}}
+function os_HighlightClass(){var match=navigator.userAgent.match(/AppleWebKit\/(\d+)/);if(match){var webKitVersion=parseInt(match[1]);if(webKitVersion<523){return 'os-suggest-result-hl-webkit';}}
+return 'os-suggest-result-hl';}
+function os_updateSearchQuery(r,newText){document.getElementById(r.searchbox).value=newText;r.query=newText;}
+function os_eventMouseover(srcId,e){var targ=os_getTarget(e);var r=os_map[srcId];if(r==null||!os_mouse_moved){return;}
+var num=os_getNumberSuffix(targ.id);if(num>=0){os_changeHighlight(r,r.selected,num,false);}}
+function os_getNumberSuffix(id){var num=id.substring(id.length-2);if(!(num.charAt(0)>='0'&&num.charAt(0)<='9')){num=num.substring(1);}
+if(os_isNumber(num)){return parseInt(num);}else{return-1;}}
+function os_eventMousemove(srcId,e){os_mouse_moved=true;}
+function os_eventMousedown(srcId,e){var targ=os_getTarget(e);var r=os_map[srcId];if(r==null){return;}
+var num=os_getNumberSuffix(targ.id);os_mouse_pressed=true;if(num>=0){os_mouse_num=num;}
+document.getElementById(r.searchbox).focus();return false;}
+function os_eventMouseup(srcId,e){var targ=os_getTarget(e);var r=os_map[srcId];if(r==null){return;}
+var num=os_getNumberSuffix(targ.id);if(num>=0&&os_mouse_num==num){os_updateSearchQuery(r,r.results[num]);os_hideResults(r);document.getElementById(r.searchform).submit();}
+os_mouse_pressed=false;document.getElementById(r.searchbox).focus();}
+function os_createToggle(r,className){var t=document.createElement('span');t.className=className;t.setAttribute('id',r.toggle);var link=document.createElement('a');link.setAttribute('href','javascript:void(0);');link.onclick=function(){os_toggle(r.searchbox,r.searchform);};var msg=document.createTextNode(wgMWSuggestMessages[0]);link.appendChild(msg);t.appendChild(link);return t;}
+function os_toggle(inputId,formName){r=os_map[inputId];var msg='';if(r==null){os_enableSuggestionsOn(inputId,formName);r=os_map[inputId];msg=wgMWSuggestMessages[0];}else{os_disableSuggestionsOn(inputId,formName);msg=wgMWSuggestMessages[1];}
+var link=document.getElementById(r.toggle).firstChild;link.replaceChild(document.createTextNode(msg),link.firstChild);}
+hookEvent('load',os_MWSuggestInit);</script> <script style="display: none;">/* generated javascript */
+var skin = 'monobook';
+var stylepath = '/skins';
+
+/* MediaWiki:Common.js */
+/* Any JavaScript here will be loaded for all users on every page load. */
+
+/* MediaWiki:Monobook.js */
+/* Any JavaScript here will be loaded for users using the MonoBook skin */</script>
+ </head><body class="mediawiki ltr ns-0 ns-subject page-UVa_558 
+skin-monobook"><div id="globalWrapper"><div id="column-content"><div 
+id="content"><a id="top"></a><h1 id="firstHeading" class="firstHeading">UVa
+ 558</h1><div id="bodyContent"><h3 id="siteSub">From Algorithmist</h3><div
+ id="contentSub"></div><div id="jump-to-nav">Jump to: <a 
+href="#column-one">navigation</a>, <a href="#searchInput">search</a></div><!--//--><table
+ id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2>
+ <span class="toctoggle">[<a href="javascript:toggleToc()" 
+class="internal" id="togglelink">hide</a>]</span></div><ul><li 
+class="toclevel-1 tocsection-1"><a href="#558_-_Wormholes"><span 
+class="tocnumber">1</span> <span class="toctext">558 - Wormholes</span></a></li>
+ <li class="toclevel-1 tocsection-2"><a href="#Summary"><span 
+class="tocnumber">2</span> <span class="toctext">Summary</span></a></li>
+ <li class="toclevel-1 tocsection-3"><a href="#Explanation"><span 
+class="tocnumber">3</span> <span class="toctext">Explanation</span></a></li>
+ <li class="toclevel-1 tocsection-4"><a href="#Gotcha.27s"><span 
+class="tocnumber">4</span> <span class="toctext">Gotcha's</span></a></li>
+ <li class="toclevel-1 tocsection-5"><a href="#Implementation"><span 
+class="tocnumber">5</span> <span class="toctext">Implementation</span></a></li>
+ <li class="toclevel-1 tocsection-6"><a href="#Input"><span 
+class="tocnumber">6</span> <span class="toctext">Input</span></a></li> <li
+ class="toclevel-1 tocsection-7"><a href="#Output"><span 
+class="tocnumber">7</span> <span class="toctext">Output</span></a></li></ul></td></tr></tbody></table><script>if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script><h2><span
+ class="editsection">[<a 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=edit&amp;section=1"
+ title="Edit section: 558 - Wormholes">edit</a>]</span> <span 
+class="mw-headline" id="558_-_Wormholes">558 - Wormholes </span></h2><ul><li><a
+ href="http://acm.uva.es/p/v5/558.html" class="external free" 
+rel="nofollow">http://acm.uva.es/p/v5/558.html</a> </li></ul><h2><span 
+class="editsection">[<a 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=edit&amp;section=2"
+ title="Edit section: Summary">edit</a>]</span> <span 
+class="mw-headline" id="Summary">Summary </span></h2><p>Given a weighted
+ directed <a href="http://www.algorithmist.com/index.php/Graph" 
+title="Graph">graph</a>, find whether a negative weight cycle exists in 
+it or not.</p><h2><span class="editsection">[<a 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=edit&amp;section=3"
+ title="Edit section: Explanation">edit</a>]</span> <span 
+class="mw-headline" id="Explanation">Explanation </span></h2><p>This one
+ is related to <a 
+href="http://www.algorithmist.com/index.php/Graph_Theory" title="Graph 
+Theory">graph theory</a>. The trick is to realize that the problem is 
+talking about a graph data structure. Each star system is a node and 
+each wormhole is an edge (with time t as the weight). After building the
+ adjacency list (or matrix) to represent the graph in memory, you need 
+to find whether it contains any negative weight cycles or not. This can 
+be easily done through a standard algorithm called <a 
+href="http://www.algorithmist.com/index.php/Bellman-Ford%27s_Algorithm" 
+title="Bellman-Ford's Algorithm" class="mw-redirect">Bellman-Ford</a>.</p><h2><span
+ class="editsection">[<a 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=edit&amp;section=4"
+ title="Edit section: Gotcha's">edit</a>]</span> <span 
+class="mw-headline" id="Gotcha.27s">Gotcha's </span></h2><p>The judge 
+program for this problem expects a newline after the last output and 
+gives a Presentation Error if a new line is not printed after the last 
+output.</p><h2><span class="editsection">[<a 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=edit&amp;section=5"
+ title="Edit section: Implementation">edit</a>]</span> <span 
+class="mw-headline" id="Implementation">Implementation </span></h2><p>Watch
+ out for stack overflow errors. Don't use arrays, use a vector instead.</p><h2><span
+ class="editsection">[<a 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=edit&amp;section=6"
+ title="Edit section: Input">edit</a>]</span> <span class="mw-headline" 
+id="Input">Input </span></h2><pre>2
+3 3
+0 1 1000
+1 2 15
+2 1 -42
+4 4
+0 1 10
+1 2 20
+2 3 30
+3 0 -60
+</pre><h2><span class="editsection">[<a 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=edit&amp;section=7"
+ title="Edit section: Output">edit</a>]</span> <span class="mw-headline"
+ id="Output">Output </span></h2><pre>possible
+not possible
+</pre><!--//--><div class="printfooter">Retrieved from "<a 
+href="http://www.algorithmist.com/index.php/UVa_558">http://www.algorithmist.com/index.php/UVa_558</a>"</div><div
+ id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a 
+href="http://www.algorithmist.com/index.php/Special:Categories" 
+title="Special:Categories">Categories</a>: <span dir="ltr"><a 
+href="http://www.algorithmist.com/index.php/Category:UVa_Online_Judge" 
+title="Category:UVa Online Judge">UVa Online Judge</a></span> | <span 
+dir="ltr"><a 
+href="http://www.algorithmist.com/index.php/Category:Graph_Theory" 
+title="Category:Graph Theory">Graph Theory</a></span></div></div><div 
+class="visualClear"></div></div></div></div><div id="column-one"><div 
+id="p-cactions" class="portlet"><h5>Views</h5><div class="pBody"><ul><li
+ id="ca-nstab-main" class="selected"><a 
+href="http://www.algorithmist.com/index.php/UVa_558" title="View the 
+content page [alt-shift-c]" accesskey="c">Page</a></li> <li id="ca-talk"
+ class="new"><a 
+href="http://www.algorithmist.com/index.php?title=Talk:UVa_558&amp;action=edit&amp;redlink=1"
+ title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></li>
+ <li id="ca-edit"><a 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=edit"
+ title="You can edit this page. Please use the preview button before 
+saving [alt-shift-e]" accesskey="e">Edit</a></li> <li id="ca-history"><a
+ 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;action=history"
+ title="Past revisions of this page [alt-shift-h]" accesskey="h">History</a></li></ul></div></div><div
+ class="portlet" id="p-personal"><h5>Personal tools</h5><div 
+class="pBody"><ul><li id="pt-login"><a 
+href="http://www.algorithmist.com/index.php?title=Special:UserLogin&amp;returnto=UVa_558"
+ title="You are encouraged to log in; however, it is not mandatory 
+[alt-shift-o]" accesskey="o">Log in / create account</a></li></ul></div></div><div
+ class="portlet" id="p-logo"><a style="background-image: 
+url(&quot;/images/3/31/Algorithmist_logo.png&quot;);" 
+href="http://www.algorithmist.com/index.php/Main_Page" title="Visit the 
+main page"></a></div><script type="text/javascript">if(window.isMSIE55)fixalpha();</script><div
+ class="generated-sidebar portlet" id="p-navigation"><h5>Navigation</h5><div
+ class="pBody"><ul><li id="n-mainpage"><a 
+href="http://www.algorithmist.com/index.php/Main_Page" title="Visit the 
+main page [alt-shift-z]" accesskey="z">Main Page</a></li> <li 
+id="n-Programming-Contest-Calendar"><a 
+href="http://www.algorithmist.com/index.php/Programming_Contest_Calendar">Programming
+ Contest Calendar</a></li> <li id="n-UVa"><a 
+href="http://www.algorithmist.com/index.php/UVa">UVa</a></li> <li 
+id="n-Sphere-Online-Judge"><a 
+href="http://www.algorithmist.com/index.php/Sphere_Online_Judge">Sphere 
+Online Judge</a></li> <li id="n-recentchanges"><a 
+href="http://www.algorithmist.com/index.php/Special:RecentChanges" 
+title="The list of recent changes in the wiki [alt-shift-r]" 
+accesskey="r">Recent changes</a></li> <li id="n-randompage"><a 
+href="http://www.algorithmist.com/index.php/Special:Random" title="Load a
+ random page [alt-shift-x]" accesskey="x">Random page</a></li> <li 
+id="n-help"><a 
+href="http://www.algorithmist.com/index.php/Help:Contents" title="The 
+place to find out">Help</a></li></ul></div></div><div id="p-search" 
+class="portlet"><h5><label for="searchInput">Search</label></h5><div 
+id="searchBody" class="pBody"><form action="/index.php" id="searchform"><input
+ name="title" value="Special:Search" type="hidden"> <input 
+autocomplete="off" id="searchInput" title="Search Algorithmist" 
+accesskey="f" name="search" type="search"> <input name="go" 
+class="searchButton" id="searchGoButton" value="Go" title="Go to a page 
+with this exact name if exists" type="submit">&nbsp; <input 
+name="fulltext" class="searchButton" id="mw-searchButton" value="Search"
+ title="Search the pages for this text" type="submit"></form></div></div><div
+ class="portlet" id="p-tb"><h5>Toolbox</h5><div class="pBody"><ul><li 
+id="t-whatlinkshere"><a 
+href="http://www.algorithmist.com/index.php/Special:WhatLinksHere/UVa_558"
+ title="List of all wiki pages that link here [alt-shift-j]" 
+accesskey="j">What links here</a></li> <li id="t-recentchangeslinked"><a
+ 
+href="http://www.algorithmist.com/index.php/Special:RecentChangesLinked/UVa_558"
+ title="Recent changes in pages linked from this page [alt-shift-k]" 
+accesskey="k">Related changes</a></li> <li id="t-specialpages"><a 
+href="http://www.algorithmist.com/index.php/Special:SpecialPages" 
+title="List of all special pages [alt-shift-q]" accesskey="q">Special 
+pages</a></li> <li id="t-print"><a 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;printable=yes"
+ rel="alternate" title="Printable version of this page [alt-shift-p]" 
+accesskey="p">Printable version</a></li> <li id="t-permalink"><a 
+href="http://www.algorithmist.com/index.php?title=UVa_558&amp;oldid=9400"
+ title="Permanent link to this revision of the page">Permanent link</a></li></ul></div></div></div><!--//--><div
+ class="visualClear"></div><div id="footer"><div id="f-poweredbyico"><a 
+href="http://www.mediawiki.org/"><img 
+src="UVa_558_files/poweredby_mediawiki_88x31.png" alt="Powered by 
+MediaWiki" width="88" height="31"></a></div><div id="f-copyrightico"><a 
+href="http://www.gnu.org/copyleft/fdl.html"><img 
+src="UVa_558_files/gnu-fdl.png" alt="GNU Free Documentation License 1.2"
+ width="88" height="31"></a></div><ul id="f-list"><li id="lastmod">This 
+page was last modified on 11 January 2008, at 16:56.</li> <li 
+id="viewcount">This page has been accessed 2,048 times.</li> <li 
+id="copyright">Content is available under <a 
+href="http://www.gnu.org/copyleft/fdl.html" class="external ">GNU Free 
+Documentation License 1.2</a>.</li> <li id="privacy"><a 
+href="http://www.algorithmist.com/index.php/Algorithmist:Privacy_policy"
+ title="Algorithmist:Privacy policy">Privacy policy</a></li> <li 
+id="about"><a 
+href="http://www.algorithmist.com/index.php/Algorithmist:About" 
+title="Algorithmist:About">About Algorithmist</a></li> <li 
+id="disclaimer"><a 
+href="http://www.algorithmist.com/index.php/Algorithmist:General_disclaimer"
+ title="Algorithmist:General disclaimer">Disclaimers</a></li></ul></div></div><script>if (window.runOnloadHook) runOnloadHook();</script>
+ <!--//--><script language="javascript"><!--
+bmi_SafeAddOnload(bmi_load,"bmi_orig_img",0);//-->
+</script></body></html>

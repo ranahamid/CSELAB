@@ -1,0 +1,1 @@
+//not workSELECT DAY('10/30/2002')//not workSELECT MONTH('10/30/2002')//not workSELECT GETDATE()//not workSELECT YEAR('05/31/2000')  

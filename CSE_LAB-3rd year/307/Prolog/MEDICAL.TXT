@@ -1,0 +1,5 @@
+xpositive("cough")
+xpositive("rash")
+xpositive("runny_nose")
+xnegetive("body_ache")
+xnegetive("fever")

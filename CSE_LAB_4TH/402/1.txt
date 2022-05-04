@@ -1,0 +1,4 @@
+1. ks test
+2. chi-square test
+3. pure pursuit
+4. koch curve

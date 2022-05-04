@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><script src="PT04_files/bmi.js" language="javascript"></script><title>The Radix 2 Decimation In Time (DIT) Algorithm.</title></head> <body bgcolor="#FFFFD0" link="#0000FF" text="#000000"><a name="Top"></a><a href="#Bottom">Bottom</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.engineeringproductivitytools.com/stuff/T0001/PT03.HTM">Previous</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.engineeringproductivitytools.com/stuff/T0001/index.html">Contents</a><hr><h1><a name="Head208"></a><a name="The_Radix_2_Decimation_In_Time">The Radix 2 Decimation In Time (DIT) Algorithm.</a></h1><p>This
+ algorithm is very similar in concept to the Decimation in Frequency 
+(DIF) Algorithm discussed earlier, so the presentation will be a little 
+less detailed. Have a look at the section describing the DIF algorithm 
+first.</p><h2><a name="Head97"></a>The Maths.</h2><p>We defined the FFT as:</p><p align="CENTER"><img src="PT04_files/EQN57.GIF" alt="equation" height="54" width="271"></p><p>If <em>N</em> is even, the above sum can be split into 'even' (<i>n</i>=2<em>n</em>') and 'odd' (<i>n</i>=2<em>n</em>'+1) halves, where <em>n</em>'=0..<em>N</em>/2-1, and re-arranged as follows:</p><p align="CENTER"><img src="PT04_files/EQN59.GIF" alt="equation" height="56" width="595"></p><p align="CENTER"><img src="PT04_files/EQN58.GIF" alt="equation" height="56" width="539"></p><p align="CENTER"><img src="PT04_files/EQN60.GIF" alt="equation" height="25" width="345"></p><p align="CENTER"><img src="PT04_files/EQN61.GIF" alt="equation" height="20" width="470"></p><p>This
+ process of splitting the 'time domain' sequence into even an odd 
+samples is what gives the algorithm its name, 'Decimation In <em>Time</em>'. As with the DIF algorithm, we have succeeded in expressing an <em>N</em> point transform as 2 (<em>N</em>/2)
+ point sub-transforms. The principal difference here is that the order 
+we do things has changed. In the DIF algorithm the time domain data was 
+'twiddled' before the two sub-transforms were performed. Here the two 
+sub-transforms are performed first. The final result is obtained by 
+'twiddling' the resulting frequency domain data. There is a slight 
+problem here, because the two sub-transforms only give values for <em>k</em>=0..<em>N</em>/2-1. We also need values for <em>k</em>=<em>N</em>/2..<em>N</em>-1. But from the periodicity of the DFT we know:</p><p align="CENTER"><img src="PT04_files/EQN63.GIF" alt="equation" height="20" width="440"></p><p>Also..</p><p align="CENTER"><img src="PT04_files/EQN62.GIF" alt="equation" height="20" width="328"></p><p>So, for <em>k</em>=0..<em>N</em>/2-1:</p><p align="CENTER"><img src="PT04_files/EQN65.GIF" alt="equation" height="20" width="447"></p><p>and..</p><p align="CENTER"><img src="PT04_files/EQN64.GIF" alt="equation" height="20" width="515"></p><p>where:</p><p align="CENTER"><img src="PT04_files/EQN68.GIF" alt="equation" height="24" width="143"></p><p>This all we need to produce a simple recursive DIT FFT routine for any <em>N</em> which is a regular power of 2 (<em>N</em>=2<sup><em>p</em></sup>).</p><h2><a name="Head139"></a><a name="A_Recursive_DIT_FFT_Routine.">A Recursive DIT FFT Routine.</a></h2><p>Given
+ the above results, we can now have a 'first stab' at a recursive 
+routine to implement this algorithm (in a hypothetical Pascal like 
+programming language which supports complex numbers and allows arrays as
+ function arguments and results):</p><pre>{f is an array of size N=2^p}
+FUNCTION DIT(N,f);
+LOCAL N',n',fe,fo,Fe,Fo,k,x,F;
+IF N==1
+   THEN	RETURN(f); {trivial if N==1}
+   ELSE	BEGIN      {perform 2 sub-transforms}
+        N':=N/2;   {size of sub-transforms}
+        FOR n':=0 TO (N'-1) DO
+          BEGIN
+          fe[n']:= f[2*n'  ]; {even n}
+          fo[n']:= f[2*n'+1]; {odd  n}
+          END;
+        Fe:=DIT(N',fe); {even n}
+        Fo:=DIT(N',fo); {odd  n}
+        FOR k:=0 TO (N'-1) DO {perform N' DIT 'butterflies'}
+          BEGIN
+          x=Fo[k]*T(N,k);    {twiddle the odd n results} 
+          F[k   ]:= Fe[k]+x; {top    subset}
+          F[k+N']:= Fe[k]-x; {bottom subset}
+          END;
+        RETURN(F);
+        END;
+</pre><p>This is simplest form of DIT implementation and directly reflects the mathematical derivation of the algorithm.</p><p></p><h2><a name="Head263"></a><a name="DIF_FFT_Algorithmic_Complexity">DIT FFT Algorithmic Complexity (Why it's fast).</a></h2><p>As with the DIF algorithm, the number of butterfly operations <em>C</em>(<em>p</em>) for a 2<sup><em>p</em></sup> point DIT transform is given by:</p><p align="CENTER"><img src="PT04_files/EQN69.GIF" alt="equation" height="25" width="128"></p><p>or, in terms of <em>N</em> (=2<sup><em>p</em></sup>):</p><p align="CENTER"><img src="PT04_files/EQN70.GIF" alt="equation" height="43" width="175"></p><p>Dropping the constant scaling factors (including the log base) we get an algorithmic complexity of O(<em>N.logN</em>)</p><h2><a name="Head283"></a><a name="A_Recursive_'In_Place'_DIF_FFT">A Recursive 'In Place' DIT FFT Routine.</a></h2><p>If
+ you were to code something like the above routine in a real programming
+ language it would work fine. However, from an efficiency point of view 
+it is somewhat less than ideal. Allocating local arrays on the stack 
+will make this implementation fairly memory hungry, and the first loop 
+in the above routine performs no useful numerical computation, it simply
+ re-arranges values previously calculated.</p><p>What if the first loop 
+were unnecessary. Suppose the input data had already been separated into
+ odd and even sample sets. If this were also true 'recursively' for each
+ sub transform then the first loop could be discarded. As with the DIF 
+algortithm, this is simple bit reversed indexing again. This time 
+however, it is the <em>input</em> 'time domain' data that must be presented in bit reversed order. <strong>I</strong>.<strong>E. Reverse the bits of the binary representation of <i>n</i> to get the corresponding array index.</strong></p><p>Given
+ that the input data has been stored in bit reversed order an in place 
+calculation is obviously possible. The input to and the output from the 
+even sub-transform will be in the 'top' half of the array. Likewise the 
+input to and the output from the odd sub-transform will be in the 
+'bottom' half of the array. In the butterfly loop, all we need to do is 
+write back the 'top' <em>k</em> values to the top half, and the 'bottom' <em>k</em> values to the bottom half. This will result in a <em>normal</em> order (not bit reversed) array giving <em>F</em>(<em>k</em>). Pulling all these ideas together, we get a more efficient (recursive) in-place DIT routine:</p><pre>{Perform in place DIT of N points starting at position BaseT.
+ DIT(0,N,f) performs DIT FFT on entire array f, N= size of f
+ N.B. The input array f is in bit reversed order! So all the
+ 'even' input samples are in the 'top' half, all the 'odd'
+ input samples are in the 'bottom' half..etc (recursively).
+}
+PROCEDURE DIT(BaseT,N, VAR f); {f is an external array}
+LOCAL N',BaseB,k,top,bot;
+IF N==1
+   THEN	{do nothing}
+   ELSE BEGIN
+        N':=N&gt;&gt;1; {shift right to get size of sub-transforms}
+        BaseB:=BaseT+N'; {split block into 2 halves}
+        DIT(BaseT,N',f);  {even n}
+        DIT(BaseB,N',f);  {odd n}
+        FOR k:=0 TO (N'-1) DO {perform N' DIT 'butterflies'}
+          BEGIN
+          top=f[BaseT+k];
+          bot=f[BaseB+k]*T(N,k);    {twiddle the odd n results} 
+          f[BaseT+k]:= top+bot; {top    subset}
+          f[BaseB+k]:= top-bot; {bottom subset}
+          END;
+        END;
+</pre><p>This version of the DIT routine is a little simpler and more 
+efficient than the first, but has the disadvantage that the input must 
+be in 'jumbly' (bit reversed) order. This may on may not be a serious 
+problem, depending on what the output is to be used for and whether or 
+not your processor/programming language supports bit reversed addressing
+ (most DSP's do). If bit reversed addressing is not available then you 
+may need to produce a bit reversed index look up table.</p><p>It is 
+worth noting that this is the simplest formulation of the 'in-place' DIT
+ algorithm. It takes bit reversed order input and generates normal order
+ output. However, this is not fundamental to the algorithm, it is merely
+ a consequence of the simplest implementation. As with the DIF 
+algorithm, it is possible to write a reverse order DIT algorithm FFT 
+which takes normal order input and generates bit reversed order output. 
+This requires the DIT FFT routine to be amended in two ways:</p><ol type="1"><li>Passing
+ an additional parameter which specifies the spacing between elements in
+ each sub-array to be transformed. In the simple code above, this is 
+always 1. In the reverse order FFT, this will start at 1 and double for 
+each sub transform. This parameter is also useful feature for 
+multi-dimensional transforms. </li><li>Since the output from each 
+sub-transform is now in bit reversed order, the twiddle factors must 
+also used in bit reversed order. This isn't difficult if the twiddle 
+factors are taken from a table in bit reversed order, or if bit reversed
+ addressing is available.</li></ol><h2><a name="Head317"></a><a name="The_'Classic'_Non-Recursive_DIF">The 'Classic' Non-Recursive DIT FFT Routine.</a></h2><p>For
+ many processors/languages a recursive routine is not attractive, 
+because of the overhead incurred by a procedure call. Be careful though,
+ in reality an aversion to recursion could cost performance (see the 
+note about cache efficiency). There is also a particular problem with 
+DSP's which often have small hardware stacks, so deeply recursive 
+routines will cause stack overflow. It is fairly easy to see that the 
+above routine can be flattened into nested loops, to yield something 
+resembling the 'classic' (non recursive) DIT FFT. Each DIT uses 2 'half 
+size' DIT's, which in turn will use 4 'quarter size' DIT's, etc.. the 
+last (not trivial) DIT will be for size 2. So, keeping notation 
+consistent with the above recursive DIT, we get 3 nested loops:</p><ul><li><strong>Pass Loop:</strong> An <em>N</em> (=2<sup><em>p</em></sup> ) point transform will perform <em>p</em> 'passes', indexed by <em>P</em>=0..<em>p</em>-1. </li><li><strong>Block Loop:</strong> Pass will <em>P</em> operate on <em>B<sub>P</sub></em> (=2<sup><em>p</em>-<em>P-<i>1</i></em></sup>) sub-blocks, each of size <em>N<sub>P</sub> </em>(=<em>N</em>/<em>B<sub>P</sub></em>=2<sup><em>P<i>+1</i></em></sup>), indexed by b=0..<em>B<sub>P</sub></em>-1 </li><li><strong>Butterfly Loop:</strong> Each sub-block operation will perform <em>N</em>'<sub><em>P</em></sub> (=<em>N<sub>P</sub></em>/2=2<sup><em>P</em></sup>) butterflies, indexed by <em>k</em>=0..<em>N</em>'<sub><em>P</em></sub>-1.</li></ul><pre>{Perform in place DIT of 2^p points (=size of f)
+ N.B. The input array f is in bit reversed order! So all the
+ 'even' input samples are in the 'top' half, all the 'odd'
+ input samples are in the 'bottom' half..etc (recursively).
+}
+PROCEDURE DIT(p,VAR f);
+LOCAL Bp,Np,Np',P,b,k,BaseT,BaseB,top,bot;
+BEGIN {DIT}
+{initialise pass parameters}
+Bp:=1&lt;&lt;(p-1);{No. of blocks}
+Np:=2;       {No. of points in each block}		
+{perform p passes}
+FOR P:=0 TO (p-1) DO
+  BEGIN {pass loop}
+  Np':=Np&gt;&gt;1; {No. of butterflies}
+  BaseT:=0;   {Reset even base index}
+  FOR b:=0 TO (Bp-1) DO
+    BEGIN {block loop}
+    BaseB:=BaseT+Np'; {calc odd base index}
+    FOR k:=0 TO (Np'-1) DO
+      BEGIN {butterfly loop}
+        top:=f[BaseT+k];
+        bot:=f[BaseB+k]*T(Np,k); {twiddle the odd n results} 
+        f[BaseT+k]:= top+bot;    {top    subset}
+        f[BaseB+k]:= top-bot;    {bottom subset}
+      END; {butterfly loop}
+    BaseT:=BaseT+Np; {start of next block}
+    END; {block loop}
+  {calc parameters for next pass}
+  Bp:=Bp&gt;&gt;1; {half as many blocks}
+  Np:=Np&lt;&lt;1; {twice as many points in each block}
+  END; {pass loop}
+END; {DIT}
+</pre><h2><a name="Head363"></a><a name="Twiddle_Factor_Tricks">Twiddle Factor Tricks.</a></h2><p>Recall the form of the twiddle factors:</p><p align="CENTER"><img src="PT04_files/EQN88.GIF" alt="equation" height="24" width="348"></p><p>In
+ practice, calculating these will require time consuming COS's and 
+SIN's, so you certainly don't want to do this for every butterfly (if 
+you do your FFT will be anything but fast). So what you need is a look 
+up table (an array of size <em>N</em>/2) which is calculated just once. The important thing to realise is that you <em>don't</em> need a separate table for each DIT pass (<em>N</em>
+ doubles each pass). Instead you use the same table each pass and 
+introduce an additional 'twiddle_step_size' parameter which starts at <em>N</em>/2 and halves after each pass. The twiddle factor used has index n*twiddle_step_size.</p><p>As
+ with the DIF algorithm, there is scope for optimising 'trivial' twiddle
+ factors. (See the DIF algorithm for more detail). The only differrence 
+with the DIT algorithm is that it makes exclusive use of trivial 
+butterflies in the first two passes.</p><p align="CENTER"><a href="http://www.engineeringproductivitytools.com/">©1999 - Engineering Productivity Tools Ltd.</a></p><hr><p align="LEFT"><a name="Bottom"></a><a href="http://www.engineeringproductivitytools.com/stuff/T0001/PT05.HTM">Next</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#Top">Top</a> <script language="javascript"><!--
+bmi_SafeAddOnload(bmi_load,"bmi_orig_img",0);//-->
+</script></p></body></html>

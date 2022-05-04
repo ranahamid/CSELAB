@@ -1,0 +1,22 @@
+template <int k> 
+real BSpline(real x, real *t)
+{
+    if (*t <= x && x < *(t+k))
+    {
+        real a = (x - *t) / (*(t+k-1) - *t);
+        real b = (*(t+k) - x) / (*(t+k) - *(t+1));
+
+        return a * BSpline<k-1>(x, t) + b * BSpline<k-1>(x, (t+1));
+    }
+    else
+        return 0;
+};
+
+template <>
+real BSpline<1>(real x, real *t)
+{
+    if (*t <= x && x < *(t+1))
+        return 1.;
+    else
+        return 0.;
+};

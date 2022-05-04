@@ -1,0 +1,149 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\4th lab\krishna lab\VLSI
+vANDgate
+Z1 !s100 zPeda04f]N5jQD5D5MO?F2
+Z2 IjNa6Fh=>^5Y[>j<i`>U9d3
+Z3 VPRm39DIc=Ig]oAdKOVbMB0
+Z4 dG:\krishna\vlsi
+Z5 w1373552254
+Z6 8G:/krishna/vlsi/ANDgate.v
+Z7 FG:/krishna/vlsi/ANDgate.v
+L0 1
+Z8 OV;L;6.6d;45
+r1
+31
+Z9 o-work work -O0
+Z10 n@a@n@dgate
+!s85 0
+!s101 -O0
+vANDtest
+Z11 !s100 NC[nDaM8GJYM6_4eGIRNQ0
+Z12 IJI=m;HNEjB<9dD31hfg?A2
+Z13 V;=:jEjPa9J?gf87WZf0Jm2
+R4
+R5
+R6
+R7
+L0 8
+R8
+r1
+31
+R9
+Z14 n@a@n@dtest
+!s85 0
+!s101 -O0
+vNANDtest
+Z15 IkE^2l^gUHe7Y9c4kk@Y8S2
+Z16 VNFF<o^L1eG1J^O5N=B05m0
+Z17 dD:\4th lab\krishna lab\VLSI
+Z18 w1373553031
+Z19 8D:/4th lab/krishna lab/VLSI/NANDgate.v
+Z20 FD:/4th lab/krishna lab/VLSI/NANDgate.v
+L0 18
+R8
+r1
+31
+R9
+Z21 n@n@a@n@dtest
+Z22 !s100 eV=<hfeHiEh2gfdaZ_Kf>1
+!s85 0
+!s101 -O0
+vNORtest
+Z23 I20o9F@9o8gl[61:Cgc=<91
+Z24 VCX^X0Oi@N^QM73f=:XE9Q2
+R17
+Z25 w1373553254
+Z26 8D:/4th lab/krishna lab/VLSI/NORgate.v
+Z27 FD:/4th lab/krishna lab/VLSI/NORgate.v
+L0 18
+R8
+r1
+31
+R9
+Z28 n@n@o@rtest
+Z29 !s100 2jV=S<6Yed4N[^2jIhI1B2
+!s85 0
+!s101 -O0
+vNOTgate
+Z30 !s100 _PdGVhEE9TJJTA>UOej4@0
+Z31 IUSg@nNgLYWzkkaF^PfYmO3
+Z32 V]hon5_]TF@EAV24KVkQm[1
+R17
+Z33 w1373554281
+Z34 8D:/4th lab/krishna lab/VLSI/XORgate.v
+Z35 FD:/4th lab/krishna lab/VLSI/XORgate.v
+L0 15
+R8
+r1
+31
+R9
+Z36 n@n@o@tgate
+!s85 0
+!s101 -O0
+vNOTtest
+Z37 I_<OF4mJ_fTazMcLgX<Jo52
+Z38 Vj^aS2kZF=N=1]N?FH]ilS2
+R17
+Z39 w1373552739
+Z40 8D:/4th lab/krishna lab/VLSI/NOTgate.v
+Z41 FD:/4th lab/krishna lab/VLSI/NOTgate.v
+L0 8
+R8
+r1
+31
+R9
+Z42 n@n@o@ttest
+Z43 !s100 84e8OWlW7Hf5M1`gD2V_=0
+!s85 0
+!s101 -O0
+vORgate
+Z44 !s100 ^XE6M1WNlVLIUCKfHPbYT0
+Z45 I7[d>XhbA_C1_=S1XzIJ790
+Z46 V0IBRDiKPlg`<;<Qb1A`_H0
+R4
+Z47 w1373552490
+Z48 8G:/krishna/vlsi/ORgate.v
+Z49 FG:/krishna/vlsi/ORgate.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s101 -O0
+R9
+Z50 n@o@rgate
+vORtest
+Z51 !s100 ViiQ>dTY8[mEgfX3gJh2_1
+Z52 IjiVP<Y326ZT<zCX;QQL^a0
+Z53 V?SRYJnl]LWLDb4QOGVnN_2
+R4
+R47
+R48
+R49
+L0 8
+R8
+r1
+!s85 0
+31
+!s101 -O0
+R9
+Z54 n@o@rtest
+vXORtest
+Z55 I8=VX?A>aD7mE^96o_>]Ud3
+Z56 V[]eXF<Gol;oHk2I2oCChO1
+R17
+R33
+R34
+R35
+L0 22
+R8
+r1
+31
+R9
+Z57 n@x@o@rtest
+Z58 !s100 JR]5b84Bn8lSRW87Q3b;B1
+!s85 0
+!s101 -O0

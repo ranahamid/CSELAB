@@ -1,0 +1,61 @@
+create table t1
+(
+roll int,
+mark int
+);
+
+create table t2
+(
+roll int,
+gp real,
+lg varchar(5)
+);
+
+
+create or replace trigger t12
+before insert on t1
+for each row
+begin
+if inserting then
+     if(:new.mark>=80 and :new.mark<=100) then
+        insert into t2 values(:new.roll,4.00,'A+');
+     end if;
+     if(:new.mark>=75 and :new.mark<80) then
+        insert into t2 values(:new.roll,3.75,'A');
+     end if;
+     if(:new.mark>=70 and :new.mark<75) then
+        insert into t2 values(:new.roll,3.50,'A-');
+     end if;
+     if(:new.mark>=65 and :new.mark<70) then
+        insert into t2 values(:new.roll,3.25,'B+');
+     end if;
+     if(:new.mark>=60 and :new.mark<65) then
+        insert into t2 values(:new.roll,3.00,'B');
+     end if;
+     if(:new.mark>=55 and :new.mark<60) then
+        insert into t2 values(:new.roll,2.75,'B-');
+     end if;
+     if(:new.mark>=50 and :new.mark<55) then
+        insert into t2 values(:new.roll,2.50,'C+');
+     end if;
+     if(:new.mark>=45 and :new.mark<50) then
+        insert into t2 values(:new.roll,2.25,'C');
+     end if; 
+     if(:new.mark>=40 and :new.mark<45) then
+        insert into t2 values(:new.roll,2.00,'D');
+     end if;
+     if(:new.mark<40) then
+        insert into t2 values(:new.roll,0.00,'F');
+     end if;
+end if;   
+end;
+
+insert into t1 values(10105419,82);
+
+
+create table t3
+(
+mark int,
+dp real,
+lg varchar(5)
+);

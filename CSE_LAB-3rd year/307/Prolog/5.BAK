@@ -1,0 +1,29 @@
+domains
+	list=symbol*
+predicates
+	sort(list,list)
+	swap(list,list)
+	printlist(list)
+	goal
+		sort([1,3,4,9,2,5],L)
+	
+clauses
+	sort(Input,Output):-
+		swap(Input,Temp),
+		!,
+		printlist(Temp),
+		swap(Temp,Output).
+	
+	sort(Output,Output).
+	
+	swap([A,B|Tail],[B,A|Tail]):-
+		A>B.
+	
+	swap([A|Tail1],[B|Tail2]):-
+		swap(Tail1,Tail2).
+	
+	printlist([]):
+		write("\n").
+	printlist([Head|Tail]):-
+		write(Head," "),
+		printlist(Tail).

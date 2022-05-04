@@ -1,0 +1,12 @@
+clc;
+clear all;
+close all;
+u=double(imread('original.tif'));
+[v1,un] = noiseadd(u,50,'uniform');
+[v2,gn] = noiseadd(u,50,'gaussian');
+[v3] = noiseadd(u,0.1,'salt');
+ figure; imshow(uint8(v1));
+ figure; imshow(uint8(v2));
+ figure; imshow(uint8(v3));
+%R=imnoise2('uniform', 0);
+%[M,  N,  a, b]  = setDefaults('salt & pepper', 0); 
